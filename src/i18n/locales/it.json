@@ -1,0 +1,173 @@
+{
+  "nav": {
+    "aiAssistant": "AI Assistant",
+    "showcase": "Esplora",
+    "portfolio": "Portfolio",
+    "contact": "Contatti"
+  },
+  "language": {
+    "label": "Lingua",
+    "en": "English",
+    "it": "Italiano",
+    "fr": "Français"
+  },
+  "hero": {
+    "eyebrow": "Sviluppatore Fullstack · Integrazione AI",
+    "titleStart": "Costruisco applicazioni web fullstack",
+    "titleAccent": " potenziate dall'AI.",
+    "lead": "Ciao, sono Davide. Progetto e sviluppo prodotti web end-to-end, integrando l'AI nelle web app e nei processi business per generare risultati misurabili.",
+    "ctaProjects": "Vedi progetti",
+    "ctaContact": "Contattami",
+    "ctaAI": "Prova l'assistente AI →"
+  },
+  "about": {
+    "title": "Chi sono",
+    "text": "Seguo i progetti dalla A alla Z, dai bisogni iniziali del business fino alla consegna finale, scegliendo tecnologie e soluzioni in base al contesto. Il mio focus e integrare l'AI nei prodotti web e nei flussi aziendali in modo pratico, con un obiettivo chiaro: creare un plus valore per il prodotto attraverso operazioni piu efficienti, decisioni migliori e risultati misurabili."
+  },
+  "projects": {
+    "title": "Progetti selezionati",
+    "subtitle": "Scegli uno scenario strategico e avvia un dialogo AI mirato sul tema.",
+    "cta": "Discuti con l'AI",
+    "items": [
+      {
+        "title": "Integrazione AI per Flussi Business",
+        "description": "Uno scenario strategico per aziende che vogliono ridurre attività manuali, migliorare i processi interni e introdurre l'AI dove porta un valore operativo concreto.",
+        "stack": ["Workflow Design", "AI Automation", "API Integration", "Internal Tools", "Business Efficiency"],
+        "link": "ai-business-workflows"
+      },
+      {
+        "title": "Piattaforma Web Custom & Architettura Prodotto",
+        "description": "Uno scenario per team che hanno bisogno di un prodotto digitale su misura, costruito attorno al proprio contesto reale, con architettura solida, delivery scalabile e scelte tecnologiche corrette fin dall'inizio.",
+        "stack": ["System Design", "Custom Product", "Frontend + Backend", "Scalability", "Delivery Strategy"],
+        "link": "custom-web-platform"
+      },
+      {
+        "title": "Ecosistemi Connessi & Servizi Terzi",
+        "description": "Una discussione pensata per prodotti che devono collegare API esterne, fonti dati, pagamenti o servizi business in un'unica esperienza digitale affidabile tra web e mobile.",
+        "stack": ["Third-Party APIs", "Data Flows", "Payments", "Cross-Platform", "Service Integration"],
+        "link": "connected-ecosystems"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Competenze",
+    "text": "Ho lavorato su progetti molto diversi tra loro — startup, prodotti enterprise, integrazioni complesse — e ogni contesto mi ha spinto ad allargare lo stack e ad adottare approcci nuovi. Quello che trovi qui è il risultato di anni di lavoro reale, non di certificazioni.",
+    "approach": {
+      "title": "Come lavoro",
+      "text": "Non mi fermo mai a una sola tecnologia. Scelgo lo stack in base al problema: a volte serve un monolite solido, altre volte un'architettura serverless che scala da sola. Quello che rimane costante è l'attenzione alla qualità del codice, alla manutenibilità e alla chiarezza delle API. Negli ultimi anni ho integrato l'AI in prodotti web reali, non come buzzword, ma per automatizzare processi, migliorare l'esperienza utente e ridurre il lavoro ripetitivo."
+    },
+    "cloud": {
+      "title": "Cloud & Serverless",
+      "text": "Sempre di più lavoro su architetture cloud-native: funzioni serverless per logica leggera e scalabile, edge functions per ridurre la latenza, e servizi gestiti per non reinventare l'infrastruttura. Ho esperienza con ambienti AWS, Azure e piattaforme come Vercel e Netlify che semplificano il deploy senza sacrificare il controllo."
+    },
+    "categories": [
+      {
+        "name": "Linguaggi",
+        "items": ["PHP", "JavaScript / TypeScript", "Python", "Ruby", "C#", "Java", "HTML & CSS", "Bash"]
+      },
+      {
+        "name": "Framework & Librerie",
+        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "Bootstrap", "Tailwind CSS"]
+      },
+      {
+        "name": "Node.js & Backend JS",
+        "items": ["Node.js", "Express", "Fastify", "REST API", "GraphQL", "WebSocket", "Middleware & Auth", "npm / pnpm"]
+      },
+      {
+        "name": "Cloud & Serverless",
+        "items": ["AWS Lambda", "AWS S3 / CloudFront", "Azure Functions", "Azure Static Web Apps", "Vercel Edge Functions", "Netlify Functions", "Supabase", "Firebase"]
+      },
+      {
+        "name": "Database",
+        "items": ["MySQL", "PostgreSQL", "MS SQL", "MongoDB", "Redis", "Modellazione ORM"]
+      },
+      {
+        "name": "DevOps & Strumenti",
+        "items": ["Docker", "Git", "Pipeline CI/CD", "Azure DevOps / GitHub / GitLab", "SSH · SSL · DNS", "VMware · VirtualBox"]
+      },
+      {
+        "name": "Architettura & Metodi",
+        "items": ["Design API & Integrazione", "OOP & Design Pattern", "Clean Architecture", "Agile / SCRUM", "TDD & Qualità del Codice", "Modellazione Dati"]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "description": "La pagina che cerchi non esiste o è stata spostata."
+  },
+  "chat": {
+    "title": "Chiedi al mio assistente AI",
+    "subtitle": "Chiedimi del mio lavoro, dello stack, o come posso aiutarti ad aggiungere l'AI al tuo prodotto.",
+    "themeSelected": "Scenario preselezionato. Ho gia avviato la conversazione nel contesto giusto.",
+    "placeholder": "Chiedi di progetti, integrazioni AI, disponibilità o metodo di lavoro...",
+    "placeholderMobile": "Chiedimi qualcosa su di me...",
+    "send": "Invia",
+    "thinking": "Sto pensando...",
+    "newChat": "Nuova chat",
+    "empty": "Nessun messaggio ancora. Parti con uno dei suggerimenti qui sotto.",
+    "error": "L'assistente non è disponibile in questo momento. Riprova tra poco.",
+    "intro": "Ciao, sono l'assistente AI di Davide. Chiedimi dei suoi progetti, delle sue competenze fullstack o di come integra l'AI nei prodotti web.",
+    "suggestions": [
+      "Come integri l'AI in un prodotto web?",
+      "Com'è il tuo stack fullstack?",
+      "Puoi aggiungere funzionalità AI a un'app esistente?"
+    ],
+    "themeStarters": {
+      "ai-business-workflows": "Parliamo dello scenario Integrazione AI per Flussi Business. Come individueresti i processi giusti, integreresti l'AI nelle operazioni quotidiane e creeresti valore misurabile per il business?",
+      "custom-web-platform": "Parliamo dello scenario Piattaforma Web Custom. Come progetteresti un'architettura su misura, sceglieresti lo stack corretto e porteresti il prodotto dal bisogno business alla release?",
+      "connected-ecosystems": "Parliamo dello scenario Ecosistemi Connessi. Come integreresti API di terze parti, servizi esterni e flussi dati business in un unico prodotto web affidabile?"
+    }
+  },
+  "contact": {
+    "title": "Parliamo del tuo prossimo progetto",
+    "text": "Se vuoi migliorare il tuo prodotto digitale o lanciare qualcosa di nuovo, scrivimi e fissiamo una call.",
+    "availability": "Disponibile per nuovi progetti",
+    "socials": "Oppure trovami su",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "subject": "Oggetto",
+      "message": "Messaggio",
+      "send": "Invia messaggio",
+      "sending": "Invio in corso...",
+      "success": "Messaggio inviato! Ti rispondo al più presto.",
+      "recaptchaTimeout": "Il controllo di sicurezza ha impiegato troppo tempo. Riprova tra qualche secondo.",
+      "error": "Qualcosa è andato storto. Scrivimi direttamente via email."
+    }
+  },
+  "seo": {
+    "keywords": "sviluppatore fullstack, integrazione AI, sviluppo web, sviluppatore react, freelance developer, integrazione API, portfolio",
+    "chat": {
+      "title": "Assistente AI per il tuo prodotto digitale",
+      "description": "Parla con l'assistente AI di Davide Carboni su sviluppo fullstack, integrazione AI e strategie per il tuo prodotto digitale."
+    },
+    "showcase": {
+      "title": "Presentazione e temi strategici AI",
+      "description": "Scopri il profilo di Davide Carboni e tre scenari strategici da discutere con l'assistente AI."
+    },
+    "portfolio": {
+      "title": "Portfolio di progetti Fullstack e AI",
+      "description": "Esplora i progetti selezionati di Davide Carboni su architetture fullstack, integrazione AI ed ecosistemi digitali connessi."
+    },
+    "contact": {
+      "title": "Contatta Davide Carboni",
+      "description": "Contatta Davide Carboni per parlare di sviluppo web fullstack, integrazione AI e del tuo prossimo progetto digitale."
+    }
+  },
+  "recruitMe": {
+    "title": "Recruit Me / Prova IA",
+    "subtitle": "Carica la tua offerta di lavoro o incolla il testo qui sotto per vedere se il mio profilo corrisponde alle tue esigenze!",
+    "placeholder": "Incolla qui la tua offerta di lavoro...",
+    "upload": "Carica file",
+    "send": "Invia",
+    "thinking": "Sto pensando...",
+    "fileNotImplemented": "Upload file non ancora implementato",
+    "success": "Messaggio inviato! Ti risponderò al più presto.",
+    "error": "Qualcosa è andato storto. Riprova."
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyright": "© {{year}} Davide Carboni"
+  }
+}

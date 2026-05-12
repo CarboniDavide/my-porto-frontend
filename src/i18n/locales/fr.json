@@ -1,0 +1,173 @@
+{
+  "recruitMe": {
+    "title": "Recrutez-moi / Essayez l'IA",
+    "subtitle": "Téléchargez votre offre d'emploi ou collez le texte ci-dessous pour voir si mon profil correspond à vos besoins !",
+    "placeholder": "Collez ici votre offre d'emploi...",
+    "upload": "Télécharger un fichier",
+    "send": "Envoyer",
+    "thinking": "Je réfléchis...",
+    "fileNotImplemented": "Téléversement de fichier non encore implémenté",
+    "success": "Message envoyé ! Je vous répondrai bientôt.",
+    "error": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "nav": {
+    "aiAssistant": "Assistant IA",
+    "showcase": "Exploration",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "language": {
+    "label": "Langue",
+    "en": "English",
+    "it": "Italiano",
+    "fr": "Français"
+  },
+  "hero": {
+    "eyebrow": "Développeur Fullstack · Intégration IA",
+    "titleStart": "Je construis des applications web fullstack",
+    "titleAccent": " propulsées par l'IA.",
+    "lead": "Bonjour, je suis Davide. Je conçois et développe des produits web end-to-end, en intégrant l'IA dans les web apps et les processus métier pour générer des résultats mesurables.",
+    "ctaProjects": "Voir les projets",
+    "ctaContact": "Me contacter",
+    "ctaAI": "Essayer l'assistant IA →"
+  },
+  "about": {
+    "title": "À propos",
+    "text": "J'accompagne les projets de A à Z, des besoins business initiaux jusqu'à la livraison finale, en choisissant les technologies et solutions les plus adaptées au contexte. Mon focus est d'intégrer l'IA dans les produits web et les workflows métier de façon pragmatique, avec un objectif clair: créer une valeur ajoutée pour le produit grâce à des opérations plus efficaces, de meilleures décisions et des résultats mesurables."
+  },
+  "projects": {
+    "title": "Projets sélectionnés",
+    "subtitle": "Choisissez un scénario stratégique et lancez un dialogue IA ciblé sur ce thème.",
+    "cta": "Discuter avec l'IA",
+    "items": [
+      {
+        "title": "Intégration IA pour Workflows Métier",
+        "description": "Un scénario stratégique pour les entreprises qui veulent réduire les tâches manuelles, améliorer les processus internes et introduire l'IA là où elle crée une vraie valeur opérationnelle.",
+        "stack": ["Workflow Design", "AI Automation", "API Integration", "Internal Tools", "Business Efficiency"],
+        "link": "ai-business-workflows"
+      },
+      {
+        "title": "Plateforme Web Sur Mesure & Architecture Produit",
+        "description": "Un scénario pour les équipes qui ont besoin d'un produit digital sur mesure, construit autour de leur contexte réel, avec une architecture solide, une delivery scalable et les bons choix technologiques dès le départ.",
+        "stack": ["System Design", "Custom Product", "Frontend + Backend", "Scalability", "Delivery Strategy"],
+        "link": "custom-web-platform"
+      },
+      {
+        "title": "Écosystèmes Connectés & Services Tiers",
+        "description": "Une discussion pour les produits qui doivent connecter des API externes, des sources de données, des paiements ou des services métier dans une expérience digitale fiable sur le web et le mobile.",
+        "stack": ["Third-Party APIs", "Data Flows", "Payments", "Cross-Platform", "Service Integration"],
+        "link": "connected-ecosystems"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Compétences",
+    "text": "J'ai travaillé sur des projets très différents — startups, produits enterprise, intégrations complexes — et chaque contexte m'a poussé à élargir ma stack et à adopter de nouvelles approches. Ce que vous trouvez ici est le résultat d'années de travail réel, pas seulement de certifications.",
+    "approach": {
+      "title": "Ma façon de travailler",
+      "text": "Je ne me cantonne jamais à une seule technologie. Je choisis la stack en fonction du problème : parfois un monolithe solide est la bonne option, d'autres fois une architecture serverless qui s'adapte automatiquement. Ce qui reste constant, c'est l'attention à la qualité du code, à la maintenabilité et à la clarté des API. Ces dernières années, j'ai intégré l'IA dans de vrais produits web — pas comme un mot à la mode, mais pour automatiser des processus, améliorer l'expérience utilisateur et réduire le travail répétitif."
+    },
+    "cloud": {
+      "title": "Cloud & Serverless",
+      "text": "Je travaille de plus en plus sur des architectures cloud-native : fonctions serverless pour une logique légère et évolutive, edge functions pour réduire la latence, et services managés pour ne pas réinventer l'infrastructure. J'ai de l'expérience avec AWS, Azure et des plateformes comme Vercel et Netlify qui simplifient le déploiement sans sacrifier le contrôle."
+    },
+    "categories": [
+      {
+        "name": "Langages",
+        "items": ["PHP", "JavaScript / TypeScript", "Python", "Ruby", "C#", "Java", "HTML & CSS", "Bash"]
+      },
+      {
+        "name": "Frameworks & Bibliothèques",
+        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "Bootstrap", "Tailwind CSS"]
+      },
+      {
+        "name": "Node.js & Backend JS",
+        "items": ["Node.js", "Express", "Fastify", "REST API", "GraphQL", "WebSocket", "Middleware & Auth", "npm / pnpm"]
+      },
+      {
+        "name": "Cloud & Serverless",
+        "items": ["AWS Lambda", "AWS S3 / CloudFront", "Azure Functions", "Azure Static Web Apps", "Vercel Edge Functions", "Netlify Functions", "Supabase", "Firebase"]
+      },
+      {
+        "name": "Bases de données",
+        "items": ["MySQL", "PostgreSQL", "MS SQL", "MongoDB", "Redis", "Modélisation ORM"]
+      },
+      {
+        "name": "DevOps & Outils",
+        "items": ["Docker", "Git", "Pipelines CI/CD", "Azure DevOps / GitHub / GitLab", "SSH · SSL · DNS", "VMware · VirtualBox"]
+      },
+      {
+        "name": "Architecture & Méthodes",
+        "items": ["Conception API & Intégration", "OOP & Design Patterns", "Clean Architecture", "Agile / SCRUM", "TDD & Qualité du Code", "Modélisation des Données"]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée."
+  },
+  "chat": {
+    "title": "Parlez avec mon assistant IA",
+    "subtitle": "Posez vos questions sur mon travail, ma stack, ou comment je peux vous aider à intégrer l'IA dans votre produit.",
+    "themeSelected": "Scenario preselectionne. J'ai deja lance la discussion dans le bon contexte.",
+    "placeholder": "Posez une question sur l'intégrations IA, disponibilité ou méthode de travail...",
+    "placeholderMobile": "Posez-moi des questions sur moi...",
+    "send": "Envoyer",
+    "thinking": "Je réfléchis...",
+    "newChat": "Nouvelle conversation",
+    "empty": "Aucun message pour le moment. Commencez avec une suggestion ci-dessous.",
+    "error": "L'assistant est indisponible pour le moment. Réessayez dans un instant.",
+    "intro": "Bonjour, je suis l'assistant IA de Davide. Posez-moi vos questions sur ses projets, ses compétences fullstack ou la façon dont il intègre l'IA dans les produits web.",
+    "suggestions": [
+      "Comment intègres-tu l'IA dans un produit web ?",
+      "Comment se présente ta stack fullstack ?",
+      "Peux-tu ajouter des fonctionnalités IA à une app existante ?"
+    ],
+    "themeStarters": {
+      "ai-business-workflows": "Parlons du scénario Intégration IA pour Workflows Métier. Comment identifierais-tu les bons processus, intégrerais-tu l'IA dans les opérations quotidiennes et créerais-tu une valeur mesurable pour le business ?",
+      "custom-web-platform": "Parlons du scénario Plateforme Web Sur Mesure. Comment concevrais-tu une architecture adaptée, choisirais-tu la bonne stack et mènerais-tu le produit du besoin métier jusqu'à la release ?",
+      "connected-ecosystems": "Parlons du scénario Écosystèmes Connectés. Comment intégrerais-tu des API tierces, des services externes et des flux de données métier dans un seul produit web fiable ?"
+    }
+  },
+  "contact": {
+    "title": "Parlons de votre prochain projet",
+    "text": "Si vous souhaitez améliorer votre produit digital ou lancer quelque chose de nouveau, écrivez-moi et planifions un appel.",
+    "availability": "Disponible pour de nouveaux projets",
+    "socials": "Ou retrouvez-moi sur",
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé ! Je vous répondrai bientôt.",
+      "recaptchaTimeout": "Le contrôle de sécurité a expiré. Réessayez dans quelques secondes.",
+      "error": "Une erreur s'est produite. Écrivez-moi directement par e-mail."
+    }
+  },
+  "seo": {
+    "keywords": "developpeur fullstack, integration IA, developpement web, developpeur react, freelance developer, integration API, portfolio",
+    "chat": {
+      "title": "Assistant IA pour votre produit digital",
+      "description": "Discutez avec l'assistant IA de Davide Carboni sur le developpement fullstack, l'integration IA et la strategie de votre produit digital."
+    },
+    "showcase": {
+      "title": "Presentation et themes IA",
+      "description": "Decouvrez le profil de Davide Carboni et trois themes strategiques a discuter avec l'assistant IA."
+    },
+    "portfolio": {
+      "title": "Portfolio de projets Fullstack et IA",
+      "description": "Explorez les projets selectionnes de Davide Carboni axes sur l'architecture fullstack, l'integration IA et les ecosystemes connectes."
+    },
+    "contact": {
+      "title": "Contacter Davide Carboni",
+      "description": "Contactez Davide Carboni pour parler de developpement web fullstack, d'integration IA et de votre prochain projet digital."
+    }
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyright": "© {{year}} Davide Carboni"
+  }
+}
