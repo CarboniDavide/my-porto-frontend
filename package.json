@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "copy dist\\index.html dist\\404.html >nul || cp dist/index.html dist/404.html || :",
     "lint": "eslint .",
     "preview": "vite preview",
     "release:patch": "npm version patch -m \"chore(release): %s\"",
