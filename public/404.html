@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      (function () {
-        var target = window.location.pathname + window.location.search + window.location.hash;
-        var destination = '/?redirect=' + encodeURIComponent(target);
-        window.location.replace(destination);
+      // GitHub Pages SPA redirect workaround
+      (function() {
+        var l = window.location;
+        var pathname = l.pathname.replace(/\/$/, "");
+        // Only redirect if not already at index.html
+        if (!pathname.match(/\/index\.html$/)) {
+          var newUrl = "/index.html?redirect=" + encodeURIComponent(l.pathname + l.search + l.hash);
+          window.location.replace(newUrl);
+        }
       })();
     </script>
   </head>
