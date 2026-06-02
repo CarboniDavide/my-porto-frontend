@@ -60,7 +60,7 @@ export function ChatPage() {
 
       {messages.length === 0 ? (
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-2 sm:px-6">
-          <div className="w-full max-w-2xl rounded-3xl bg-[#fffaf4]/35 px-3 py-6 backdrop-blur-sm sm:px-6 sm:py-5">
+          <div className="w-full max-w-2xl px-3 py-6 sm:px-6 sm:py-5">
             <h1 className="mb-6 text-center font-serif text-xl font-bold text-white sm:text-3xl">
               {t('chat.title')}
             </h1>
