@@ -137,7 +137,7 @@ export function ContactPage() {
                 </p>
                 <div className="flex flex-col gap-3">
                   <a
-                    href="https://github.com/"
+                    href="https://github.com/CarboniDavide/my-porto-frontend"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 rounded-full border border-[#ebdcc9] bg-[#fdf4e8] px-5 py-3 font-semibold text-[#1f2327] transition hover:-translate-y-0.5 hover:border-[#d66d28]"
