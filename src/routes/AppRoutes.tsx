@@ -4,6 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext'
 import { ChatPage } from '../pages/ChatPage'
 import { ContactPage } from '../pages/ContactPage'
 import { OverviewPage } from '../pages/OverviewPage'
+import { ExperiencesPage } from '../pages/ExperiencesPage'
 import { PortfolioPage } from '../pages/PortfolioPage'
 import { RecruitMePage } from '../pages/RecruitMePage'
 import NotFoundPage from '../pages/NotFoundPage'
@@ -23,6 +24,7 @@ export function AppRoutes() {
       <Route path="/:lang" element={<LocalizedLayout />}>
         <Route index element={<ChatPage />} />
         <Route path="showcase" element={<OverviewPage />} />
+        <Route path="experiences" element={<ExperiencesPage />} />
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="recruit-me" element={<RecruitMePage />} />

@@ -46,6 +46,7 @@ export function Navbar() {
   const NAV_LINKS = [
     { to: withLanguage('/'), label: t('nav.aiAssistant'), active: currentSection === '' },
     { to: withLanguage('/showcase'), label: t('nav.showcase'), active: currentSection === 'showcase' },
+    { to: withLanguage('/experiences'), label: t('nav.experiences'), active: currentSection === 'experiences' },
     { to: withLanguage('/portfolio'), label: t('nav.portfolio'), active: currentSection === 'portfolio' },
     { to: withLanguage('/contact'), label: t('nav.contact'), active: currentSection === 'contact' },
     { to: withLanguage('/recruit-me'), label: t('recruitMe.title'), active: currentSection === 'recruit-me' },

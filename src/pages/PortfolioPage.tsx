@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useLanguage } from '../contexts/LanguageContext'
 import { usePageSeo } from '../hooks/usePageSeo'
 import {
-  ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout, Users, Clock3
+  ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout
 } from 'lucide-react'
 import { ObserverSlidePage } from '../components/ObserverSlidePage'
 
@@ -49,44 +49,6 @@ export function PortfolioPage() {
         </div>
         <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[#d66d28] hidden md:block" aria-hidden="true">
           <ChevronDown className="size-8" />
-        </div>
-      </section>
-
-      {/* Team leadership + prioritization */}
-      <section
-        className="box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)] bg-[#fdf4e8]"
-        data-slide
-      >
-        <div className="w-full max-w-6xl lg:grid lg:grid-cols-2 lg:items-stretch">
-          <div className="flex min-h-[250px] items-center justify-center p-10 lg:order-2">
-            <Users className="size-40 text-[#d66d28] sm:size-80 opacity-90" />
-          </div>
-
-          <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12 lg:order-1 lg:border-r lg:border-[#ebdcc9]">
-            <h2 className="mb-4 font-serif text-3xl font-bold text-[#1f2327] sm:text-4xl">
-              {t('skills.team.title')}
-            </h2>
-            <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">
-              {t('skills.team.text')}
-            </p>
-            <div className="mb-8 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#d66d28]">
-              <Clock3 className="size-4" />
-              <span>{t('skills.team.focus.title')}</span>
-            </div>
-            <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">
-              {t('skills.team.focus.text')}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {((t('skills.team.highlights', { returnObjects: true }) as string[]) ?? []).map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-sm font-bold uppercase tracking-tight text-[#d66d28] shadow-sm"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 

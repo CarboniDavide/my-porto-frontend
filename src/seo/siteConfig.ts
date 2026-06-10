@@ -8,6 +8,7 @@ export const SEO_ROUTE_PATHS = {
   chat: '',
   showcase: 'showcase',
   portfolio: 'portfolio',
+  experiences: 'experiences',
   contact: 'contact',
   'recruit-me': 'recruit-me',
 } as const

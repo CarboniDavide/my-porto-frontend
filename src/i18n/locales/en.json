@@ -2,6 +2,7 @@
   "nav": {
     "aiAssistant": "AI Assistant",
     "showcase": "Explore",
+    "experiences": "Experience",
     "portfolio": "Portfolio",
     "contact": "Contact"
   },
@@ -101,6 +102,73 @@
       }
     ]
   },
+  "experiences": {
+    "title": "Experience",
+    "text": "A product-focused background combining business applications, APIs, automation, and team coordination.",
+    "ctaExperience": "Professional path",
+    "ctaSkills": "Technical skills",
+    "workStyle": {
+      "title": "How I work",
+      "text": "I combine AI integration, API design, OOP, design patterns, clean architecture, and testing to build robust applications. I also care a lot about problem solving, UX, and workflow automation.",
+      "highlights": ["AI integration", "APIs & third-party services", "Clean architecture", "Testing & maintainability"]
+    },
+    "experience": {
+      "eyebrow": "Professional journey",
+      "title": "Recent experience",
+      "text": "From business applications to project coordination, my background combines technical execution, third-party integrations, and continuous improvement of internal tools."
+    },
+    "skills": {
+      "title": "Technical skills",
+      "text": "These are the technologies and methods I use day to day, organized from real project experience."
+    },
+    "items": [
+      {
+        "role": "Full Stack Developer & Project Manager",
+        "company": "City of Lausanne · emploilausanne.ch",
+        "period": "Aug 2025 – Apr 2026",
+        "bullets": [
+          "Built web applications with Laravel, React, and Inertia.js.",
+          "Coordinated the internal journee-mmt.ch project with Node.js, React + Vite, and Express.js."
+        ]
+      },
+      {
+        "role": "Full Stack Web Developer",
+        "company": "Aequivalent",
+        "period": "2021 – Jan 2025",
+        "bullets": [
+          "Developed an internal platform with Django and JS/jQuery, with advanced API automation.",
+          "Built client web apps in Nuxt/Vue.js connected to the Django API and reduced manual work."
+        ]
+      },
+      {
+        "role": "Full Stack Web Developer",
+        "company": "JPM Publications · jpmguides.com",
+        "period": "2019",
+        "bullets": [
+          "Integrated the Viator (TripAdvisor) API into the JPM platform in Ruby on Rails.",
+          "Integrated listing, selection, and payment flows into the Ionic/Angular mobile app."
+        ]
+      },
+      {
+        "role": "Web Developer",
+        "company": "Open Net SARL",
+        "period": "2018",
+        "bullets": [
+          "Built Odoo modules for clients using Python.",
+          "Contributed to internal automation tools."
+        ]
+      },
+      {
+        "role": "Web Developer",
+        "company": "Gueissaz-Jaccard Music Box",
+        "period": "2016 – 2019",
+        "bullets": [
+          "Created and deployed a portfolio website with HTML, CSS, and JavaScript.",
+          "Delivered a simple, clear, and maintainable web presence."
+        ]
+      }
+    ]
+  },
   "notFound": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has been moved."
@@ -158,6 +226,10 @@
     "portfolio": {
       "title": "Portfolio of Fullstack & AI Projects",
       "description": "Explore selected projects by Davide Carboni focused on fullstack architecture, AI integration, and connected business ecosystems."
+    },
+    "experiences": {
+      "title": "Davide Carboni's Professional Experience",
+      "description": "Explore Davide Carboni's professional background, technologies, and working methods in fullstack development and project coordination."
     },
     "contact": {
       "title": "Contact Davide Carboni",

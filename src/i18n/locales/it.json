@@ -2,6 +2,7 @@
   "nav": {
     "aiAssistant": "AI Assistant",
     "showcase": "Esplora",
+    "experiences": "Esperienze",
     "portfolio": "Portfolio",
     "contact": "Contatti"
   },
@@ -101,6 +102,73 @@
       }
     ]
   },
+  "experiences": {
+    "title": "Esperienze",
+    "text": "Un percorso orientato al prodotto, con applicazioni business, API, automazione e coordinamento del lavoro di team.",
+    "ctaExperience": "Percorso professionale",
+    "ctaSkills": "Competenze tecniche",
+    "workStyle": {
+      "title": "Come lavoro",
+      "text": "Unisco integrazione AI, progettazione di API, OOP, design patterns, clean architecture e testing per costruire applicazioni robuste. Tengo molto anche alla risoluzione dei problemi, all'UX e all'automazione dei workflow.",
+      "highlights": ["AI integrata", "API e servizi terzi", "Clean architecture", "Test e mantenibilità"]
+    },
+    "experience": {
+      "eyebrow": "Percorso professionale",
+      "title": "Esperienze recenti",
+      "text": "Dallo sviluppo di applicazioni business al coordinamento di progetto, il mio percorso combina esecuzione tecnica, integrazione di servizi terzi e miglioramento continuo degli strumenti interni."
+    },
+    "skills": {
+      "title": "Competenze informatiche",
+      "text": "Qui trovi le tecnologie e i metodi che uso ogni giorno, organizzati a partire dalla mia esperienza reale."
+    },
+    "items": [
+      {
+        "role": "Sviluppatore full stack e Chef de Projet",
+        "company": "Ville de Lausanne · emploilausanne.ch",
+        "period": "Agosto 2025 – Aprile 2026",
+        "bullets": [
+          "Sviluppo di applicazioni web con Laravel, React e Inertia.js.",
+          "Coordinamento del progetto interno journee-mmt.ch con Node.js, React + Vite ed Express.js."
+        ]
+      },
+      {
+        "role": "Sviluppatore web full stack",
+        "company": "Aequivalent",
+        "period": "2021 – Gennaio 2025",
+        "bullets": [
+          "Sviluppo della piattaforma interna con Django e JS/jQuery, con automazioni avanzate via API.",
+          "Creazione di applicazioni web client in Nuxt/Vue.js collegate all'API Django e riduzione delle attività manuali."
+        ]
+      },
+      {
+        "role": "Sviluppatore web full stack",
+        "company": "JPM Publications · jpmguides.com",
+        "period": "2019",
+        "bullets": [
+          "Integrazione dell'API Viator (TripAdvisor) nella piattaforma JPM in Ruby on Rails.",
+          "Integrazione dei flussi di listing, selezione e pagamento nell'app mobile Ionic/Angular."
+        ]
+      },
+      {
+        "role": "Sviluppatore web",
+        "company": "Open Net SARL",
+        "period": "2018",
+        "bullets": [
+          "Sviluppo di moduli Odoo per i clienti con Python.",
+          "Contributo a strumenti interni di automazione."
+        ]
+      },
+      {
+        "role": "Sviluppatore web",
+        "company": "Gueissaz-Jaccard Music Box",
+        "period": "2016 – 2019",
+        "bullets": [
+          "Creazione e messa online di un sito portfolio con HTML, CSS e JavaScript.",
+          "Realizzazione di una presenza web semplice, chiara e manutenibile."
+        ]
+      }
+    ]
+  },
   "notFound": {
     "title": "Pagina non trovata",
     "description": "La pagina che cerchi non esiste o è stata spostata."
@@ -158,6 +226,10 @@
     "portfolio": {
       "title": "Portfolio di progetti Fullstack e AI",
       "description": "Esplora i progetti selezionati di Davide Carboni su architetture fullstack, integrazione AI ed ecosistemi digitali connessi."
+    },
+    "experiences": {
+      "title": "Esperienze professionali di Davide Carboni",
+      "description": "Scopri il percorso professionale, le tecnologie e i metodi di lavoro di Davide Carboni nello sviluppo fullstack e nel coordinamento di progetto."
     },
     "contact": {
       "title": "Contatta Davide Carboni",

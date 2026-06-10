@@ -24,6 +24,10 @@ const PAGE_TRANSLATION_KEYS: Record<SeoRouteKey, { title: string; description: s
     title: 'seo.portfolio.title',
     description: 'seo.portfolio.description',
   },
+  experiences: {
+    title: 'seo.experiences.title',
+    description: 'seo.experiences.description',
+  },
   contact: {
     title: 'seo.contact.title',
     description: 'seo.contact.description',
