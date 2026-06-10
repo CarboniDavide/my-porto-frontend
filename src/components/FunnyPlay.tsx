@@ -7,7 +7,7 @@ type ActivityMode = 'chat' | 'piano' | 'game' | 'quiz'
 type QuizQuestion = { q: string; options: string[]; answer: number; note: string }
 
 type FunnyPlayProps = {
-  t: (key: string, options?: unknown) => unknown
+  t: any
   inputPlaceholder: string
   onSend: (content: string) => Promise<void>
   onReset: () => void
