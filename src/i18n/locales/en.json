@@ -60,6 +60,16 @@
       "title": "Cloud & Serverless",
       "text": "I increasingly work on cloud-native architectures: serverless functions for lightweight and scalable logic, edge functions to reduce latency, and managed services to avoid reinventing infrastructure. I have experience with AWS, Azure environments, and platforms like Vercel and Netlify that simplify deployment without sacrificing control."
     },
+    "team": {
+      "title": "Team leadership & prioritization",
+      "text": "I can coordinate work across multiple people, keep tasks clearly distributed, and keep the project aligned with its goals. I pay close attention to prioritization to avoid blockers, protect deadlines, and deliver within the expected timeframe.",
+      "focus": {
+        "title": "On-time delivery",
+        "text": "I organize tasks, dependencies, and check-ins so the project keeps moving steadily without losing quality along the way."
+      },
+      "highlightsLabel": "Key areas",
+      "highlights": ["Team coordination", "Priority management", "Deadline delivery", "Task planning"]
+    },
     "categories": [
       {
         "name": "Languages",

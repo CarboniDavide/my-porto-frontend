@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useLanguage } from '../contexts/LanguageContext'
 import { usePageSeo } from '../hooks/usePageSeo'
 import {
-  ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout
+  ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout, Users, Clock3
 } from 'lucide-react'
 import { ObserverSlidePage } from '../components/ObserverSlidePage'
 
@@ -27,7 +27,7 @@ export function PortfolioPage() {
     <ObserverSlidePage>
 
       {/* Hero */}
-      <section className="relative box-border flex items-center justify-center bg-[#fffaf4] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)]" data-slide>
+      <section className="relative box-border flex items-center justify-center bg-white px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)]" data-slide>
         <div className="w-full max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d66d28]">{t('nav.portfolio')}</p>
           <h1 className="mb-6 font-serif text-4xl font-bold text-[#1f2327] sm:text-6xl">{t('skills.title')}</h1>
@@ -52,6 +52,44 @@ export function PortfolioPage() {
         </div>
       </section>
 
+      {/* Team leadership + prioritization */}
+      <section
+        className="box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)] bg-[#fdf4e8]"
+        data-slide
+      >
+        <div className="w-full max-w-6xl lg:grid lg:grid-cols-2 lg:items-stretch">
+          <div className="flex min-h-[250px] items-center justify-center p-10 lg:order-2">
+            <Users className="size-40 text-[#d66d28] sm:size-80 opacity-90" />
+          </div>
+
+          <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12 lg:order-1 lg:border-r lg:border-[#ebdcc9]">
+            <h2 className="mb-4 font-serif text-3xl font-bold text-[#1f2327] sm:text-4xl">
+              {t('skills.team.title')}
+            </h2>
+            <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">
+              {t('skills.team.text')}
+            </p>
+            <div className="mb-8 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#d66d28]">
+              <Clock3 className="size-4" />
+              <span>{t('skills.team.focus.title')}</span>
+            </div>
+            <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">
+              {t('skills.team.focus.text')}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {((t('skills.team.highlights', { returnObjects: true }) as string[]) ?? []).map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-sm font-bold uppercase tracking-tight text-[#d66d28] shadow-sm"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* One section per skill category */}
       {skills.map((category, index) => {
         const Icon = CATEGORY_ICONS[index % CATEGORY_ICONS.length]
@@ -67,7 +105,7 @@ export function PortfolioPage() {
             data-slide
           >
             <div className="w-full max-w-6xl lg:grid lg:grid-cols-2 lg:items-stretch">
-              
+
               {/* Icon Container - Centrato anche su mobile */}
               <div
                 className={`flex min-h-[250px] items-center justify-center p-10 ${
