@@ -185,7 +185,19 @@
         "quiz": "Play a Quiz"
       },
       "piano": {
-        "instructions": "Play the piano with mouse/touch or keyboard (A W S E D F T G Y H U J K)."
+        "instructions": "Play the piano with mouse/touch or keyboard.",
+        "examples": {
+          "title": "Examples",
+          "subtitle": "Press a button and the piano plays automatically.",
+          "playPrefix": "Play",
+          "playingPrefix": "Playing",
+          "stop": "Stop",
+          "songs": {
+            "happyBirthday": "Happy Birthday",
+            "sandstorm": "Sandstorm (Darude)",
+            "videoKilled": "Video Killed the Radio Star"
+          }
+        }
       },
       "game": {
         "instructions": "Dodge obstacles with left/right arrows (or A/D). On mobile use touch controls.",

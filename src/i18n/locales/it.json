@@ -185,7 +185,19 @@
         "quiz": "Play a Quiz"
       },
       "piano": {
-        "instructions": "Suona la pianola con mouse/touch o con tastiera (A W S E D F T G Y H U J K)."
+        "instructions": "Suona la pianola con mouse/touch o tastiera.",
+        "examples": {
+          "title": "Esempi",
+          "subtitle": "Premi un pulsante e il piano suona da solo.",
+          "playPrefix": "Suona",
+          "playingPrefix": "Suonando",
+          "stop": "Stop",
+          "songs": {
+            "happyBirthday": "Tanti auguri",
+            "sandstorm": "Sandstorm (Darude)",
+            "videoKilled": "Video Killed the Radio Star"
+          }
+        }
       },
       "game": {
         "instructions": "Schiva gli ostacoli con frecce sinistra/destra (o A/D). Su mobile usa i pulsanti touch.",

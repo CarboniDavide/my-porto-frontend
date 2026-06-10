@@ -196,7 +196,19 @@
         "quiz": "Play a Quiz"
       },
       "piano": {
-        "instructions": "Jouez du piano avec souris/touch ou clavier (A W S E D F T G Y H U J K)."
+        "instructions": "Jouez du piano avec la souris/touch ou le clavier.",
+        "examples": {
+          "title": "Exemples",
+          "subtitle": "Appuyez sur un bouton et le piano joue tout seul.",
+          "playPrefix": "Jouer",
+          "playingPrefix": "Lecture",
+          "stop": "Stop",
+          "songs": {
+            "happyBirthday": "Joyeux anniversaire",
+            "sandstorm": "Sandstorm (Darude)",
+            "videoKilled": "Video Killed the Radio Star"
+          }
+        }
       },
       "game": {
         "instructions": "Evitez les obstacles avec fleches gauche/droite (ou A/D). Sur mobile, utilisez les controles tactiles.",
