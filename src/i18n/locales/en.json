@@ -176,6 +176,66 @@
   "chat": {
     "title": "Ask my AI assistant",
     "subtitle": "Ask anything about my work, stack, or how I can help you add AI to your product.",
+    "fun": {
+      "subtitle": "Not in the mood for chat? Pick a quick and fun mode.",
+      "modes": {
+        "chat": "Chat",
+        "piano": "Play Piano",
+        "game": "Play a Game",
+        "quiz": "Play a Quiz"
+      },
+      "piano": {
+        "instructions": "Play the piano with mouse/touch or keyboard (A W S E D F T G Y H U J K)."
+      },
+      "game": {
+        "instructions": "Dodge obstacles with left/right arrows (or A/D). On mobile use touch controls.",
+        "score": "Score",
+        "play": "Play",
+        "pause": "Pause",
+        "reset": "Reset",
+        "gameOver": "Game over!"
+      },
+      "quiz": {
+        "instructions": "Quick logic quiz: choose one answer and move to the next question.",
+        "question": "Question",
+        "next": "Next",
+        "done": "Quiz completed",
+        "score": "Score",
+        "restart": "Try again",
+        "questions": [
+          {
+            "q": "Which number completes the pattern: 2, 6, 12, 20, ?",
+            "options": ["28", "30", "32", "36"],
+            "answer": 1,
+            "note": "Pattern is n(n+1): 1x2, 2x3, 3x4, 4x5, 5x6 = 30."
+          },
+          {
+            "q": "If all Bloops are Razzies and all Razzies are Lazzies, then all Bloops are...",
+            "options": ["Not Lazzies", "Lazzies", "Only sometimes Lazzies", "None of the above"],
+            "answer": 1,
+            "note": "Classic transitive syllogism."
+          },
+          {
+            "q": "A bat and a ball cost 1.10 total. Bat costs 1.00 more than ball. Ball costs...",
+            "options": ["0.05", "0.10", "0.15", "0.20"],
+            "answer": 0,
+            "note": "If ball = x, bat = x + 1.00, total 1.10, so x = 0.05."
+          },
+          {
+            "q": "Find the odd one out: Triangle, Square, Pentagon, Circle",
+            "options": ["Triangle", "Square", "Pentagon", "Circle"],
+            "answer": 3,
+            "note": "Circle has no edges/vertices unlike polygons."
+          },
+          {
+            "q": "What comes next: AZ, BY, CX, DW, ?",
+            "options": ["EV", "FU", "GV", "EZ"],
+            "answer": 0,
+            "note": "First letter increments, second letter decrements."
+          }
+        ]
+      }
+    },
     "themeSelected": "Scenario preselected. I have already started the discussion in context.",
     "placeholder": "Ask about my projects, AI integrations, availability, or how I work...",
     "placeholderMobile": "Ask about me ...",

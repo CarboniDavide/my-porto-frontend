@@ -176,6 +176,66 @@
   "chat": {
     "title": "Chiedi al mio assistente AI",
     "subtitle": "Chiedimi del mio lavoro, dello stack, o come posso aiutarti ad aggiungere l'AI al tuo prodotto.",
+    "fun": {
+      "subtitle": "Se non vuoi chattare, scegli una modalità rapida e divertente.",
+      "modes": {
+        "chat": "Chat",
+        "piano": "Play Piano",
+        "game": "Play a Game",
+        "quiz": "Play a Quiz"
+      },
+      "piano": {
+        "instructions": "Suona la pianola con mouse/touch o con tastiera (A W S E D F T G Y H U J K)."
+      },
+      "game": {
+        "instructions": "Schiva gli ostacoli con frecce sinistra/destra (o A/D). Su mobile usa i pulsanti touch.",
+        "score": "Punteggio",
+        "play": "Gioca",
+        "pause": "Pausa",
+        "reset": "Reset",
+        "gameOver": "Game over!"
+      },
+      "quiz": {
+        "instructions": "Quiz di logica rapido: scegli una risposta e passa alla domanda successiva.",
+        "question": "Domanda",
+        "next": "Avanti",
+        "done": "Quiz completato",
+        "score": "Risultato",
+        "restart": "Riprova",
+        "questions": [
+          {
+            "q": "Quale numero completa la sequenza: 2, 6, 12, 20, ?",
+            "options": ["28", "30", "32", "36"],
+            "answer": 1,
+            "note": "Schema n(n+1): 1x2, 2x3, 3x4, 4x5, 5x6 = 30."
+          },
+          {
+            "q": "Se tutti i Bloops sono Razzies e tutti i Razzies sono Lazzies, allora i Bloops sono...",
+            "options": ["Non Lazzies", "Lazzies", "Solo a volte Lazzies", "Nessuna delle precedenti"],
+            "answer": 1,
+            "note": "Sillogismo transitivo classico."
+          },
+          {
+            "q": "Una mazza e una palla costano 1,10 in totale. La mazza costa 1,00 in piu della palla. La palla costa...",
+            "options": ["0,05", "0,10", "0,15", "0,20"],
+            "answer": 0,
+            "note": "Se palla = x, mazza = x + 1,00 e totale 1,10, quindi x = 0,05."
+          },
+          {
+            "q": "Trova l'elemento diverso: Triangolo, Quadrato, Pentagono, Cerchio",
+            "options": ["Triangolo", "Quadrato", "Pentagono", "Cerchio"],
+            "answer": 3,
+            "note": "Il cerchio non ha lati o vertici come i poligoni."
+          },
+          {
+            "q": "Cosa viene dopo: AZ, BY, CX, DW, ?",
+            "options": ["EV", "FU", "GV", "EZ"],
+            "answer": 0,
+            "note": "La prima lettera sale, la seconda scende."
+          }
+        ]
+      }
+    },
     "themeSelected": "Scenario preselezionato. Ho gia avviato la conversazione nel contesto giusto.",
     "placeholder": "Chiedi di progetti, integrazioni AI, disponibilità o metodo di lavoro...",
     "placeholderMobile": "Chiedimi qualcosa su di me...",

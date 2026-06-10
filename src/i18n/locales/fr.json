@@ -187,6 +187,66 @@
   "chat": {
     "title": "Parlez avec mon assistant IA",
     "subtitle": "Posez vos questions sur mon travail, ma stack, ou comment je peux vous aider à intégrer l'IA dans votre produit.",
+    "fun": {
+      "subtitle": "Vous ne voulez pas discuter? Choisissez un mode rapide et ludique.",
+      "modes": {
+        "chat": "Chat",
+        "piano": "Play Piano",
+        "game": "Play a Game",
+        "quiz": "Play a Quiz"
+      },
+      "piano": {
+        "instructions": "Jouez du piano avec souris/touch ou clavier (A W S E D F T G Y H U J K)."
+      },
+      "game": {
+        "instructions": "Evitez les obstacles avec fleches gauche/droite (ou A/D). Sur mobile, utilisez les controles tactiles.",
+        "score": "Score",
+        "play": "Jouer",
+        "pause": "Pause",
+        "reset": "Reinitialiser",
+        "gameOver": "Partie terminee!"
+      },
+      "quiz": {
+        "instructions": "Quiz logique rapide: choisissez une reponse puis passez a la suivante.",
+        "question": "Question",
+        "next": "Suivant",
+        "done": "Quiz termine",
+        "score": "Score",
+        "restart": "Reessayer",
+        "questions": [
+          {
+            "q": "Quel nombre complete la suite: 2, 6, 12, 20, ?",
+            "options": ["28", "30", "32", "36"],
+            "answer": 1,
+            "note": "Schema n(n+1): 1x2, 2x3, 3x4, 4x5, 5x6 = 30."
+          },
+          {
+            "q": "Si tous les Bloops sont des Razzies et tous les Razzies sont des Lazzies, alors tous les Bloops sont...",
+            "options": ["Pas des Lazzies", "Des Lazzies", "Parfois des Lazzies", "Aucune des propositions"],
+            "answer": 1,
+            "note": "Syllogisme transitif classique."
+          },
+          {
+            "q": "Une batte et une balle coutent 1,10 au total. La batte coute 1,00 de plus que la balle. La balle coute...",
+            "options": ["0,05", "0,10", "0,15", "0,20"],
+            "answer": 0,
+            "note": "Si balle = x, batte = x + 1,00 et total 1,10, alors x = 0,05."
+          },
+          {
+            "q": "Trouvez l'intrus: Triangle, Carre, Pentagone, Cercle",
+            "options": ["Triangle", "Carre", "Pentagone", "Cercle"],
+            "answer": 3,
+            "note": "Le cercle n'a pas de cotes ni de sommets comme les polygones."
+          },
+          {
+            "q": "Que vient ensuite: AZ, BY, CX, DW, ?",
+            "options": ["EV", "FU", "GV", "EZ"],
+            "answer": 0,
+            "note": "La premiere lettre augmente, la seconde diminue."
+          }
+        ]
+      }
+    },
     "themeSelected": "Scenario preselectionne. J'ai deja lance la discussion dans le bon contexte.",
     "placeholder": "Posez une question sur l'intégrations IA, disponibilité ou méthode de travail...",
     "placeholderMobile": "Posez-moi des questions sur moi...",
