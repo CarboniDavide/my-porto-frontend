@@ -5,6 +5,29 @@ import { ObserverSlidePage } from '../components/ObserverSlidePage'
 
 type ExperienceItem = { role: string; company: string; period: string; bullets: string[] }
 
+function renderBulletText(bullet: string) {
+  const parts = bullet.split(/(dclics\.ch|journee-mmt\.ch)/gi)
+
+  return parts.map((part, index) => {
+    const lower = part.toLowerCase()
+    if (lower === 'dclics.ch' || lower === 'journee-mmt.ch') {
+      return (
+        <a
+          key={`${part}-${index}`}
+          href={`https://${part}`}
+          target="_blank"
+          rel="noreferrer"
+          className="font-semibold text-[#d66d28] underline decoration-[#d66d28]/60 underline-offset-2 hover:text-[#c05e20]"
+        >
+          {part}
+        </a>
+      )
+    }
+
+    return <span key={`${part}-${index}`}>{part}</span>
+  })
+}
+
 export function ExperiencesPage() {
   usePageSeo('experiences')
   const { t } = useTranslation('translation')
@@ -67,7 +90,7 @@ export function ExperiencesPage() {
                   {item.bullets.map((bullet) => (
                     <div key={bullet} className="flex gap-3 text-base leading-relaxed text-[#50575d] sm:text-lg">
                       <span className="mt-2 size-2 shrink-0 rounded-full bg-[#d66d28]" />
-                      <span>{bullet}</span>
+                      <span>{renderBulletText(bullet)}</span>
                     </div>
                   ))}
                 </div>
