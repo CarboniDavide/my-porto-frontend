@@ -342,183 +342,218 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
 
 function MiniRunner({ t }: { t: FunnyPlayProps['t'] }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number | null>(null)
-  const inputRef = useRef({ left: false, right: false })
+  const rafRef = useRef<number | null>(null)
+  const stateRef = useRef<'idle' | 'running' | 'over'>('idle')
   const gameRef = useRef({
-    playerX: 130,
-    playerY: 360,
-    playerW: 44,
-    playerH: 28,
-    obstacleX: 120,
-    obstacleY: -20,
-    obstacleSize: 22,
-    speed: 3,
-    score: 0,
+    y: 0, vy: 0, jumpsLeft: 2,
+    obstacles: [] as { x: number; w: number; h: number }[],
+    speed: 4, frame: 0, nextAt: 100, leg: 0,
   })
 
-  const [isRunning, setIsRunning] = useState(false)
-  const [isGameOver, setIsGameOver] = useState(false)
+  const [phase, setPhase] = useState<'idle' | 'running' | 'over'>('idle')
   const [score, setScore] = useState(0)
 
-  function resetGame() {
-    gameRef.current = {
-      playerX: 130,
-      playerY: 360,
-      playerW: 44,
-      playerH: 28,
-      obstacleX: Math.random() * 260,
-      obstacleY: -20,
-      obstacleSize: 22,
-      speed: 3,
-      score: 0,
-    }
+  const GROUND = 28
+  const PW = 30, PH = 34
+
+  function groundY(h: number) { return h - GROUND - PH }
+
+  function doJump() {
+    const g = gameRef.current
+    if (g.jumpsLeft > 0) { g.vy = -11; g.jumpsLeft-- }
+  }
+
+  function startGame() {
+    const c = canvasRef.current; if (!c) return
+    const g = gameRef.current
+    g.y = groundY(c.height); g.vy = 0; g.jumpsLeft = 2
+    g.obstacles = []; g.speed = 4; g.frame = 0; g.nextAt = 100; g.leg = 0
     setScore(0)
-    setIsGameOver(false)
+    stateRef.current = 'running'
+    setPhase('running')
+  }
+
+  function interact() {
+    const s = stateRef.current
+    if (s === 'idle' || s === 'over') { startGame(); return }
+    doJump()
+  }
+
+  function drawFox(ctx: CanvasRenderingContext2D, x: number, y: number, leg: number, dead: boolean) {
+    const hx = x + 15
+    // body
+    ctx.fillStyle = '#d66d28'
+    ctx.beginPath(); ctx.ellipse(hx, y + 22, 12, 9, 0, 0, Math.PI * 2); ctx.fill()
+    // head
+    ctx.beginPath(); ctx.arc(hx + 2, y + 10, 10, 0, Math.PI * 2); ctx.fill()
+    // ears
+    ctx.beginPath(); ctx.moveTo(hx - 3, y + 3); ctx.lineTo(hx - 7, y - 5); ctx.lineTo(hx + 1, y + 2); ctx.closePath(); ctx.fill()
+    ctx.beginPath(); ctx.moveTo(hx + 7, y + 3); ctx.lineTo(hx + 11, y - 5); ctx.lineTo(hx + 3, y + 2); ctx.closePath(); ctx.fill()
+    ctx.fillStyle = '#f4a261'
+    ctx.beginPath(); ctx.moveTo(hx - 3, y + 2); ctx.lineTo(hx - 5, y - 1); ctx.lineTo(hx, y + 1); ctx.closePath(); ctx.fill()
+    ctx.beginPath(); ctx.moveTo(hx + 7, y + 2); ctx.lineTo(hx + 9, y - 1); ctx.lineTo(hx + 4, y + 1); ctx.closePath(); ctx.fill()
+    // muzzle
+    ctx.fillStyle = '#fdf4e8'
+    ctx.beginPath(); ctx.ellipse(hx + 3, y + 13, 5, 4, 0, 0, Math.PI * 2); ctx.fill()
+    // eyes
+    if (dead) {
+      ctx.strokeStyle = '#1f2327'; ctx.lineWidth = 1.5
+      for (const [ex, ey] of [[hx - 2, y + 8], [hx + 6, y + 8]] as [number, number][]) {
+        ctx.beginPath(); ctx.moveTo(ex - 2, ey - 2); ctx.lineTo(ex + 2, ey + 2); ctx.stroke()
+        ctx.beginPath(); ctx.moveTo(ex + 2, ey - 2); ctx.lineTo(ex - 2, ey + 2); ctx.stroke()
+      }
+    } else {
+      ctx.fillStyle = '#1f2327'
+      ctx.beginPath(); ctx.arc(hx - 2, y + 8, 2, 0, Math.PI * 2); ctx.fill()
+      ctx.beginPath(); ctx.arc(hx + 6, y + 8, 2, 0, Math.PI * 2); ctx.fill()
+      ctx.fillStyle = 'white'
+      ctx.beginPath(); ctx.arc(hx - 1, y + 7, 0.8, 0, Math.PI * 2); ctx.fill()
+      ctx.beginPath(); ctx.arc(hx + 7, y + 7, 0.8, 0, Math.PI * 2); ctx.fill()
+    }
+    // nose
+    ctx.fillStyle = '#1f2327'
+    ctx.beginPath(); ctx.ellipse(hx + 3, y + 14, 1.5, 1, 0, 0, Math.PI * 2); ctx.fill()
+    // tail
+    ctx.strokeStyle = '#d66d28'; ctx.lineWidth = 5; ctx.lineCap = 'round'
+    ctx.beginPath(); ctx.moveTo(x + 3, y + 27); ctx.quadraticCurveTo(x - 8, y + 21, x - 2, y + 13); ctx.stroke()
+    ctx.strokeStyle = '#fdf4e8'; ctx.lineWidth = 2.5
+    ctx.beginPath(); ctx.moveTo(x - 3, y + 13); ctx.lineTo(x - 2, y + 10); ctx.stroke()
+    // legs
+    const sw = Math.sin(leg) * 5
+    ctx.fillStyle = '#c05e20'
+    ctx.beginPath(); ctx.rect(x + 16, y + 28, 5, Math.max(1, 8 + sw)); ctx.fill()
+    ctx.beginPath(); ctx.rect(x + 9, y + 28, 5, Math.max(1, 8 - sw)); ctx.fill()
+  }
+
+  function drawCactus(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number) {
+    ctx.fillStyle = '#40916c'
+    const sw = Math.max(7, w * 0.38)
+    const sx = x + (w - sw) / 2
+    ctx.beginPath(); ctx.rect(sx, y, sw, h); ctx.fill()
+    if (h > 26) {
+      ctx.beginPath(); ctx.rect(x, y + 10, sx - x + 1, 6); ctx.fill()
+      ctx.beginPath(); ctx.rect(x, y + 4, 7, 12); ctx.fill()
+      ctx.beginPath(); ctx.rect(sx + sw - 1, y + 6, x + w - sx - sw + 1, 6); ctx.fill()
+      ctx.beginPath(); ctx.rect(x + w - 7, y + 2, 7, 11); ctx.fill()
+    }
+  }
+
+  function render(dead = false) {
+    const c = canvasRef.current; if (!c) return
+    const ctx = c.getContext('2d'); if (!ctx) return
+    const g = gameRef.current
+    const gY = c.height - GROUND
+
+    ctx.fillStyle = '#fdf4e8'; ctx.fillRect(0, 0, c.width, c.height)
+
+    // clouds
+    ctx.fillStyle = '#f0e6d8'
+    const co = (g.frame * 0.4) % (c.width + 100)
+    for (const [cx2, cy2, r] of [[120, 28, 18], [350, 40, 14], [500, 22, 20]] as [number, number, number][]) {
+      const cx3 = ((cx2 - co + c.width + 100) % (c.width + 100)) - 20
+      ctx.beginPath(); ctx.arc(cx3, cy2, r, 0, Math.PI * 2); ctx.fill()
+      ctx.beginPath(); ctx.arc(cx3 + r * 0.9, cy2 - r * 0.3, r * 0.65, 0, Math.PI * 2); ctx.fill()
+      ctx.beginPath(); ctx.arc(cx3 + r * 1.7, cy2, r * 0.75, 0, Math.PI * 2); ctx.fill()
+    }
+
+    // ground
+    ctx.fillStyle = '#ebdcc9'; ctx.fillRect(0, gY, c.width, GROUND)
+    ctx.fillStyle = '#d4c4b0'; ctx.fillRect(0, gY, c.width, 2)
+    const dOff = (g.frame * g.speed * 0.6) % 40
+    for (let dx = -dOff; dx < c.width; dx += 40) ctx.fillRect(dx, gY + 8, 18, 1)
+
+    for (const obs of g.obstacles) drawCactus(ctx, obs.x, gY - obs.h, obs.w, obs.h)
+
+    drawFox(ctx, 80 - PW / 2, g.y, g.leg, dead)
+
+    ctx.fillStyle = '#50575d'; ctx.font = 'bold 13px sans-serif'
+    ctx.textAlign = 'right'; ctx.fillText(String(Math.floor(g.frame / 6)), c.width - 14, 22); ctx.textAlign = 'left'
   }
 
   function tick() {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
+    if (stateRef.current !== 'running') return
+    const c = canvasRef.current; if (!c) return
     const g = gameRef.current
-    if (inputRef.current.left) g.playerX -= 5
-    if (inputRef.current.right) g.playerX += 5
-    g.playerX = Math.max(0, Math.min(canvas.width - g.playerW, g.playerX))
+    const gY = groundY(c.height)
 
-    g.obstacleY += g.speed
-    if (g.obstacleY > canvas.height + 25) {
-      g.obstacleY = -20
-      g.obstacleX = Math.random() * (canvas.width - g.obstacleSize)
-      g.speed = Math.min(g.speed + 0.08, 8)
-      g.score += 1
-      setScore(g.score)
+    g.vy += 0.55; g.y = Math.min(g.y + g.vy, gY)
+    if (g.y >= gY) { g.vy = 0; g.jumpsLeft = 2 }
+    g.frame++; g.speed = Math.min(4 + g.frame / 200, 10)
+    g.leg += g.y >= gY ? 0.28 : 0.08
+
+    if (g.frame >= g.nextAt) {
+      const h = 22 + Math.random() * 28
+      g.obstacles.push({ x: c.width + 20, w: 18 + Math.random() * 12, h })
+      g.nextAt = g.frame + Math.max(38, 90 - g.frame / 30) + Math.random() * 50
+    }
+    for (const o of g.obstacles) o.x -= g.speed
+    g.obstacles = g.obstacles.filter((o) => o.x + o.w > -10)
+
+    const margin = 5
+    for (const obs of g.obstacles) {
+      const obsY = c.height - GROUND - obs.h
+      if (
+        80 - PW / 2 + margin < obs.x + obs.w &&
+        80 - PW / 2 + PW - margin > obs.x &&
+        g.y + PH - margin > obsY &&
+        g.y + margin < obsY + obs.h
+      ) {
+        stateRef.current = 'over'; setPhase('over'); setScore(Math.floor(g.frame / 6))
+        render(true); return
+      }
     }
 
-    const hit =
-      g.obstacleX < g.playerX + g.playerW &&
-      g.obstacleX + g.obstacleSize > g.playerX &&
-      g.obstacleY < g.playerY + g.playerH &&
-      g.obstacleY + g.obstacleSize > g.playerY
-
-    if (hit) {
-      setIsGameOver(true)
-      setIsRunning(false)
-      return
-    }
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.fillStyle = '#fdf4e8'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-    ctx.fillStyle = '#d66d28'
-    ctx.fillRect(g.playerX, g.playerY, g.playerW, g.playerH)
-
-    ctx.fillStyle = '#1f2327'
-    ctx.beginPath()
-    ctx.arc(g.obstacleX + g.obstacleSize / 2, g.obstacleY + g.obstacleSize / 2, g.obstacleSize / 2, 0, Math.PI * 2)
-    ctx.fill()
-
-    ctx.fillStyle = '#1f2327'
-    ctx.font = 'bold 14px sans-serif'
-    ctx.fillText(`${t('chat.fun.game.score') as string}: ${g.score}`, 10, 22)
-
-    animationRef.current = requestAnimationFrame(tick)
+    setScore(Math.floor(g.frame / 6))
+    render(false)
+    rafRef.current = requestAnimationFrame(tick)
   }
 
   useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') inputRef.current.left = true
-      if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') inputRef.current.right = true
-    }
-
-    function onKeyUp(event: KeyboardEvent) {
-      if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') inputRef.current.left = false
-      if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') inputRef.current.right = false
-    }
-
-    window.addEventListener('keydown', onKeyDown)
-    window.addEventListener('keyup', onKeyUp)
-
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-      window.removeEventListener('keyup', onKeyUp)
-    }
+    const c = canvasRef.current
+    if (c) { gameRef.current.y = groundY(c.height); render() }
   }, [])
 
   useEffect(() => {
-    if (!isRunning) {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current)
-      return
+    const fn = (e: KeyboardEvent) => {
+      if (e.code === 'Space' || e.key === 'ArrowUp') { e.preventDefault(); interact() }
     }
+    window.addEventListener('keydown', fn)
+    return () => window.removeEventListener('keydown', fn)
+  }, [])
 
-    animationRef.current = requestAnimationFrame(tick)
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current)
-    }
-  }, [isRunning])
+  useEffect(() => {
+    if (phase !== 'running') { if (rafRef.current) cancelAnimationFrame(rafRef.current); return }
+    rafRef.current = requestAnimationFrame(tick)
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
+  }, [phase])
 
   return (
     <div>
       <p className="mb-3 text-sm text-[#50575d]">{t('chat.fun.game.instructions') as string}</p>
-      <canvas ref={canvasRef} width={320} height={420} className="mx-auto block max-w-full rounded-2xl border border-[#ebdcc9]" />
-
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-        <button
-          type="button"
-          onClick={() => {
-            if (isGameOver) resetGame()
-            setIsRunning((prev) => !prev)
-          }}
-          className="rounded-full bg-[#d66d28] px-5 py-2 text-sm font-semibold text-white hover:bg-[#c05e20]"
-        >
-          {isRunning ? (t('chat.fun.game.pause') as string) : (t('chat.fun.game.play') as string)}
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            resetGame()
-            setIsRunning(false)
-          }}
-          className="rounded-full border border-[#ebdcc9] bg-white px-5 py-2 text-sm font-semibold text-[#1f2327]"
-        >
-          {t('chat.fun.game.reset') as string}
-        </button>
+      <div
+        className="relative mx-auto cursor-pointer select-none overflow-hidden rounded-2xl border border-[#ebdcc9]"
+        style={{ touchAction: 'none' }}
+        onClick={interact}
+        onTouchStart={(e) => { e.preventDefault(); interact() }}
+      >
+        <canvas ref={canvasRef} width={600} height={180} className="block w-full" />
+        {phase === 'idle' && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="rounded-full bg-[#d66d28] px-5 py-2 text-sm font-semibold text-white shadow-md">
+              {t('chat.fun.game.play') as string} ▶
+            </span>
+          </div>
+        )}
+        {phase === 'over' && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1f2327]/40">
+            <p className="text-sm font-bold text-white drop-shadow">{t('chat.fun.game.gameOver') as string}</p>
+            <p className="text-xs text-white drop-shadow">{t('chat.fun.game.score') as string}: {score}</p>
+            <span className="mt-1 rounded-full bg-[#d66d28] px-4 py-1.5 text-sm font-semibold text-white">
+              {t('chat.fun.game.reset') as string} ↩
+            </span>
+          </div>
+        )}
       </div>
-
-      <div className="mt-3 flex justify-center gap-3 sm:hidden">
-        <button
-          type="button"
-          onTouchStart={() => {
-            inputRef.current.left = true
-          }}
-          onTouchEnd={() => {
-            inputRef.current.left = false
-          }}
-          className="rounded-xl border border-[#ebdcc9] bg-white px-6 py-3 text-sm font-bold text-[#1f2327]"
-        >
-          ◀
-        </button>
-        <button
-          type="button"
-          onTouchStart={() => {
-            inputRef.current.right = true
-          }}
-          onTouchEnd={() => {
-            inputRef.current.right = false
-          }}
-          className="rounded-xl border border-[#ebdcc9] bg-white px-6 py-3 text-sm font-bold text-[#1f2327]"
-        >
-          ▶
-        </button>
-      </div>
-
-      {isGameOver && (
-        <p className="mt-4 text-center text-sm font-semibold text-[#1f2327]">
-          {t('chat.fun.game.gameOver') as string} {t('chat.fun.game.score') as string}: {score}
-        </p>
-      )}
     </div>
   )
 }
