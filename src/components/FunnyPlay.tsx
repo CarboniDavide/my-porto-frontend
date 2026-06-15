@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Brain, Gamepad2, MessageCircle, Music2, RotateCcw, Trophy } from 'lucide-react'
 import { ChatInput } from './ChatInput'
-import { PianoSongLibrary, type PianoSongOption } from './music/PianoSongLibrary'
 
 type ActivityMode = 'chat' | 'piano' | 'game' | 'quiz'
 type QuizQuestion = { q: string; options: string[]; answer: number; note: string }
@@ -121,10 +120,10 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
   const activeNodesRef = useRef<Map<string, { oscillators: OscillatorNode[]; gain: GainNode }>>(
     new Map(),
   )
-  const songTimersRef = useRef<number[]>([])
   const [activeKeys, setActiveKeys] = useState<string[]>([])
-  const [autoActiveKeys, setAutoActiveKeys] = useState<string[]>([])
-  const [activeSongId, setActiveSongId] = useState<string | null>(null)
+  const [isMobilePortrait, setIsMobilePortrait] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth < 640 && window.innerHeight > window.innerWidth,
+  )
 
   const keys = [
     { id: 'C3', key: 'z', freq: 130.81, type: 'white', left: 0 },
@@ -154,132 +153,12 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
     { id: 'C5', key: 't', freq: 523.25, type: 'white', left: 93.33 },
   ] as const
 
-  type SongStep = { noteId: (typeof keys)[number]['id']; beats: number }
-
-  const whiteKeyWidth = `${100 / 15}%`
-
-  const sampleSongs: Array<PianoSongOption & { melody: SongStep[] }> = [
-    {
-      id: 'happy-birthday',
-      title: t('chat.fun.piano.examples.songs.happyBirthday') as string,
-      melody: [
-        { noteId: 'G3', beats: 1 },
-        { noteId: 'G3', beats: 1 },
-        { noteId: 'A3', beats: 2 },
-        { noteId: 'G3', beats: 2 },
-        { noteId: 'C4', beats: 2 },
-        { noteId: 'B3', beats: 4 },
-        { noteId: 'G3', beats: 1 },
-        { noteId: 'G3', beats: 1 },
-        { noteId: 'A3', beats: 2 },
-        { noteId: 'G3', beats: 2 },
-        { noteId: 'D4', beats: 2 },
-        { noteId: 'C4', beats: 4 },
-        { noteId: 'G3', beats: 1 },
-        { noteId: 'G3', beats: 1 },
-        { noteId: 'G4', beats: 2 },
-        { noteId: 'E4', beats: 2 },
-        { noteId: 'C4', beats: 2 },
-        { noteId: 'B3', beats: 2 },
-        { noteId: 'A3', beats: 4 },
-        { noteId: 'F4', beats: 1 },
-        { noteId: 'F4', beats: 1 },
-        { noteId: 'E4', beats: 2 },
-        { noteId: 'C4', beats: 2 },
-        { noteId: 'D4', beats: 2 },
-        { noteId: 'C4', beats: 4 },
-      ],
-    },
-    {
-      id: 'sandstorm',
-      title: t('chat.fun.piano.examples.songs.sandstorm') as string,
-      melody: [
-        // Phrase 1 — iconic rapid 4-note burst
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.5 },
-        { noteId: 'B4', beats: 1 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'A4', beats: 1 },
-        { noteId: 'E4', beats: 2 },
-        // Phrase 2 — repeat with variation
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'B4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.5 },
-        { noteId: 'B4', beats: 1 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'G4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'B4', beats: 1 },
-        { noteId: 'A4', beats: 0.5 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'F#4', beats: 0.5 },
-        { noteId: 'E4', beats: 2 },
-        // Phrase 3 — build up with lower register
-        { noteId: 'E4', beats: 0.25 },
-        { noteId: 'F#4', beats: 0.25 },
-        { noteId: 'G4', beats: 0.25 },
-        { noteId: 'A4', beats: 0.25 },
-        { noteId: 'B4', beats: 0.5 },
-        { noteId: 'A4', beats: 0.5 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'F#4', beats: 0.5 },
-        { noteId: 'E4', beats: 1 },
-        { noteId: 'D4', beats: 0.5 },
-        { noteId: 'E4', beats: 0.5 },
-        { noteId: 'B3', beats: 2 },
-      ],
-    },
-    {
-      id: 'video-killed',
-      title: t('chat.fun.piano.examples.songs.videoKilled') as string,
-      melody: [
-        // Iconic synth intro riff
-        { noteId: 'A4', beats: 0.5 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'E4', beats: 1 },
-        { noteId: 'D4', beats: 0.5 },
-        { noteId: 'E4', beats: 0.5 },
-        { noteId: 'G4', beats: 1 },
-        { noteId: 'A4', beats: 2 },
-        // Second bar
-        { noteId: 'A4', beats: 0.5 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'E4', beats: 1 },
-        { noteId: 'D4', beats: 0.5 },
-        { noteId: 'E4', beats: 0.5 },
-        { noteId: 'D4', beats: 1 },
-        { noteId: 'C4', beats: 2 },
-        // Third bar — rises
-        { noteId: 'C4', beats: 0.5 },
-        { noteId: 'D4', beats: 0.5 },
-        { noteId: 'E4', beats: 0.5 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'A4', beats: 1 },
-        { noteId: 'C5', beats: 2 },
-        // Fourth bar — descends back
-        { noteId: 'B4', beats: 0.5 },
-        { noteId: 'A4', beats: 0.5 },
-        { noteId: 'G4', beats: 0.5 },
-        { noteId: 'F#4', beats: 0.5 },
-        { noteId: 'E4', beats: 1 },
-        { noteId: 'A3', beats: 2 },
-      ],
-    },
-  ]
-
-  const noteById = new Map(keys.map((note) => [note.id, note]))
+  const mobileSubset = new Set(['C3', 'C#3', 'D3', 'D#3', 'E3', 'F3', 'F#3', 'G3', 'G#3', 'A3', 'A#3', 'B3', 'C4', 'C#4', 'D4', 'D#4', 'E4'])
+  const displayedKeys = isMobilePortrait
+    ? keys.map((k) => ({ ...k, left: k.left * 1.5 })).filter((k) => mobileSubset.has(k.id))
+    : [...keys]
+  const whiteKeyWidth = `${100 / displayedKeys.filter((k) => k.type === 'white').length}%`
+  const blackKeyWidth = isMobilePortrait ? '6.5%' : '4.5%'
 
   function getAudioContext() {
     if (!audioContextRef.current) audioContextRef.current = new AudioContext()
@@ -369,55 +248,6 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
     setActiveKeys((prev) => prev.filter((id) => id !== noteId))
   }
 
-  function clearSongPlayback() {
-    songTimersRef.current.forEach((timerId) => window.clearTimeout(timerId))
-    songTimersRef.current = []
-    activeNodesRef.current.forEach((_, noteId) => stopNote(noteId))
-    setAutoActiveKeys([])
-    setActiveSongId(null)
-  }
-
-  function playSong(songId: string) {
-    const song = sampleSongs.find((candidate) => candidate.id === songId)
-    if (!song) return
-
-    clearSongPlayback()
-    setActiveSongId(song.id)
-    void getAudioContext().resume()
-
-    const beatMs = 300
-    let elapsed = 0
-
-    song.melody.forEach((step) => {
-      const note = noteById.get(step.noteId)
-      if (!note) {
-        elapsed += step.beats * beatMs
-        return
-      }
-
-      const startTimer = window.setTimeout(() => {
-        setAutoActiveKeys((prev) => (prev.includes(note.id) ? prev : [...prev, note.id]))
-        playNote(note.id, note.freq)
-      }, elapsed)
-
-      const stopTimer = window.setTimeout(() => {
-        setAutoActiveKeys((prev) => prev.filter((id) => id !== note.id))
-        stopNote(note.id)
-      }, elapsed + step.beats * beatMs * 0.86)
-
-      songTimersRef.current.push(startTimer, stopTimer)
-      elapsed += step.beats * beatMs
-    })
-
-    const endTimer = window.setTimeout(() => {
-      setAutoActiveKeys([])
-      setActiveSongId(null)
-      songTimersRef.current = []
-    }, elapsed + 40)
-
-    songTimersRef.current.push(endTimer)
-  }
-
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.repeat) return
@@ -439,15 +269,23 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
     return () => {
       window.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('keyup', onKeyUp)
-      clearSongPlayback()
+      activeNodesRef.current.forEach((_, noteId) => stopNote(noteId))
     }
+  }, [])
+
+  useEffect(() => {
+    function check() {
+      setIsMobilePortrait(window.innerWidth < 640 && window.innerHeight > window.innerWidth)
+    }
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
   }, [])
 
   return (
     <div>
       <p className="mb-4 text-sm text-[#50575d]">{t('chat.fun.piano.instructions') as string}</p>
       <div className="relative mx-auto h-48 w-full max-w-6xl overflow-hidden rounded-2xl border border-[#ebdcc9] bg-[#fdf4e8]">
-        {keys.filter((k) => k.type === 'white').map((note) => (
+        {displayedKeys.filter((k) => k.type === 'white').map((note) => (
           <button
             key={note.id}
             type="button"
@@ -464,11 +302,7 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
             onTouchEnd={() => stopNote(note.id)}
             className={[
               'absolute bottom-0 h-full border-r border-[#ebdcc9] bg-white text-xs font-bold uppercase text-[#50575d] transition',
-              autoActiveKeys.includes(note.id)
-                ? 'bg-[#ffbf85] ring-2 ring-inset ring-[#d66d28]'
-                : activeKeys.includes(note.id)
-                  ? 'bg-[#ffd9b8]'
-                  : 'hover:bg-[#fff4e8]',
+              activeKeys.includes(note.id) ? 'bg-[#ffd9b8]' : 'hover:bg-[#fff4e8]',
             ].join(' ')}
             style={{ left: `${note.left}%`, width: whiteKeyWidth }}
           >
@@ -476,7 +310,7 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
           </button>
         ))}
 
-        {keys.filter((k) => k.type === 'black').map((note) => (
+        {displayedKeys.filter((k) => k.type === 'black').map((note) => (
           <button
             key={note.id}
             type="button"
@@ -492,33 +326,16 @@ function PianoPlayground({ t }: { t: FunnyPlayProps['t'] }) {
             }}
             onTouchEnd={() => stopNote(note.id)}
             className={[
-              'absolute top-0 z-10 h-[62%] w-[4.5%] rounded-b-lg bg-[#1f2327] text-[10px] font-bold uppercase text-white transition',
-              autoActiveKeys.includes(note.id)
-                ? 'bg-[#ff8a3b] ring-2 ring-inset ring-[#ffd3b0]'
-                : activeKeys.includes(note.id)
-                  ? 'bg-[#d66d28]'
-                  : 'hover:bg-[#2e343a]',
+              'absolute top-0 z-10 h-[62%] rounded-b-lg bg-[#1f2327] text-[10px] font-bold uppercase text-white transition',
+              activeKeys.includes(note.id) ? 'bg-[#d66d28]' : 'hover:bg-[#2e343a]',
             ].join(' ')}
-            style={{ left: `${note.left}%` }}
+            style={{ left: `${note.left}%`, width: blackKeyWidth }}
           >
             <span className="absolute bottom-2 left-1/2 -translate-x-1/2">{note.key}</span>
           </button>
         ))}
       </div>
 
-      <PianoSongLibrary
-        songs={sampleSongs.map(({ id, title }) => ({ id, title }))}
-        activeSongId={activeSongId}
-        onPlaySong={playSong}
-        onStop={clearSongPlayback}
-        labels={{
-          title: t('chat.fun.piano.examples.title') as string,
-          subtitle: t('chat.fun.piano.examples.subtitle') as string,
-          playPrefix: t('chat.fun.piano.examples.playPrefix') as string,
-          playingPrefix: t('chat.fun.piano.examples.playingPrefix') as string,
-          stop: t('chat.fun.piano.examples.stop') as string,
-        }}
-      />
     </div>
   )
 }
