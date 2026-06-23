@@ -272,7 +272,7 @@
     "title": "Parliamo del tuo prossimo progetto",
     "text": "Se vuoi migliorare il tuo prodotto digitale o lanciare qualcosa di nuovo, scrivimi e fissiamo una call.",
     "availability": "Disponibile per nuovi progetti",
-    "socials": "Oppure trovami su",
+    "findMe": "Trovami",
     "form": {
       "name": "Nome",
       "email": "Email",

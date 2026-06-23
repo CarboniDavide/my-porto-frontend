@@ -272,7 +272,7 @@
     "title": "Let us talk about your next project",
     "text": "If you want to improve your digital product or launch something new, send me a message and let us schedule a call.",
     "availability": "Available for new projects",
-    "socials": "Or find me on",
+    "findMe": "Find me",
     "form": {
       "name": "Name",
       "email": "Email",

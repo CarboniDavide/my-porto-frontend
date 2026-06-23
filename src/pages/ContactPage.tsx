@@ -6,7 +6,6 @@ import { ChevronDown } from 'lucide-react'
 import { ObserverSlidePage } from '../components/ObserverSlidePage'
 import { RecaptchaNotice } from '../components/RecapchaNotice'
 
-const EMAIL = 'studio.ing.dci@gmail.com'
 const baseUrl = import.meta.env.VITE_CHAT_API_BASE?.replace(/\/$/, '') ?? ''
 const contactEndpoint = `${baseUrl}/api/contact`
 
@@ -121,19 +120,10 @@ export function ContactPage() {
           <div className="w-full max-w-6xl flex flex-col gap-12 lg:flex-row lg:gap-0">
 
             {/* Contact info — 30% */}
-            <div className="flex flex-col gap-8 lg:w-[30%] lg:pt-20 lg:pr-16 order-2 lg:order-1 mb-8 lg:mb-0">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-[#7d7f80] mb-4">Email</p>
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="text-xl font-semibold text-[#d66d28] hover:underline break-all"
-                >
-                  {EMAIL}
-                </a>
-              </div>
+            <div className="flex flex-col gap-8 lg:w-[30%] lg:pr-16 order-2 lg:order-1 mb-8 lg:mb-0">
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-[#7d7f80] mb-4">
-                  {t('contact.socials')}
+                  {t('contact.findMe')}
                 </p>
                 <div className="flex flex-col gap-3">
                   <a
