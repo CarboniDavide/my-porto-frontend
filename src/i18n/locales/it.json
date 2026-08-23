@@ -6,6 +6,11 @@
     "portfolio": "Portfolio",
     "contact": "Contatti"
   },
+  "showcase": {
+    "eyebrow": "Casi d'uso e scenari AI",
+    "title": "Scopri l'AI in azione",
+    "intro": "Scopri casi d'uso e scenari pratici dell'AI. Seleziona un tema per avviare una conversazione mirata con l'assistente AI e vedere come queste soluzioni possono essere applicate al tuo contesto."
+  },
   "language": {
     "label": "Lingua",
     "en": "English",

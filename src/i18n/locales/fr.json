@@ -17,6 +17,11 @@
     "portfolio": "Portfolio",
     "contact": "Contact"
   },
+  "showcase": {
+    "eyebrow": "Cas d'usage et scénarios IA",
+    "title": "L'IA en action",
+    "intro": "Découvrez des cas d'usage et des scénarios pratiques de l'IA. Choisissez un thème pour démarrer une discussion ciblée avec l'assistant IA et voir comment ces solutions peuvent s'appliquer à votre contexte."
+  },
   "language": {
     "label": "Langue",
     "en": "English",
