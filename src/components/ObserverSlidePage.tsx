@@ -67,7 +67,7 @@ export function ObserverSlidePage({ totalSlides, children }: ObserverSlidePagePr
       animationTimer = window.setTimeout(() => {
         isAnimating = false
         syncFromScroll()
-      }, 900)
+      }, 1100)
     }
 
     const isDesktop = window.matchMedia('(min-width: 1024px)').matches
@@ -79,7 +79,7 @@ export function ObserverSlidePage({ totalSlides, children }: ObserverSlidePagePr
         onDown: () => gotoSection(currentIndex - 1),
         onUp: () => gotoSection(currentIndex + 1),
         tolerance: 10,
-        preventDefault: false,
+        preventDefault: true,
       })
     }
 

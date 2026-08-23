@@ -54,6 +54,102 @@
   filter: blur(8px);
 }
 
+.document-scan-line {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: #d66d28;
+  box-shadow: 0 0 14px 3px rgba(214, 109, 40, 0.45);
+  animation: none;
+  opacity: 0;
+}
+
+.ai-bot-mark {
+  background: #1f2327;
+  color: #fdf4e8;
+}
+
+.ai-worker-icon {
+  opacity: 1;
+}
+
+.ai-worker-icon.is-active {
+  opacity: 1;
+  animation: worker-pulse 1.8s ease-in-out 1;
+}
+
+.document-step,
+.document-output {
+  animation: none;
+  opacity: 0;
+}
+
+.document-scan-line.is-active {
+  animation: document-scan 3.5s ease-in-out 1;
+}
+
+.document-section.is-visible .document-step { animation: result-rise 700ms ease both; }
+.document-section.is-visible .document-output { animation: result-rise 700ms ease both; }
+
+.document-workflow-item::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #d66d28;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.document-section.is-visible .document-workflow-item::before { animation: workflow-line-in 500ms ease both; }
+.document-section.is-visible .document-workflow-item:nth-child(1) .document-step { animation-delay: 3.5s; }
+.document-section.is-visible .document-workflow-item:nth-child(1)::before { animation-delay: 3.5s; }
+.document-section.is-visible .document-workflow-item:nth-child(1) .document-output { animation-delay: 4.2s; }
+.document-section.is-visible .document-workflow-item:nth-child(2) .document-step { animation-delay: 4.9s; }
+.document-section.is-visible .document-workflow-item:nth-child(2)::before { animation-delay: 4.9s; }
+.document-section.is-visible .document-workflow-item:nth-child(2) .document-output { animation-delay: 5.6s; }
+.document-section.is-visible .document-workflow-item:nth-child(3) .document-step { animation-delay: 6.3s; }
+.document-section.is-visible .document-workflow-item:nth-child(3)::before { animation-delay: 6.3s; }
+.document-section.is-visible .document-workflow-item:nth-child(3) .document-output { animation-delay: 7s; }
+
+.sales-bar {
+  transform-origin: bottom;
+  animation: none;
+  opacity: 0;
+}
+
+.sales-section.is-visible .sales-bar {
+  animation: sales-pulse 2.8s ease-in-out 1;
+  opacity: 1;
+}
+
+@keyframes document-scan {
+  0%, 100% { transform: translateY(0); opacity: 0.35; }
+  50% { transform: translateY(112px); opacity: 1; }
+}
+
+@keyframes worker-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(214, 109, 40, 0.6); transform: scale(1); }
+  50% { box-shadow: 0 0 0 12px rgba(214, 109, 40, 0); transform: scale(1.12); }
+}
+
+@keyframes result-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes workflow-line-in {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes sales-pulse {
+  from { transform: scaleY(0.88); opacity: 0.72; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
 
 
 .case-study:target {

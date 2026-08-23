@@ -7,6 +7,7 @@ import { OverviewPage } from '../pages/OverviewPage'
 import { ExperiencesPage } from '../pages/ExperiencesPage'
 import { PortfolioPage } from '../pages/PortfolioPage'
 import { RecruitMePage } from '../pages/RecruitMePage'
+import { AiDemoPage } from '../pages/AiDemoPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
 function RedirectToCurrentLanguage() {
@@ -24,6 +25,7 @@ export function AppRoutes() {
       <Route path="/:lang" element={<LocalizedLayout />}>
         <Route index element={<ChatPage />} />
         <Route path="showcase" element={<OverviewPage />} />
+        <Route path="ai-demo" element={<AiDemoPage />} />
         <Route path="experiences" element={<ExperiencesPage />} />
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="contact" element={<ContactPage />} />

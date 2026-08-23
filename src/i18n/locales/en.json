@@ -11,6 +11,79 @@
     "title": "Explore AI in Action",
     "intro": "Discover practical AI use cases and scenarios. Select a theme to start a focused conversation with the AI Assistant and see how these solutions can be applied to your context."
   },
+  "aiDemo": {
+    "eyebrow": "A realistic business scenario",
+    "title": "Turn every customer request into a next step",
+    "intro": "An AI Operations Copilot reads incoming requests, understands what matters, drafts a helpful reply, and creates the right follow-up for the team. Less manual triage, more time for decisions that need people.",
+    "cta": "Explore this use case with AI",
+    "preview": {
+      "title": "Operations Copilot",
+      "subtitle": "Customer support workflow",
+      "status": "Online",
+      "demoNotice": "Interactive simulation with sample data. No live business system is connected.",
+      "progress": "Live workflow",
+      "processing": "Processing",
+      "ready": "Ready",
+      "run": "Run the simulation",
+      "replay": "Run it again",
+      "request": "I was charged twice for my annual plan. Can you check the second payment and let me know when it will be refunded?",
+      "replyLabel": "Suggested response",
+      "reply": "I found a duplicate annual charge. I have opened a refund request and assigned it to Billing. The customer will receive an update within one business day."
+    },
+    "workflowEyebrow": "How it works",
+    "workflowTitle": "From a messy inbox to an organised operation",
+    "workflowText": "The value is not just generating text. The assistant connects the request to the company process, so every answer comes with a clear action and an auditable decision.",
+    "steps": [
+      { "label": "Input", "title": "Read and understand", "text": "Collect requests from email, chat, or a form and identify intent, urgency, customer, and relevant data." },
+      { "label": "Reason", "title": "Apply company rules", "text": "Use the knowledge base and business rules to choose the correct route, while flagging exceptions for a person." },
+      { "label": "Action", "title": "Reply and hand off", "text": "Draft a consistent response, update the CRM or ticketing system, and assign the next task to the right team." }
+    ],
+    "resultEyebrow": "What the team receives",
+    "resultTitle": "A useful output, not just an answer",
+    "resultText": "The assistant turns one customer message into structured information the business can act on immediately.",
+    "outputs": [
+      { "label": "Intent", "value": "Duplicate payment", "icon": "tag" },
+      { "label": "Priority", "value": "Billing follow-up", "icon": "sparkles" },
+      { "label": "Next action", "value": "Open refund request", "icon": "clipboard" }
+    ],
+    "actions": [
+      { "label": "Analyse request", "title": "I analysed the request", "result": "I detected a duplicate annual payment for customer #4821.", "icon": "scan" },
+      { "label": "Draft reply", "title": "I drafted the reply", "result": "I prepared a clear reply with the refund timeline and next steps.", "icon": "message" },
+      { "label": "Create ticket", "title": "I created the ticket", "result": "I assigned Billing ticket #1048 to the Billing team with high priority.", "icon": "ticket" }
+    ],
+    "documentCase": {
+      "eyebrow": "Case 02 · Back office",
+      "title": "Turn documents into decisions, faster",
+      "text": "An AI document workflow extracts data from invoices, contracts, or claims, checks it against company rules, and sends only exceptions to the right person.",
+      "cta": "Discuss document workflows",
+      "panelTitle": "Document Intelligence",
+      "panelStatus": "Demo workflow",
+      "panelTiming": "8 sec workflow",
+      "workerActive": "I am working",
+      "workerDone": "Workflow complete",
+      "workerIdle": "Waiting for input",
+      "inputLabel": "Incoming document",
+      "input": "Supplier invoice · INV-2026-0842.pdf",
+      "steps": ["I extract supplier, amount, VAT, and due date", "I compare with purchase order and policy", "I prepare approval or route the exception to Finance"],
+      "outputs": ["Sample amount matched", "VAT check complete", "Ready for human approval"]
+    },
+    "salesCase": {
+      "eyebrow": "Case 03 · Sales and management",
+      "title": "Give sales teams a clearer forecast",
+      "text": "An AI sales analyst combines CRM activity, deal history, and pipeline signals to identify risks, suggest follow-ups, and make the forecast easier to trust.",
+      "cta": "Discuss sales intelligence",
+      "panelTitle": "Revenue Intelligence",
+      "panelStatus": "Demo data",
+      "workerActive": "I am analysing",
+      "workerDone": "Workflow complete",
+      "workerIdle": "Waiting for input",
+      "steps": ["I read pipeline changes and account activity", "I detect stalled deals and forecast risk", "I suggest the next action for each opportunity"],
+      "outputs": ["3 deals flagged", "6 follow-ups suggested", "Forecast ready for review"]
+    },
+    "note": "A human stays in control: sensitive cases, low-confidence answers, and final approvals can always be routed to a team member.",
+    "bottomTitle": "Could this fit one of your workflows?",
+    "bottomText": "Tell the AI assistant about a repetitive process in your company and explore how it could be designed, integrated, and measured."
+  },
   "language": {
     "label": "Language",
     "en": "English",
@@ -299,6 +372,10 @@
     "showcase": {
       "title": "Presentation and AI Discussion Themes",
       "description": "Explore Davide Carboni's profile and three strategic themes to discuss with the AI assistant."
+    },
+    "aiDemo": {
+      "title": "AI Operations Copilot for Customer Workflows",
+      "description": "See a concrete example of how AI can classify customer requests, draft replies, and trigger the next business action."
     },
     "portfolio": {
       "title": "Portfolio of Fullstack & AI Projects",
