@@ -22,6 +22,79 @@
     "title": "L'IA en action",
     "intro": "Découvrez des cas d'usage et des scénarios pratiques de l'IA. Choisissez un thème pour démarrer une discussion ciblée avec l'assistant IA et voir comment ces solutions peuvent s'appliquer à votre contexte."
   },
+  "aiDemo": {
+    "eyebrow": "Un scénario réaliste en entreprise",
+    "title": "Transformer chaque demande client en prochaine étape",
+    "intro": "Un AI Operations Copilot lit les demandes entrantes, comprend l'essentiel, prépare une réponse utile et crée le bon suivi pour l'équipe. Moins de tri manuel, plus de temps pour les décisions qui nécessitent une intervention humaine.",
+    "cta": "Explorer ce cas avec l'IA",
+    "preview": {
+      "title": "Operations Copilot",
+      "subtitle": "Workflow du support client",
+      "status": "En ligne",
+      "demoNotice": "Simulation interactive avec des données d'exemple. Aucun système métier réel n'est connecté.",
+      "progress": "Workflow en direct",
+      "processing": "Traitement",
+      "ready": "Prêt",
+      "run": "Lancer la simulation",
+      "replay": "Rejouer la simulation",
+      "request": "J'ai été débité deux fois pour mon abonnement annuel. Pouvez-vous vérifier le second paiement et me dire quand je serai remboursé ?",
+      "replyLabel": "Réponse suggérée",
+      "reply": "J'ai trouvé un double débit annuel. J'ai ouvert une demande de remboursement et l'ai assignée à la facturation. Le client recevra une mise à jour sous un jour ouvré."
+    },
+    "workflowEyebrow": "Comment ça marche",
+    "workflowTitle": "D'une boîte de réception désordonnée à une opération structurée",
+    "workflowText": "La valeur ne consiste pas seulement à générer du texte. L'assistant relie la demande au processus de l'entreprise, afin que chaque réponse s'accompagne d'une action claire et d'une décision traçable.",
+    "steps": [
+      { "label": "Entrée", "title": "Lire et comprendre", "text": "Collecter les demandes depuis un e-mail, un chat ou un formulaire et identifier l'intention, l'urgence, le client et les données utiles." },
+      { "label": "Raisonnement", "title": "Appliquer les règles métier", "text": "Utiliser la base de connaissances et les règles métier pour choisir le bon parcours, tout en signalant les exceptions à une personne." },
+      { "label": "Action", "title": "Répondre et transmettre", "text": "Rédiger une réponse cohérente, mettre à jour le CRM ou le système de tickets et attribuer la prochaine tâche à la bonne équipe." }
+    ],
+    "resultEyebrow": "Ce que reçoit l'équipe",
+    "resultTitle": "Un résultat utile, pas seulement une réponse",
+    "resultText": "L'assistant transforme un message client en informations structurées sur lesquelles l'entreprise peut agir immédiatement.",
+    "outputs": [
+      { "label": "Intention", "value": "Double paiement", "icon": "tag" },
+      { "label": "Priorité", "value": "Suivi facturation", "icon": "sparkles" },
+      { "label": "Prochaine action", "value": "Ouvrir une demande de remboursement", "icon": "clipboard" }
+    ],
+    "actions": [
+      { "label": "Analyser la demande", "title": "J'ai analysé la demande", "result": "J'ai détecté un double paiement annuel pour le client n°4821.", "icon": "scan" },
+      { "label": "Rédiger la réponse", "title": "J'ai rédigé la réponse", "result": "J'ai préparé une réponse claire avec le délai de remboursement et les prochaines étapes.", "icon": "message" },
+      { "label": "Créer le ticket", "title": "J'ai créé le ticket", "result": "J'ai attribué le ticket facturation n°1048 à l'équipe Facturation en priorité haute.", "icon": "ticket" }
+    ],
+    "documentCase": {
+      "eyebrow": "Cas 02 · Back office",
+      "title": "Transformer les documents en décisions, plus vite",
+      "text": "Un workflow documentaire IA extrait les données des factures, contrats ou demandes, les vérifie selon les règles de l'entreprise et transmet uniquement les exceptions à la bonne personne.",
+      "cta": "Parler des workflows documentaires",
+      "panelTitle": "Document Intelligence",
+      "panelStatus": "Workflow démo",
+      "panelTiming": "Workflow : 8 sec",
+      "workerActive": "Je travaille",
+      "workerDone": "Workflow terminé",
+      "workerIdle": "En attente d'une entrée",
+      "inputLabel": "Document entrant",
+      "input": "Facture fournisseur · INV-2026-0842.pdf",
+      "steps": ["J'extrais le fournisseur, le montant, la TVA et l'échéance", "Je compare avec le bon de commande et la policy", "Je prépare la validation ou je transmets l'exception à la Finance"],
+      "outputs": ["Montant d'exemple rapproché", "Contrôle TVA terminé", "Prêt pour validation humaine"]
+    },
+    "salesCase": {
+      "eyebrow": "Cas 03 · Ventes et direction",
+      "title": "Donner aux commerciaux une prévision plus claire",
+      "text": "Un AI sales analyst combine l'activité CRM, l'historique des opportunités et les signaux du pipeline pour identifier les risques, suggérer des relances et rendre le forecast plus fiable.",
+      "cta": "Parler de sales intelligence",
+      "panelTitle": "Revenue Intelligence",
+      "panelStatus": "Données démo",
+      "workerActive": "J'analyse",
+      "workerDone": "Workflow terminé",
+      "workerIdle": "En attente d'une entrée",
+      "steps": ["Je lis les changements du pipeline et l'activité des comptes", "Je détecte les opportunités bloquées et les risques du forecast", "Je suggère la prochaine action pour chaque opportunité"],
+      "outputs": ["3 opportunités signalées", "6 relances suggérées", "Forecast prêt à être révisé"]
+    },
+    "note": "Une personne garde le contrôle : les cas sensibles, les réponses peu fiables et les validations finales peuvent toujours être transmis à un membre de l'équipe.",
+    "bottomTitle": "Ce cas peut-il correspondre à votre workflow ?",
+    "bottomText": "Décrivez à l'assistant IA un processus répétitif de votre entreprise et explorez comment le concevoir, l'intégrer et mesurer ses résultats."
+  },
   "language": {
     "label": "Langue",
     "en": "English",
@@ -310,6 +383,10 @@
     "showcase": {
       "title": "Presentation et themes IA",
       "description": "Decouvrez le profil de Davide Carboni et trois themes strategiques a discuter avec l'assistant IA."
+    },
+    "aiDemo": {
+      "title": "AI Operations Copilot pour les workflows clients",
+      "description": "Découvrez un exemple concret de la façon dont l'IA peut classer les demandes clients, rédiger des réponses et déclencher la prochaine action métier."
     },
     "portfolio": {
       "title": "Portfolio de projets Fullstack et IA",

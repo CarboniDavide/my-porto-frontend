@@ -36,7 +36,7 @@ export function OverviewPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              to={`/${language}`}
+              to={`/${language}/ai-demo`}
               className="rounded-full bg-[#d66d28] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#c05e20]"
             >
               {t('hero.ctaAI')}

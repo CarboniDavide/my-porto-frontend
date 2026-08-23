@@ -11,6 +11,79 @@
     "title": "Scopri l'AI in azione",
     "intro": "Scopri casi d'uso e scenari pratici dell'AI. Seleziona un tema per avviare una conversazione mirata con l'assistente AI e vedere come queste soluzioni possono essere applicate al tuo contesto."
   },
+  "aiDemo": {
+    "eyebrow": "Uno scenario aziendale realistico",
+    "title": "Trasforma ogni richiesta cliente in un prossimo passo",
+    "intro": "Un AI Operations Copilot legge le richieste in arrivo, capisce cosa conta, prepara una risposta utile e crea il follow-up corretto per il team. Meno triage manuale, più tempo per le decisioni che richiedono le persone.",
+    "cta": "Esplora questo caso con l'AI",
+    "preview": {
+      "title": "Operations Copilot",
+      "subtitle": "Workflow per l'assistenza clienti",
+      "status": "Online",
+      "demoNotice": "Simulazione interattiva con dati di esempio. Nessun sistema aziendale reale è collegato.",
+      "progress": "Workflow in diretta",
+      "processing": "Elaborazione",
+      "ready": "Pronto",
+      "run": "Avvia la simulazione",
+      "replay": "Ripeti la simulazione",
+      "request": "Mi è stato addebitato due volte il piano annuale. Potete verificare il secondo pagamento e farmi sapere quando verrà rimborsato?",
+      "replyLabel": "Risposta suggerita",
+      "reply": "Ho trovato un doppio addebito annuale. Ho aperto una richiesta di rimborso e l'ho assegnata all'ufficio Billing. Il cliente riceverà un aggiornamento entro un giorno lavorativo."
+    },
+    "workflowEyebrow": "Come funziona",
+    "workflowTitle": "Da una casella disordinata a un'operazione organizzata",
+    "workflowText": "Il valore non è solo generare testo. L'assistente collega la richiesta al processo aziendale, così ogni risposta arriva con un'azione chiara e una decisione tracciabile.",
+    "steps": [
+      { "label": "Input", "title": "Legge e comprende", "text": "Raccoglie le richieste da email, chat o form e identifica intenzione, urgenza, cliente e dati rilevanti." },
+      { "label": "Ragionamento", "title": "Applica le regole aziendali", "text": "Usa knowledge base e regole di business per scegliere il percorso corretto, segnalando le eccezioni a una persona." },
+      { "label": "Azione", "title": "Risponde e assegna", "text": "Prepara una risposta coerente, aggiorna il CRM o il sistema ticket e assegna il prossimo task al team corretto." }
+    ],
+    "resultEyebrow": "Cosa riceve il team",
+    "resultTitle": "Un risultato utile, non solo una risposta",
+    "resultText": "L'assistente trasforma un messaggio cliente in informazioni strutturate su cui l'azienda può agire subito.",
+    "outputs": [
+      { "label": "Intento", "value": "Doppio pagamento", "icon": "tag" },
+      { "label": "Priorità", "value": "Follow-up Billing", "icon": "sparkles" },
+      { "label": "Prossima azione", "value": "Aprire richiesta rimborso", "icon": "clipboard" }
+    ],
+    "actions": [
+      { "label": "Analizza richiesta", "title": "Ho analizzato la richiesta", "result": "Ho rilevato un doppio pagamento annuale per il cliente #4821.", "icon": "scan" },
+      { "label": "Prepara risposta", "title": "Ho preparato la risposta", "result": "Ho preparato una risposta chiara con tempistiche e prossimi passi del rimborso.", "icon": "message" },
+      { "label": "Crea ticket", "title": "Ho creato il ticket", "result": "Ho assegnato il ticket Billing #1048 al team Billing con priorità alta.", "icon": "ticket" }
+    ],
+    "documentCase": {
+      "eyebrow": "Caso 02 · Back office",
+      "title": "Trasforma i documenti in decisioni, più velocemente",
+      "text": "Un workflow documentale AI estrae i dati da fatture, contratti o richieste di rimborso, li verifica con le regole aziendali e invia alla persona corretta solo le eccezioni.",
+      "cta": "Parla dei workflow documentali",
+      "panelTitle": "Document Intelligence",
+      "panelStatus": "Workflow demo",
+      "panelTiming": "Workflow: 8 sec",
+      "workerActive": "Sto lavorando",
+      "workerDone": "Workflow completato",
+      "workerIdle": "In attesa di input",
+      "inputLabel": "Documento in arrivo",
+      "input": "Fattura fornitore · INV-2026-0842.pdf",
+      "steps": ["Estraggo fornitore, importo, IVA e scadenza", "Confronto ordine d'acquisto e policy", "Preparo l'approvazione o assegno l'eccezione al Finance"],
+      "outputs": ["Importo di esempio verificato", "Controllo IVA completato", "Pronta per approvazione umana"]
+    },
+    "salesCase": {
+      "eyebrow": "Caso 03 · Vendite e management",
+      "title": "Dai al team sales una previsione più chiara",
+      "text": "Un AI sales analyst combina attività CRM, storico delle trattative e segnali della pipeline per identificare i rischi, suggerire follow-up e rendere il forecast più affidabile.",
+      "cta": "Parla di sales intelligence",
+      "panelTitle": "Revenue Intelligence",
+      "panelStatus": "Dati demo",
+      "workerActive": "Sto analizzando",
+      "workerDone": "Workflow completato",
+      "workerIdle": "In attesa di input",
+      "steps": ["Leggo variazioni della pipeline e attività account", "Individuo trattative ferme e rischi sul forecast", "Suggerisco la prossima azione per ogni opportunità"],
+      "outputs": ["3 trattative segnalate", "6 follow-up suggeriti", "Forecast pronto per revisione"]
+    },
+    "note": "La persona resta al controllo: casi sensibili, risposte poco sicure e approvazioni finali possono sempre essere assegnati a un membro del team.",
+    "bottomTitle": "Potrebbe adattarsi a un tuo workflow?",
+    "bottomText": "Racconta all'assistente AI un processo ripetitivo della tua azienda e scopri come progettarlo, integrarlo e misurarne i risultati."
+  },
   "language": {
     "label": "Lingua",
     "en": "English",
@@ -299,6 +372,10 @@
     "showcase": {
       "title": "Presentazione e temi strategici AI",
       "description": "Scopri il profilo di Davide Carboni e tre scenari strategici da discutere con l'assistente AI."
+    },
+    "aiDemo": {
+      "title": "AI Operations Copilot per i workflow cliente",
+      "description": "Scopri un esempio concreto di come l'AI può classificare le richieste cliente, preparare risposte e avviare la prossima azione aziendale."
     },
     "portfolio": {
       "title": "Portfolio di progetti Fullstack e AI",

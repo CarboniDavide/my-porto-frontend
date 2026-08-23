@@ -7,6 +7,7 @@ export const DEFAULT_OG_IMAGE = '/favicon.svg'
 export const SEO_ROUTE_PATHS = {
   chat: '',
   showcase: 'showcase',
+  'ai-demo': 'ai-demo',
   portfolio: 'portfolio',
   experiences: 'experiences',
   contact: 'contact',
