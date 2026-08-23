@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
 @theme {
   --color-brand: #d66d28;
@@ -39,6 +39,7 @@
 
   p { margin: 0; }
   a { color: inherit; }
+  button:not(:disabled) { cursor: pointer; }
 }
 
 .page-glow {
