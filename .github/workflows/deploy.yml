@@ -84,7 +84,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Bump patch version and create tag
-        run: 'npm version patch -m "chore(release): %s [skip ci]"'
+        run: |
+          NEXT_VERSION="v$(node -e "const v=require('./package.json').version.split('.'); v[2]=parseInt(v[2])+1; console.log(v.join('.'))")"
+          if git rev-parse "$NEXT_VERSION" >/dev/null 2>&1; then
+            git tag -d "$NEXT_VERSION"
+            if git ls-remote --tags origin | grep -q "refs/tags/$NEXT_VERSION$"; then
+              git push origin ":refs/tags/$NEXT_VERSION"
+            fi
+          fi
+          npm version patch -m "chore(release): %s [skip ci]"
 
       - name: Push commit and tag
         run: |
