@@ -53,9 +53,9 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="mx-auto max-w-5xl px-4 sm:px-6" aria-label="Main navigation">
-        {/* Single row on desktop: logo | links centered | lang */}
-        <div className="flex items-center justify-between py-3 sm:grid sm:grid-cols-[1fr_auto_1fr]">
+    <nav className="w-full px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      {/* Single row on desktop: logo left | links centered | lang right */}
+      <div className="relative flex items-center justify-between py-3">
           {/* Logo — left */}
           <Link to={withLanguage('/')} className="flex items-center gap-2.5 shrink-0 group">
             <img src={logoUrl} alt="Logo" width="40" height="40" className="block" />
@@ -65,7 +65,7 @@ export function Navbar() {
           </Link>
 
           {/* Nav links — center (hidden on mobile, shown inline on desktop) */}
-          <ul className="hidden sm:flex sm:items-center sm:gap-1">
+          <ul className="hidden lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:items-center lg:gap-1">
             {NAV_LINKS.map(({ to, label, active }) => (
               <li key={to}>
                 <Link
@@ -84,7 +84,7 @@ export function Navbar() {
           </ul>
 
           {/* Right side: lang + burger */}
-          <div className="flex items-center justify-end gap-2">
+          <div className="flex items-center justify-end gap-2 ml-auto">
             {/* Language switcher */}
             <div ref={langRef} className="relative">
               <button
@@ -127,7 +127,7 @@ export function Navbar() {
               onClick={() => setMenuOpen((o) => !o)}
               aria-expanded={menuOpen}
               aria-label="Menu"
-              className="flex size-9 items-center justify-center rounded-full border border-[#ebdcc9] bg-[#f5ece0] text-[#50575d] transition hover:bg-[#ebdcc9] sm:hidden"
+              className="flex size-9 items-center justify-center rounded-full border border-[#ebdcc9] bg-[#f5ece0] text-[#50575d] transition hover:bg-[#ebdcc9] lg:hidden"
             >
               {menuOpen ? (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
@@ -144,7 +144,7 @@ export function Navbar() {
 
         {/* Mobile menu — collapsible */}
         {menuOpen && (
-          <ul className="flex flex-col gap-1 pb-3 sm:hidden bg-[#fffaf4] border border-[#ebdcc9] rounded-xl mx-2 mt-2 shadow-lg px-4 py-3">
+          <ul className="flex flex-col gap-1 pb-3 lg:hidden bg-[#fffaf4] border border-[#ebdcc9] rounded-xl mx-2 mt-2 shadow-lg px-4 py-3">
             {NAV_LINKS.map(({ to, label, active }) => (
               <li key={to}>
                 <Link
