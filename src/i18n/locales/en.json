@@ -97,7 +97,8 @@
     "lead": "Hi, I am Davide. I design and build end-to-end web products, integrating AI into web apps and business workflows to deliver measurable value.",
     "ctaProjects": "View projects",
     "ctaContact": "Contact me",
-    "ctaAI": "Try the AI Assistant →"
+    "ctaAI": "Try the AI Assistant →",
+    "ctaAIExamples": "Concrete AI examples"
   },
   "about": {
     "title": "About me",
