@@ -15,9 +15,14 @@ export type FileUploadResponse = {
   error?: string
 }
 
-export async function uploadFile(file: File, endpoint: string): Promise<FileUploadResponse> {
+export async function uploadFile(
+  file: File,
+  endpoint: string,
+  recaptchaToken: string,
+): Promise<FileUploadResponse> {
   const formData = new FormData();
   formData.append('file', file);
+  formData.append('recaptchaToken', recaptchaToken);
 
   const response = await fetch(`${baseUrl}${endpoint}/upload`, {
     method: 'POST',

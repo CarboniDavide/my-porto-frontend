@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRecaptcha } from '../contexts/RecaptchaContext'
 import type { FileUploadResponse } from '../services/chatApi'
 import { uploadFile } from '../services/chatApi'
 
@@ -23,6 +24,7 @@ export function ChatInput({
   uploadEndpoint,
   disabled = false,
 }: ChatInputProps) {
+  const { getRecaptchaToken } = useRecaptcha()
   const [draft, setDraft] = useState('')
   const [file, setFile] = useState<File | null>(null)
   const [fileError, setFileError] = useState<string | null>(null)
@@ -53,7 +55,8 @@ export function ChatInput({
     if (file && uploadEndpoint) {
       setUploading(true)
       try {
-        const res: FileUploadResponse = await uploadFile(file, uploadEndpoint)
+        const recaptchaToken = await getRecaptchaToken('recruit_file_upload')
+        const res: FileUploadResponse = await uploadFile(file, uploadEndpoint, recaptchaToken)
         setFile(null)
         if (res.reply && onAssistantMessage) {
           onAssistantMessage(res.reply)
