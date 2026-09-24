@@ -142,7 +142,7 @@
   },
   "skills": {
     "title": "Compétences",
-    "text": "J'ai travaillé sur des projets très différents — startups, produits enterprise, intégrations complexes — et chaque contexte m'a poussé à élargir ma stack et à adopter de nouvelles approches. Ce que vous trouvez ici est le résultat d'années de travail réel, pas seulement de certifications.",
+    "text": "Mon expertise ne se limite pas à une technologie: elle repose sur ma capacité à relier frontend, backend, données et services externes au sein de solutions complètes. Avec une expérience en PHP, JavaScript, Python, React, Vue.js, Django, Laravel, Node.js et bases SQL et NoSQL, je choisis la stack selon le problème et construis des applications robustes, maintenables et prêtes à évoluer. L'IA fait désormais partie de mon quotidien: elle m'aide à accélérer la production, améliorer les services, réduire les erreurs et maintenir un haut niveau de qualité. J'y associe architecture logicielle, DevOps et automatisation pour transformer des besoins concrets en produits digitaux efficaces.",
     "approach": {
       "title": "Ma façon de travailler",
       "text": "Je ne me cantonne jamais à une seule technologie. Je choisis la stack en fonction du problème : parfois un monolithe solide est la bonne option, d'autres fois une architecture serverless qui s'adapte automatiquement. Ce qui reste constant, c'est l'attention à la qualité du code, à la maintenabilité et à la clarté des API. Ces dernières années, j'ai intégré l'IA dans de vrais produits web — pas comme un mot à la mode, mais pour automatiser des processus, améliorer l'expérience utilisateur et réduire le travail répétitif."
@@ -168,7 +168,7 @@
       },
       {
         "name": "Frameworks & Bibliothèques",
-        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "Bootstrap", "Tailwind CSS"]
+        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "n8n", "Bootstrap", "Tailwind CSS"]
       },
       {
         "name": "Node.js & Backend JS",
@@ -176,7 +176,7 @@
       },
       {
         "name": "Cloud & Serverless",
-        "items": ["AWS Lambda", "AWS S3 / CloudFront", "Azure Functions", "Azure Static Web Apps", "Vercel Edge Functions", "Netlify Functions", "Supabase", "Firebase"]
+        "items": ["Azure", "Infomaniak", "Heroku", "Netlify", "Azure Functions", "Azure Static Web Apps", "AWS Lambda", "AWS S3 / CloudFront", "Supabase", "Firebase"]
       },
       {
         "name": "Bases de données",
@@ -194,7 +194,7 @@
   },
   "experiences": {
     "title": "Expériences",
-    "text": "Un parcours orienté produit, intégration et livraison: des projets métier, des API, de l'automatisation et de la coordination d'équipe.",
+    "text": "Mon parcours professionnel a commencé dans l'hôtellerie et la restauration, où j'ai développé un fort sens du service, de la communication et des besoins des utilisateurs. Après ma formation en informatique, j'ai évolué vers le développement web full stack et travaillé sur des applications métier, des intégrations d'API et des outils sur mesure. Aujourd'hui, je combine expertise technique, automatisation et intégration pragmatique de l'IA pour construire des solutions utiles, maintenables et réellement adaptées aux objectifs du projet.",
     "ctaExperience": "Parcours pro",
     "ctaSkills": "Compétences techniques",
     "workStyle": {
@@ -217,8 +217,9 @@
         "company": "Ville de Lausanne · emploilausanne.ch",
         "period": "Août 2025 – Avril 2026",
         "bullets": [
-          "Développement d'applications web avec Laravel, React et Inertia.js sur dclics.ch.",
-          "Coordination du projet interne journee-mmt.ch avec Node.js, React + Vite et Express.js."
+          "Conception et développement de l'application web dclics.ch avec Laravel, React et Inertia.js, en veillant à l'ergonomie des interfaces et à l'efficacité des processus utilisateurs.",
+          "Gestion du projet journee-mmt.ch, de l'analyse des besoins à la livraison, avec coordination entre les équipes métier et techniques.",
+          "Mise en place d'une solution avec Node.js, React, Vite et Express.js dans un contexte de livraison orienté produit."
         ]
       },
       {
@@ -226,8 +227,9 @@
         "company": "Aequivalent",
         "period": "2021 – Janvier 2025",
         "bullets": [
-          "Développement d'une plateforme interne avec Django et JS/jQuery, avec automatisation avancée via API.",
-          "Création d'applications web client en Nuxt/Vue.js connectées à l'API Django et réduction des tâches manuelles."
+          "Développement et évolution de solutions web métier sur mesure avec Django, JavaScript et Vue.js/Nuxt.",
+          "Intégration d'API et automatisation de processus pour optimiser les opérations internes, réduire les erreurs manuelles et fiabiliser les flux métier.",
+          "Analyse et optimisation des interfaces UX/UI, participation au cycle Agile/Scrum et collaboration avec les parties prenantes pour transformer les besoins en solutions évolutives."
         ]
       },
       {
@@ -235,8 +237,9 @@
         "company": "JPM Publications · jpmguides.com",
         "period": "2019",
         "bullets": [
-          "Intégration de l'API Viator (TripAdvisor) dans la plateforme JPM en Ruby on Rails.",
-          "Intégration des flux de listing, de sélection et de paiement dans l'application mobile Ionic/Angular."
+          "Intégration de l'API Viator (Tripadvisor) dans le backend Ruby on Rails afin d'exposer les données et services de réservation dans l'écosystème JPM.",
+          "Développement des fonctionnalités d'affichage, de sélection et d'achat des produits Viator dans l'application mobile Ionic/Angular.",
+          "Travail sur une expérience utilisateur fluide, depuis la consultation des activités jusqu'à leur réservation."
         ]
       },
       {
@@ -244,8 +247,8 @@
         "company": "Open Net SARL",
         "period": "2018",
         "bullets": [
-          "Développement de modules Odoo pour les clients avec Python.",
-          "Contribution à des outils internes d'automatisation."
+          "Développement et personnalisation de modules Odoo en Python pour répondre aux besoins spécifiques des clients.",
+          "Participation au développement d'outils internes et découverte de l'écosystème Odoo dans un contexte professionnel."
         ]
       },
       {
@@ -253,8 +256,17 @@
         "company": "Gueissaz-Jaccard Music Box",
         "period": "2016 – 2019",
         "bullets": [
-          "Création et mise en ligne d'un site portfolio avec HTML, CSS et JavaScript.",
-          "Mise en place d'une présence web simple, claire et maintenable."
+          "Création et mise en ligne d'un site web portfolio avec HTML, CSS et JavaScript vanilla.",
+          "Conception d'une présence web simple, claire et maintenable pour valoriser l'activité de l'entreprise."
+        ]
+      },
+      {
+        "role": "Professionnel de l'hôtellerie et de la restauration",
+        "company": "Hôtellerie / Restauration",
+        "period": "2002 – 2017",
+        "bullets": [
+          "Développement d'une solide expérience de la communication, du service et de l'orientation client.",
+          "Acquisition d'une capacité à comprendre les besoins, gérer les priorités et rester efficace dans des environnements exigeants."
         ]
       }
     ]

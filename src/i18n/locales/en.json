@@ -131,7 +131,7 @@
   },
   "skills": {
     "title": "Skills",
-    "text": "I've worked on very different projects — startups, enterprise products, complex integrations — and each context pushed me to expand my stack and adopt new approaches. What you find here is the result of years of real work, not just certifications.",
+    "text": "My expertise is not tied to a single technology; it is the ability to connect frontend, backend, data, and external services into complete solutions. With experience in PHP, JavaScript, Python, React, Vue.js, Django, Laravel, Node.js, and SQL and NoSQL databases, I choose the stack according to the problem and build robust, maintainable applications that are ready to evolve. AI is now part of my daily work: it helps me accelerate delivery, improve services, reduce errors, and maintain a high standard of product quality. I combine this with software architecture, DevOps, and automation to turn concrete needs into effective digital products.",
     "approach": {
       "title": "How I work",
       "text": "I never stick to a single technology. I choose the stack based on the problem: sometimes a solid monolith is the right call, other times a serverless architecture that scales on its own. What stays constant is attention to code quality, maintainability, and clear APIs. In recent years I've integrated AI into real web products — not as a buzzword, but to automate processes, improve user experience, and reduce repetitive work."
@@ -157,7 +157,7 @@
       },
       {
         "name": "Frameworks & Libraries",
-        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "Bootstrap", "Tailwind CSS"]
+        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "n8n", "Bootstrap", "Tailwind CSS"]
       },
       {
         "name": "Node.js & Backend JS",
@@ -165,7 +165,7 @@
       },
       {
         "name": "Cloud & Serverless",
-        "items": ["AWS Lambda", "AWS S3 / CloudFront", "Azure Functions", "Azure Static Web Apps", "Vercel Edge Functions", "Netlify Functions", "Supabase", "Firebase"]
+        "items": ["Azure", "Infomaniak", "Heroku", "Netlify", "Azure Functions", "Azure Static Web Apps", "AWS Lambda", "AWS S3 / CloudFront", "Supabase", "Firebase"]
       },
       {
         "name": "Databases",
@@ -183,7 +183,7 @@
   },
   "experiences": {
     "title": "Experience",
-    "text": "A product-focused background combining business applications, APIs, automation, and team coordination.",
+    "text": "My professional journey began in hospitality and food service, where I developed a strong sense of service, communication, and customer needs. After training in software development, I moved into full-stack web development and worked on business applications, API integrations, and custom tools. Today, I combine technical expertise, automation, and practical AI integration to build useful, maintainable solutions that genuinely support each project's goals.",
     "ctaExperience": "Professional path",
     "ctaSkills": "Technical skills",
     "workStyle": {
@@ -206,8 +206,9 @@
         "company": "City of Lausanne · emploilausanne.ch",
         "period": "Aug 2025 – Apr 2026",
         "bullets": [
-          "Built web applications with Laravel, React, and Inertia.js on dclics.ch.",
-          "Coordinated the internal journee-mmt.ch project with Node.js, React + Vite, and Express.js."
+          "Designed and developed the dclics.ch web application with Laravel, React, and Inertia.js, focusing on interface usability and efficient user processes.",
+          "Managed the journee-mmt.ch project from requirements analysis through delivery, coordinating business and technical teams.",
+          "Delivered a Node.js, React, Vite, and Express.js solution in a product-focused environment."
         ]
       },
       {
@@ -215,8 +216,9 @@
         "company": "Aequivalent",
         "period": "2021 – Jan 2025",
         "bullets": [
-          "Developed an internal platform with Django and JS/jQuery, with advanced API automation.",
-          "Built client web apps in Nuxt/Vue.js connected to the Django API and reduced manual work."
+          "Developed and evolved custom business web solutions with Django, JavaScript, and Vue.js/Nuxt.",
+          "Integrated APIs and automated processes to optimize internal operations, reduce manual errors, and improve workflow reliability.",
+          "Analyzed and improved UX/UI, worked in an Agile/Scrum cycle, and collaborated with stakeholders to turn business needs into scalable solutions."
         ]
       },
       {
@@ -224,8 +226,9 @@
         "company": "JPM Publications · jpmguides.com",
         "period": "2019",
         "bullets": [
-          "Integrated the Viator (TripAdvisor) API into the JPM platform in Ruby on Rails.",
-          "Integrated listing, selection, and payment flows into the Ionic/Angular mobile app."
+          "Integrated the Viator (Tripadvisor) API into the Ruby on Rails backend, making booking data and services available across the JPM ecosystem.",
+          "Developed product display, selection, and purchase features in the Ionic/Angular mobile application.",
+          "Created a smooth user journey from browsing activities through to booking."
         ]
       },
       {
@@ -233,8 +236,8 @@
         "company": "Open Net SARL",
         "period": "2018",
         "bullets": [
-          "Built Odoo modules for clients using Python.",
-          "Contributed to internal automation tools."
+          "Developed and customized Odoo modules in Python to meet specific client requirements.",
+          "Contributed to internal tools and learned the Odoo ecosystem in a professional environment."
         ]
       },
       {
@@ -242,8 +245,17 @@
         "company": "Gueissaz-Jaccard Music Box",
         "period": "2016 – 2019",
         "bullets": [
-          "Created and deployed a portfolio website with HTML, CSS, and JavaScript.",
-          "Delivered a simple, clear, and maintainable web presence."
+          "Created and deployed a portfolio website with HTML, CSS, and vanilla JavaScript.",
+          "Built a simple, clear, and maintainable web presence to showcase the company activity."
+        ]
+      },
+      {
+        "role": "Hospitality and food service professional",
+        "company": "Hospitality / Food service",
+        "period": "2002 – 2017",
+        "bullets": [
+          "Built strong communication, service, and customer-orientation skills.",
+          "Learned to understand needs, manage priorities, and stay effective in demanding environments."
         ]
       }
     ]

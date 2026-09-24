@@ -35,11 +35,11 @@ export function ExperiencesPage() {
 
   return (
     <ObserverSlidePage>
-      <section className="relative box-border flex items-center justify-center bg-white px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)]" data-slide>
+      <section className="relative box-border flex items-center justify-center bg-[#fffaf4] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)]" data-slide>
         <div className="w-full max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d66d28]">{t('nav.experiences')}</p>
           <h1 className="mb-6 font-serif text-4xl font-bold text-[#1f2327] sm:text-6xl">{t('experiences.title')}</h1>
-          <p className="mb-8 text-lg leading-relaxed text-[#50575d] sm:text-xl">{t('experiences.text')}</p>
+          <p className="mb-8 max-w-3xl text-lg leading-relaxed text-[#50575d] sm:text-xl">{t('experiences.text')}</p>
           <div className="flex flex-wrap gap-3">
             <a
               href="#experience-0"
