@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useRecaptcha } from '../contexts/RecaptchaContext'
 import type { FileUploadResponse } from '../services/chatApi'
 import { uploadFile } from '../services/chatApi'
@@ -24,7 +25,10 @@ export function ChatInput({
   uploadEndpoint,
   disabled = false,
 }: ChatInputProps) {
+  const { t } = useTranslation('translation')
   const { getRecaptchaToken } = useRecaptcha()
+  const uploadLabel = t('recruitMe.upload', 'Upload file')
+  const newChatLabel = t('chat.newChat', 'New chat')
   const [draft, setDraft] = useState('')
   const [file, setFile] = useState<File | null>(null)
   const [fileError, setFileError] = useState<string | null>(null)
@@ -110,7 +114,13 @@ export function ChatInput({
 
         {/* Upload file */}
         {showUpload && (
-          <label className="absolute right-12 top-1/2 -translate-y-1/2 flex items-center cursor-pointer group">
+          <label
+            aria-label={uploadLabel}
+            className="absolute right-12 top-1/2 -translate-y-1/2 flex items-center cursor-pointer group"
+          >
+            <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-within:opacity-100" role="tooltip">
+              {uploadLabel}
+            </span>
             <span className="relative flex items-center">
               <span className="flex items-center justify-center size-7 rounded-full bg-[#fdf4e8] border border-[#ebdcc9] text-[#d66d28] text-xl font-bold transition group-hover:bg-[#d66d28] group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -133,8 +143,12 @@ export function ChatInput({
           <button
             type="button"
             onClick={resetAll}
-            className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center size-7 rounded-full bg-[#fdf4e8] border border-[#ebdcc9] text-[#d66d28] text-xl font-bold transition hover:bg-[#d66d28] hover:text-white cursor-pointer"
+            aria-label={newChatLabel}
+            className="group absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center size-7 rounded-full bg-[#fdf4e8] border border-[#ebdcc9] text-[#d66d28] text-xl font-bold transition hover:bg-[#d66d28] hover:text-white cursor-pointer"
           >
+            <span className="pointer-events-none absolute bottom-full right-0 z-10 mb-2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-visible:opacity-100" role="tooltip">
+              {newChatLabel}
+            </span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
