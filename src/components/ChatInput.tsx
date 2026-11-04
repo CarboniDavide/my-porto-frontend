@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Paperclip, SquarePen } from 'lucide-react'
+import { ArrowUp, FileText, Plus, SquarePen, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useRecaptcha } from '../contexts/RecaptchaContext'
 import type { FileUploadResponse } from '../services/chatApi'
@@ -84,8 +84,7 @@ export function ChatInput({
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
-      void onSend(draft)
-      setDraft('')
+      e.currentTarget.form?.requestSubmit()
     }
   }
 
@@ -99,70 +98,89 @@ export function ChatInput({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 rounded-2xl bg-[#fffaf4] p-2 sm:flex-row sm:items-stretch sm:p-4"
+      className="flex flex-col gap-2 rounded-3xl border border-[#ebdcc9] bg-white p-3 shadow-sm"
     >
-      <div className="relative flex-1 flex items-center">
-        <textarea
-          value={draft}
-          onChange={e => setDraft(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder={file ? file.name : placeholder}
-          rows={2}
-          disabled={disabled}
-          className="overflow-hidden h-[52px] flex-1 resize-none rounded-xl border border-[#ebdcc9] bg-white px-3 py-3 pr-20 text-sm text-[#1f2327] placeholder:text-[#d66d28] focus:outline-none focus:ring-2 focus:ring-[#d66d28] sm:px-4"
-          style={{ minHeight: 52, maxHeight: 160 }}
-        />
+      {file && (
+        <div className="flex">
+          <div className="flex max-w-full items-center gap-2 rounded-xl bg-[#fdf4e8] py-1.5 pl-1.5 pr-2">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#d66d28]">
+              <FileText className="size-4" />
+            </span>
+            <span className="max-w-[14rem] truncate text-sm text-[#1f2327]">{file.name}</span>
+            <button
+              type="button"
+              onClick={() => setFile(null)}
+              aria-label="Remove file"
+              disabled={uploading}
+              className="flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-full text-[#6b7280] transition hover:bg-[#ebdcc9] hover:text-[#1f2327]"
+            >
+              <X className="size-3.5" />
+            </button>
+          </div>
+        </div>
+      )}
 
-        {/* Upload file */}
-        {showUpload && (
+      <textarea
+        value={draft}
+        onChange={e => setDraft(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder={placeholder}
+        rows={1}
+        disabled={disabled}
+        className="w-full resize-none bg-transparent px-2 py-2 text-sm text-[#1f2327] placeholder:text-gray-400 focus:outline-none"
+        style={{ minHeight: 40, maxHeight: 160 }}
+      />
+
+      {fileError && <div className="px-2 text-xs text-red-600">{fileError}</div>}
+      {uploading && <div className="px-2 text-xs text-[#d66d28]">Uploading…</div>}
+
+      <div className="flex items-center justify-between">
+        {showUpload ? (
           <label
             aria-label={uploadLabel}
-            className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center cursor-pointer group"
+            className="group relative flex size-10 cursor-pointer items-center justify-center rounded-full bg-[#f1f3f4] text-[#1f2327] transition hover:bg-[#ebdcc9]"
           >
-            <span className="pointer-events-none absolute bottom-full right-0 z-10 mb-2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-within:opacity-100" role="tooltip">
+            <span className="pointer-events-none absolute bottom-full left-0 z-10 mb-2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-within:opacity-100" role="tooltip">
               {uploadLabel}
             </span>
-            <span className="relative flex items-center">
-              <span className="flex items-center justify-center size-7 rounded-full bg-[#fdf4e8] border border-[#ebdcc9] text-[#d66d28] text-xl font-bold transition group-hover:bg-[#d66d28] group-hover:text-white">
-                <Paperclip className="size-4" />
-              </span>
-            </span>
+            <Plus className="size-5" />
             <input
               type="file"
               accept=".txt,.pdf"
-              onChange={handleFileChange}
+              onChange={e => {
+                handleFileChange(e)
+                e.target.value = ''
+              }}
               className="hidden"
               disabled={disabled || uploading}
             />
           </label>
+        ) : (
+          <span />
         )}
 
-        {/* Reset chat */}
-        {showReset && (
+        <div className="flex items-center gap-2">
+          {showReset && (
+            <button
+              type="button"
+              onClick={resetAll}
+              aria-label={newChatLabel}
+              title={newChatLabel}
+              className="flex size-10 cursor-pointer items-center justify-center rounded-full bg-[#f1f3f4] text-[#1f2327] transition hover:bg-[#ebdcc9]"
+            >
+              <SquarePen className="size-5" />
+            </button>
+          )}
           <button
-            type="button"
-            onClick={resetAll}
-            aria-label={newChatLabel}
-            className="group absolute right-12 top-1/2 -translate-y-1/2 flex items-center justify-center size-7 rounded-full bg-[#fdf4e8] border border-[#ebdcc9] text-[#d66d28] text-xl font-bold transition hover:bg-[#d66d28] hover:text-white cursor-pointer"
+            type="submit"
+            aria-label="Send"
+            disabled={disabled || uploading || (!draft.trim() && !file)}
+            className="flex size-10 cursor-pointer items-center justify-center rounded-full bg-[#d66d28] text-white transition hover:bg-[#c05e20] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-visible:opacity-100" role="tooltip">
-              {newChatLabel}
-            </span>
-            <SquarePen className="size-4" />
+            <ArrowUp className="size-5" />
           </button>
-        )}
+        </div>
       </div>
-
-      {fileError && <div className="text-xs text-red-600 self-center">{fileError}</div>}
-      {uploading && <div className="text-xs text-[#d66d28] self-center">Uploading…</div>}
-
-      <button
-        type="submit"
-        disabled={disabled || (!draft.trim() && !file)}
-        className="h-[52px] w-full rounded-xl bg-[#d66d28] px-5 py-3 text-sm font-semibold text-white shadow transition hover:-translate-y-0.5 hover:bg-[#c05e20] disabled:translate-y-0 sm:w-auto"
-      >
-        Send
-      </button>
     </form>
   )
 }

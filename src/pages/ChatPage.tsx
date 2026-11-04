@@ -67,7 +67,7 @@ export function ChatPage() {
           <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#fffaf4] sm:text-base">
             {t('chat.subtitle') as string}
           </p>
-          <div className="w-full rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] p-3 shadow-2xl sm:p-5">
+          <div className="w-full shadow-2xl rounded-3xl">
             <ChatInput
               placeholder={inputPlaceholder}
               onSend={send}
