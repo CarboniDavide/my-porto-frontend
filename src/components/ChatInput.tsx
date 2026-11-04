@@ -14,6 +14,7 @@ interface ChatInputProps {
   showReset?: boolean
   uploadEndpoint?: string
   disabled?: boolean
+  embedded?: boolean
 }
 
 export function ChatInput({
@@ -25,6 +26,7 @@ export function ChatInput({
   showReset = false,
   uploadEndpoint,
   disabled = false,
+  embedded = false,
 }: ChatInputProps) {
   const { t } = useTranslation('translation')
   const { getRecaptchaToken } = useRecaptcha()
@@ -98,7 +100,7 @@ export function ChatInput({
   return (
     <form
       onSubmit={handleSubmit}
-      className="chat-input-form flex flex-col gap-2 rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] p-3"
+      className={`chat-input-form flex flex-col gap-2 border border-[#ebdcc9] bg-[#fffaf4] p-3 ${embedded ? 'chat-input-form-embedded' : 'rounded-3xl'}`}
     >
       {file && (
         <div className="flex">
