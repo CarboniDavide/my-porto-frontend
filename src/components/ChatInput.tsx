@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Paperclip, SquarePen } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useRecaptcha } from '../contexts/RecaptchaContext'
 import type { FileUploadResponse } from '../services/chatApi'
@@ -123,9 +124,7 @@ export function ChatInput({
             </span>
             <span className="relative flex items-center">
               <span className="flex items-center justify-center size-7 rounded-full bg-[#fdf4e8] border border-[#ebdcc9] text-[#d66d28] text-xl font-bold transition group-hover:bg-[#d66d28] group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
-                </svg>
+                <Paperclip className="size-4" />
               </span>
             </span>
             <input
@@ -149,9 +148,7 @@ export function ChatInput({
             <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-visible:opacity-100" role="tooltip">
               {newChatLabel}
             </span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <SquarePen className="size-4" />
           </button>
         )}
       </div>
