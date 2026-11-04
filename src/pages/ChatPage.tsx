@@ -6,7 +6,6 @@ import { usePageSeo } from '../hooks/usePageSeo'
 import { RecaptchaNotice } from '../components/RecapchaNotice'
 import { ChatBubble, TypingIndicator } from '../components/ChatBubble'
 import { ChatInput } from '../components/ChatInput'
-import { FunnyPlay } from '../components/FunnyPlay'
 
 export function ChatPage() {
   usePageSeo('chat')
@@ -61,13 +60,21 @@ export function ChatPage() {
       />
 
       {messages.length === 0 ? (
-        <FunnyPlay
-          t={t}
-          inputPlaceholder={inputPlaceholder}
-          onSend={send}
-          onReset={reset}
-          isLoading={isLoading}
-        />
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 sm:px-6">
+          <h1 className="mb-6 text-center font-serif text-xl font-bold text-white sm:text-3xl">
+            {t('chat.title') as string}
+          </h1>
+          <div className="w-full rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] p-3 shadow-2xl sm:p-5">
+            <ChatInput
+              placeholder={inputPlaceholder}
+              onSend={send}
+              onReset={reset}
+              showUpload={false}
+              showReset={false}
+              disabled={isLoading}
+            />
+          </div>
+        </div>
       ) : (
         <>
           <div className="relative z-10 flex-1 overflow-hidden">
