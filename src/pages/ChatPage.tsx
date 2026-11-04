@@ -9,7 +9,7 @@ import { ChatInput } from '../components/ChatInput'
 
 export function ChatPage() {
   usePageSeo('chat')
-  const { messages, isLoading, error, send, reset } = useChat('/api/chat')
+  const { messages, isLoading, error, send, addAssistantMessage, reset } = useChat('/api/chat')
   const { t } = useTranslation('translation')
   const [searchParams] = useSearchParams()
   const themeStarters = t('chat.themeStarters', { returnObjects: true }) as Record<string, string>
@@ -64,13 +64,18 @@ export function ChatPage() {
           <h1 className="mb-6 text-center font-serif text-xl font-bold text-white sm:text-3xl">
             {t('chat.title') as string}
           </h1>
+          <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#fffaf4] sm:text-base">
+            {t('chat.subtitle') as string}
+          </p>
           <div className="w-full rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] p-3 shadow-2xl sm:p-5">
             <ChatInput
               placeholder={inputPlaceholder}
               onSend={send}
+              onAssistantMessage={addAssistantMessage}
               onReset={reset}
-              showUpload={false}
+              showUpload={true}
               showReset={false}
+              uploadEndpoint="/api/chat"
               disabled={isLoading}
             />
           </div>
@@ -97,9 +102,11 @@ export function ChatPage() {
             <ChatInput
               placeholder={inputPlaceholder}
               onSend={send}
+              onAssistantMessage={addAssistantMessage}
               onReset={reset}
-              showUpload={false}
+              showUpload={true}
               showReset={true}
+              uploadEndpoint="/api/chat"
               disabled={isLoading}
             />
           </div>

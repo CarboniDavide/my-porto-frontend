@@ -36,10 +36,6 @@ const PAGE_TRANSLATION_KEYS: Record<SeoRouteKey, { title: string; description: s
     title: 'seo.contact.title',
     description: 'seo.contact.description',
   },
-  'recruit-me': {
-    title: 'recruitMe.title',
-    description: 'recruitMe.subtitle',
-  },
 }
 
 export function usePageSeo(route: SeoRouteKey) {

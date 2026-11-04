@@ -1,15 +1,4 @@
 {
-  "recruitMe": {
-    "title": "Recrutez-moi / Essayez l'IA",
-    "subtitle": "Téléchargez votre offre d'emploi ou collez le texte ci-dessous pour voir si mon profil correspond à vos besoins !",
-    "placeholder": "Collez ici votre offre d'emploi...",
-    "upload": "Télécharger un fichier",
-    "send": "Envoyer",
-    "thinking": "Je réfléchis...",
-    "fileNotImplemented": "Téléversement de fichier non encore implémenté",
-    "success": "Message envoyé ! Je vous répondrai bientôt.",
-    "error": "Une erreur s'est produite. Veuillez réessayer."
-  },
   "nav": {
     "aiAssistant": "Assistant IA",
     "showcase": "Exploration",
@@ -277,7 +266,8 @@
   },
   "chat": {
     "title": "Parlez avec mon assistant IA",
-    "subtitle": "Posez vos questions sur mon travail, ma stack, ou comment je peux vous aider à intégrer l'IA dans votre produit.",
+    "subtitle": "Posez vos questions sur mon travail et ma stack, ou collez ou téléchargez une offre d'emploi pour voir si mon profil convient.",
+    "upload": "Télécharger un fichier",
     "fun": {
       "subtitle": "Vous ne voulez pas discuter? Choisissez un mode rapide et ludique.",
       "modes": {
@@ -351,7 +341,7 @@
       }
     },
     "themeSelected": "Scenario preselectionne. J'ai deja lance la discussion dans le bon contexte.",
-    "placeholder": "Posez une question sur l'intégrations IA, disponibilité ou méthode de travail...",
+    "placeholder": "Posez une question sur mes projets ou ma disponibilité, ou collez une offre d'emploi...",
     "placeholderMobile": "Posez-moi des questions sur moi...",
     "send": "Envoyer",
     "thinking": "Je réfléchis...",

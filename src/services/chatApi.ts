@@ -2,7 +2,7 @@ import type { ChatMessage, ChatResponse } from '../types/chat'
 
 const baseUrl = import.meta.env.VITE_CHAT_API_BASE?.replace(/\/$/, '') ?? ''
 
-// Upload file (txt/pdf) to recruiter backend
+// Upload file (txt/pdf) to the chat backend
 export type FileUploadResponse = {
   reply: string
   extractedText?: string

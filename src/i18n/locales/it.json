@@ -266,7 +266,8 @@
   },
   "chat": {
     "title": "Chiedi al mio assistente AI",
-    "subtitle": "Chiedimi del mio lavoro, dello stack, o come posso aiutarti ad aggiungere l'AI al tuo prodotto.",
+    "subtitle": "Chiedimi del mio lavoro e dello stack, oppure incolla o carica un'offerta di lavoro per vedere se il mio profilo è adatto.",
+    "upload": "Carica file",
     "fun": {
       "subtitle": "Se non vuoi chattare, scegli una modalità rapida e divertente.",
       "modes": {
@@ -340,7 +341,7 @@
       }
     },
     "themeSelected": "Scenario preselezionato. Ho gia avviato la conversazione nel contesto giusto.",
-    "placeholder": "Chiedi di progetti, integrazioni AI, disponibilità o metodo di lavoro...",
+    "placeholder": "Chiedi dei miei progetti o della disponibilità, oppure incolla un'offerta di lavoro...",
     "placeholderMobile": "Chiedimi qualcosa su di me...",
     "send": "Invia",
     "thinking": "Sto pensando...",
@@ -402,17 +403,6 @@
       "title": "Contatta Davide Carboni",
       "description": "Contatta Davide Carboni per parlare di sviluppo web fullstack, integrazione AI e del tuo prossimo progetto digitale."
     }
-  },
-  "recruitMe": {
-    "title": "Recruit Me / Prova IA",
-    "subtitle": "Carica la tua offerta di lavoro o incolla il testo qui sotto per vedere se il mio profilo corrisponde alle tue esigenze!",
-    "placeholder": "Incolla qui la tua offerta di lavoro...",
-    "upload": "Carica file",
-    "send": "Invia",
-    "thinking": "Sto pensando...",
-    "fileNotImplemented": "Upload file non ancora implementato",
-    "success": "Messaggio inviato! Ti risponderò al più presto.",
-    "error": "Qualcosa è andato storto. Riprova."
   },
   "footer": {
     "github": "GitHub",

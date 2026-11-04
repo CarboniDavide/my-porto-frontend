@@ -49,7 +49,6 @@ export function Navbar() {
     { to: withLanguage('/experiences'), label: t('nav.experiences'), active: currentSection === 'experiences' },
     { to: withLanguage('/portfolio'), label: t('nav.portfolio'), active: currentSection === 'portfolio' },
     { to: withLanguage('/contact'), label: t('nav.contact'), active: currentSection === 'contact' },
-    { to: withLanguage('/recruit-me'), label: t('recruitMe.title'), active: currentSection === 'recruit-me' },
   ]
 
   return (

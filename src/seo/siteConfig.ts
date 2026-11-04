@@ -11,7 +11,6 @@ export const SEO_ROUTE_PATHS = {
   portfolio: 'portfolio',
   experiences: 'experiences',
   contact: 'contact',
-  'recruit-me': 'recruit-me',
 } as const
 
 export type SeoRouteKey = keyof typeof SEO_ROUTE_PATHS

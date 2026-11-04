@@ -15,9 +15,8 @@ export function Footer() {
   const year = new Date().getFullYear()
   const normalizedPath = pathname.replace(/\/+$/, '') || '/'
   const isChatRoute = isSupportedLanguage(lang) && normalizedPath === `/${lang}`
-  const isRecruitMeRoute = normalizedPath.endsWith('/recruit-me')
 
-  if (isChatRoute || isRecruitMeRoute) {
+  if (isChatRoute) {
     return null
   }
 

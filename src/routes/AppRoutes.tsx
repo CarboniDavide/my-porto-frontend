@@ -6,7 +6,6 @@ import { ContactPage } from '../pages/ContactPage'
 import { OverviewPage } from '../pages/OverviewPage'
 import { ExperiencesPage } from '../pages/ExperiencesPage'
 import { PortfolioPage } from '../pages/PortfolioPage'
-import { RecruitMePage } from '../pages/RecruitMePage'
 import { AiDemoPage } from '../pages/AiDemoPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
@@ -29,7 +28,7 @@ export function AppRoutes() {
         <Route path="experiences" element={<ExperiencesPage />} />
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="contact" element={<ContactPage />} />
-        <Route path="recruit-me" element={<RecruitMePage />} />
+        <Route path="recruit-me" element={<Navigate to=".." replace relative="path" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />

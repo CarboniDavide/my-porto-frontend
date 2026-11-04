@@ -266,7 +266,8 @@
   },
   "chat": {
     "title": "Ask my AI assistant",
-    "subtitle": "Ask anything about my work, stack, or how I can help you add AI to your product.",
+    "subtitle": "Ask anything about my work and stack, or paste or upload a job offer to see if my profile fits.",
+    "upload": "Upload file",
     "fun": {
       "subtitle": "Not in the mood for chat? Pick a quick and fun mode.",
       "modes": {
@@ -340,7 +341,7 @@
       }
     },
     "themeSelected": "Scenario preselected. I have already started the discussion in context.",
-    "placeholder": "Ask about my projects, AI integrations, availability, or how I work...",
+    "placeholder": "Ask about my projects or availability, or paste a job offer...",
     "placeholderMobile": "Ask about me ...",
     "send": "Send",
     "thinking": "Thinking...",
@@ -402,17 +403,6 @@
       "title": "Contact Davide Carboni",
       "description": "Get in touch with Davide Carboni to discuss fullstack web development, AI integration, and your next digital project."
     }
-  },
-  "recruitMe": {
-    "title": "Recruit Me / Try AI",
-    "subtitle": "Upload your job offer or paste the text below to see if my profile matches your requirements!",
-    "placeholder": "Paste your job offer here...",
-    "upload": "Upload file",
-    "send": "Send",
-    "thinking": "Thinking...",
-    "fileNotImplemented": "File upload not yet implemented",
-    "success": "Message sent! I'll get back to you soon.",
-    "error": "Something went wrong. Please try again."
   },
   "footer": {
     "github": "GitHub",
