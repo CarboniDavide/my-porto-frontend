@@ -98,12 +98,12 @@ export function ChatInput({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 rounded-3xl border border-[#ebdcc9] bg-white p-3 shadow-sm"
+      className="flex flex-col gap-2 rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] p-3 shadow-sm"
     >
       {file && (
         <div className="flex">
           <div className="flex max-w-full items-center gap-2 rounded-xl bg-[#fdf4e8] py-1.5 pl-1.5 pr-2">
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#d66d28]">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-[#fffaf4] text-[#d66d28]">
               <FileText className="size-4" />
             </span>
             <span className="max-w-[14rem] truncate text-sm text-[#1f2327]">{file.name}</span>
@@ -127,7 +127,7 @@ export function ChatInput({
         placeholder={placeholder}
         rows={1}
         disabled={disabled}
-        className="w-full resize-none bg-transparent px-2 py-2 text-sm text-[#1f2327] placeholder:text-gray-400 focus:outline-none"
+        className="w-full resize-none bg-transparent px-2 py-2 text-sm text-[#1f2327] placeholder:text-[#d66d28] focus:outline-none"
         style={{ minHeight: 40, maxHeight: 160 }}
       />
 
@@ -138,7 +138,7 @@ export function ChatInput({
         {showUpload ? (
           <label
             aria-label={uploadLabel}
-            className="group relative flex size-10 cursor-pointer items-center justify-center rounded-full bg-[#f1f3f4] text-[#1f2327] transition hover:bg-[#ebdcc9]"
+            className="group relative flex size-10 cursor-pointer items-center justify-center             rounded-full border border-[#ebdcc9] bg-[#fdf4e8] text-[#d66d28] transition hover:bg-[#d66d28] hover:text-white"
           >
             <span className="pointer-events-none absolute bottom-full left-0 z-10 mb-2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-within:opacity-100" role="tooltip">
               {uploadLabel}
@@ -166,7 +166,7 @@ export function ChatInput({
               onClick={resetAll}
               aria-label={newChatLabel}
               title={newChatLabel}
-              className="flex size-10 cursor-pointer items-center justify-center rounded-full bg-[#f1f3f4] text-[#1f2327] transition hover:bg-[#ebdcc9]"
+              className="flex size-10 cursor-pointer items-center justify-center               rounded-full border border-[#ebdcc9] bg-[#fdf4e8] text-[#d66d28] transition hover:bg-[#d66d28] hover:text-white"
             >
               <SquarePen className="size-5" />
             </button>
