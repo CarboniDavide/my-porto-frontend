@@ -33,8 +33,12 @@ export function ObserverSlidePage({ totalSlides, children }: ObserverSlidePagePr
     let isAnimating = false
     let animationTimer: number | undefined
 
+    const getMaxScroll = () => document.documentElement.scrollHeight - window.innerHeight
+    const hasFooterStop = () => getMaxScroll() - sections[totalSections - 1].offsetTop > 8
+
     const getClosestIndex = () => {
       const scrollTop = window.scrollY
+      if (hasFooterStop() && scrollTop >= getMaxScroll() - 8) return totalSections
       let closestIndex = 0
       let closestDistance = Number.POSITIVE_INFINITY
 
@@ -52,17 +56,20 @@ export function ObserverSlidePage({ totalSlides, children }: ObserverSlidePagePr
     const syncFromScroll = () => {
       const nextIndex = getClosestIndex()
       currentIndex = nextIndex
-      setActiveSlide((prev) => (prev === nextIndex ? prev : nextIndex))
+      const dotIndex = Math.min(nextIndex, totalSections - 1)
+      setActiveSlide((prev) => (prev === dotIndex ? prev : dotIndex))
     }
 
     syncFromScroll()
 
     const gotoSection = (index: number) => {
-      if (index < 0 || index >= totalSections || isAnimating) return
+      const footerIndex = hasFooterStop() ? totalSections : totalSections - 1
+      if (index < 0 || index > footerIndex || isAnimating) return
       isAnimating = true
       currentIndex = index
-      setActiveSlide(index)
-      window.scrollTo({ top: sections[index].offsetTop, behavior: 'smooth' })
+      setActiveSlide(Math.min(index, totalSections - 1))
+      const top = index === totalSections ? getMaxScroll() : sections[index].offsetTop
+      window.scrollTo({ top, behavior: 'smooth' })
       if (animationTimer) window.clearTimeout(animationTimer)
       animationTimer = window.setTimeout(() => {
         isAnimating = false
