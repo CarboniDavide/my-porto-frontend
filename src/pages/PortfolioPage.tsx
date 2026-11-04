@@ -3,13 +3,23 @@ import { useTranslation } from 'react-i18next'
 import { useLanguage } from '../contexts/LanguageContext'
 import { usePageSeo } from '../hooks/usePageSeo'
 import {
-  ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout
+  ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout,
+  Braces, Terminal, FileCode2, Boxes, Cpu, Zap, Globe, HardDrive, Table2, GitBranch, Workflow,
+  Settings2, Network, Compass, Puzzle, Blocks, Palette, type LucideIcon,
 } from 'lucide-react'
 import { ObserverSlidePage } from '../components/ObserverSlidePage'
 
 type SkillCategory = { name: string; items: string[] }
 
-const CATEGORY_ICONS = [Code2, Layers, Server, Cloud, Database, Container, Layout]
+const CATEGORY_ART: { main: LucideIcon; sats: LucideIcon[] }[] = [
+  { main: Code2, sats: [Braces, Terminal, FileCode2] },
+  { main: Layers, sats: [Boxes, Palette, Layout] },
+  { main: Server, sats: [Cpu, Zap, Terminal] },
+  { main: Cloud, sats: [Globe, Zap, HardDrive] },
+  { main: Database, sats: [Table2, HardDrive, Server] },
+  { main: Container, sats: [GitBranch, Settings2, Workflow] },
+  { main: Network, sats: [Compass, Puzzle, Blocks] },
+]
 
 function getCategorySummary(items: string[]): string {
   const preview = items.slice(0, 3).join(', ')
@@ -54,14 +64,15 @@ export function PortfolioPage() {
 
       {/* One section per skill category */}
       {skills.map((category, index) => {
-        const Icon = CATEGORY_ICONS[index % CATEGORY_ICONS.length]
+        const art = CATEGORY_ART[index % CATEGORY_ART.length]
+        const Main = art.main
         const isEven = index % 2 === 0
         const isEvenSection = (index + 1) % 2 === 0
 
         return (
           <section
             key={category.name}
-            className={`box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)] ${
+            className={`exp-section exp-tone-${(index % 6) + 1} box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)] ${
               isEven ? 'bg-white' : 'bg-[#fdf4e8]'
             }`}
             data-slide
@@ -74,7 +85,18 @@ export function PortfolioPage() {
                   isEvenSection ? 'lg:order-2' : 'lg:order-1'
                 }`}
               >
-                <Icon className="size-40 text-[#d66d28] sm:size-80 opacity-90" />
+                <div className={`showcase-theme-art showcase-theme-art-${(index % 6) + 1}`} aria-hidden="true">
+                  <span className="showcase-art-ring showcase-art-ring-1" />
+                  <span className="showcase-art-ring showcase-art-ring-2" />
+                  <span className="showcase-art-core">
+                    <Main strokeWidth={1.6} />
+                  </span>
+                  {art.sats.map((Sat, satIndex) => (
+                    <span className={`showcase-art-sat showcase-art-sat-${satIndex + 1}`} key={satIndex}>
+                      <Sat strokeWidth={1.8} />
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/* Text Content - Linea di separazione dinamica */}
@@ -93,7 +115,7 @@ export function PortfolioPage() {
                   {category.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-sm font-bold uppercase tracking-tight text-[#d66d28] shadow-sm"
+                      className="exp-chip rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-sm font-bold uppercase tracking-tight text-[#d66d28] shadow-sm"
                     >
                       {item}
                     </span>
@@ -106,48 +128,48 @@ export function PortfolioPage() {
       })}
 
       {/* 4. Approach + Cloud */}
-      <section className="box-border flex items-center justify-center border-t border-white/10 bg-[#1f2327] px-4 py-20 min-h-[calc(100svh-4rem)] text-white" data-slide>
+      <section className="portfolio-closing box-border flex items-center justify-center border-t border-[#e6e8f1] px-4 py-20 min-h-[calc(100svh-4rem)]" data-slide>
         <div className="w-full max-w-6xl">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             
             {/* Box Approccio */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white/5 p-8 sm:p-12 border border-white/10 transition-all hover:bg-white/10">
+            <div className="portfolio-card group relative overflow-hidden rounded-3xl p-8 sm:p-12 transition-all">
               <div className="relative z-10">
-                <div className="mb-6 inline-flex size-12 items-center justify-center rounded-xl bg-[#d66d28]/20 text-[#d66d28]">
+                <div className="portfolio-card-icon mb-6 inline-flex size-12 items-center justify-center rounded-xl">
                   <Layers className="size-6" />
                 </div>
                 <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d66d28]">
                   {t('skills.approach.title')}
                 </p>
-                <h2 className="mb-5 font-serif text-3xl font-bold text-[#ebdcc9]">
+                <h2 className="mb-5 font-serif text-3xl font-bold">
                   {t('skills.approach.title')}
                 </h2>
-                <p className="text-base leading-relaxed text-gray-400">
+                <p className="text-base leading-relaxed">
                   {t('skills.approach.text')}
                 </p>
               </div>
               {/* Decorazione di sfondo */}
-              <div className="absolute -right-8 -top-8 size-32 rounded-full bg-[#d66d28]/10 blur-3xl transition-all group-hover:bg-[#d66d28]/20" />
+              <div className="absolute -right-8 -top-8 size-32 rounded-full bg-[#6558e8]/10 blur-3xl" />
             </div>
 
             {/* Box Cloud */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white/5 p-8 sm:p-12 border border-white/10 transition-all hover:bg-white/10">
+            <div className="portfolio-card group relative overflow-hidden rounded-3xl p-8 sm:p-12 transition-all">
               <div className="relative z-10">
-                <div className="mb-6 inline-flex size-12 items-center justify-center rounded-xl bg-[#d66d28]/20 text-[#d66d28]">
+                <div className="portfolio-card-icon mb-6 inline-flex size-12 items-center justify-center rounded-xl">
                   <Cloud className="size-6" />
                 </div>
                 <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d66d28]">
                   {t('skills.cloud.title')}
                 </p>
-                <h2 className="mb-5 font-serif text-3xl font-bold text-[#ebdcc9]">
+                <h2 className="mb-5 font-serif text-3xl font-bold">
                   {t('skills.cloud.title')}
                 </h2>
-                <p className="text-base leading-relaxed text-gray-400">
+                <p className="text-base leading-relaxed">
                   {t('skills.cloud.text')}
                 </p>
               </div>
               {/* Decorazione di sfondo */}
-              <div className="absolute -right-8 -top-8 size-32 rounded-full bg-[#d66d28]/10 blur-3xl transition-all group-hover:bg-[#d66d28]/20" />
+              <div className="absolute -right-8 -top-8 size-32 rounded-full bg-[#22a37a]/10 blur-3xl" />
             </div>
 
           </div>

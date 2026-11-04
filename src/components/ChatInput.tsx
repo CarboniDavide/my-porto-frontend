@@ -98,7 +98,7 @@ export function ChatInput({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] p-3 shadow-sm"
+      className="chat-input-form flex flex-col gap-2 rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] p-3"
     >
       {file && (
         <div className="flex">
@@ -138,7 +138,7 @@ export function ChatInput({
         {showUpload ? (
           <label
             aria-label={uploadLabel}
-            className="group relative flex size-10 cursor-pointer items-center justify-center             rounded-full border border-[#ebdcc9] bg-[#fdf4e8] text-[#d66d28] transition hover:bg-[#d66d28] hover:text-white"
+            className="chat-upload-button group relative flex size-10 cursor-pointer items-center justify-center rounded-full border border-[#ebdcc9] bg-[#fdf4e8] text-[#d66d28] transition hover:bg-[#d66d28] hover:text-white"
           >
             <span className="pointer-events-none absolute bottom-full left-0 z-10 mb-2 whitespace-nowrap rounded-md bg-[#1f2327] px-2 py-1 text-xs font-medium text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-within:opacity-100" role="tooltip">
               {uploadLabel}
@@ -166,16 +166,16 @@ export function ChatInput({
               onClick={resetAll}
               aria-label={newChatLabel}
               title={newChatLabel}
-              className="flex size-10 cursor-pointer items-center justify-center               rounded-full border border-[#ebdcc9] bg-[#fdf4e8] text-[#d66d28] transition hover:bg-[#d66d28] hover:text-white"
+              className="chat-reset-button flex size-10 cursor-pointer items-center justify-center rounded-full border border-[#ebdcc9] bg-[#fdf4e8] text-[#d66d28] transition hover:bg-[#d66d28] hover:text-white"
             >
               <SquarePen className="size-5" />
             </button>
           )}
           <button
             type="submit"
-            aria-label="Send"
+            aria-label={t('chat.send')}
             disabled={disabled || uploading || (!draft.trim() && !file)}
-            className="flex size-10 cursor-pointer items-center justify-center rounded-full bg-[#d66d28] text-white transition hover:bg-[#c05e20] disabled:cursor-not-allowed disabled:opacity-50"
+            className="chat-submit-button flex size-10 cursor-pointer items-center justify-center rounded-full bg-[#d66d28] text-white transition hover:bg-[#c05e20] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <ArrowUp className="size-5" />
           </button>

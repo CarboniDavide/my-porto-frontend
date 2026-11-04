@@ -12,6 +12,7 @@ export function ChatPage() {
   const { messages, isLoading, error, send, addAssistantMessage, reset } = useChat('/api/chat')
   const { t } = useTranslation('translation')
   const [searchParams] = useSearchParams()
+  const suggestions = t('chat.suggestions', { returnObjects: true }) as string[]
   const themeStarters = t('chat.themeStarters', { returnObjects: true }) as Record<string, string>
   const topic = searchParams.get('topic') ?? ''
   const themedStarter = themeStarters[topic]
@@ -43,7 +44,6 @@ export function ChatPage() {
       setIsMobileInput(e.matches)
     }
 
-    setIsMobileInput(mediaQuery.matches)
     mediaQuery.addEventListener('change', updateViewport)
 
     return () => {
@@ -52,22 +52,21 @@ export function ChatPage() {
   }, [])
 
   return (
-    <section className="relative isolate flex h-[calc(100dvh-7.5rem)] flex-col sm:h-[calc(100dvh-6rem)]">
-      <div
-        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/bg_chat.jpg)' }}
-        aria-hidden="true"
-      />
+    <section className="chat-page relative isolate flex h-[calc(100dvh-7.5rem)] flex-col sm:h-[calc(100dvh-6rem)]">
+      <div className="chat-background fixed inset-0 -z-10" aria-hidden="true">
+        <span className="chat-background-orb chat-background-orb-one" />
+        <span className="chat-background-orb chat-background-orb-two" />
+      </div>
 
       {messages.length === 0 ? (
-        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 sm:px-6">
-          <h1 className="mb-6 text-center font-serif text-xl font-bold text-white sm:text-3xl">
+        <div className="chat-empty-state relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 sm:px-6">
+          <h1 className="chat-title mb-4 text-center font-serif text-3xl font-bold sm:text-5xl">
             {t('chat.title') as string}
           </h1>
-          <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#fffaf4] sm:text-base">
+          <p className="chat-subtitle mx-auto mb-7 max-w-3xl text-center text-sm sm:text-base">
             {t('chat.subtitle') as string}
           </p>
-          <div className="w-full shadow-2xl rounded-3xl">
+          <div className="chat-composer w-full">
             <ChatInput
               placeholder={inputPlaceholder}
               onSend={send}
@@ -79,12 +78,25 @@ export function ChatPage() {
               disabled={isLoading}
             />
           </div>
+          <div className="chat-suggestions" aria-label={t('chat.empty')}>
+            {suggestions.map((suggestion) => (
+              <button
+                key={suggestion}
+                type="button"
+                className="chat-suggestion-button"
+                disabled={isLoading}
+                onClick={() => void send(suggestion)}
+              >
+                {suggestion}
+              </button>
+            ))}
+          </div>
         </div>
       ) : (
         <>
           <div className="relative z-10 flex-1 overflow-hidden">
             <div className="mx-auto h-full w-full max-w-6xl overflow-hidden px-2 py-2 sm:px-6 sm:py-8">
-              <section className="flex h-full w-full min-w-0 flex-col overflow-hidden rounded-3xl border border-[#ebdcc9] bg-[#fffaf4] shadow-2xl">
+              <section className="flex h-full w-full min-w-0 flex-col overflow-hidden rounded-3xl border border-[#e6e8f1] bg-[#fffaf4]">
                 <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto overscroll-contain bg-[#fdf4e8] p-2 sm:p-6">
                   {messages.map((msg) => (
                     <ChatBubble key={msg.id} message={msg} />

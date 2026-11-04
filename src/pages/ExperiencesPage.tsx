@@ -1,7 +1,20 @@
 import { useTranslation } from 'react-i18next'
 import { usePageSeo } from '../hooks/usePageSeo'
-import { Briefcase, ChevronDown } from 'lucide-react'
+import {
+  ChevronDown, Building2, Landmark, Code2, Database, Rocket, Layers, GitBranch, Server,
+  BookOpen, Globe, Newspaper, Boxes, Terminal, Puzzle, Music, Wrench, Palette, UtensilsCrossed, Users, Star, Coffee,
+  type LucideIcon,
+} from 'lucide-react'
 import { ObserverSlidePage } from '../components/ObserverSlidePage'
+
+const artSets: { main: LucideIcon; sats: LucideIcon[] }[] = [
+  { main: Landmark, sats: [Building2, Code2, Users] },
+  { main: Layers, sats: [Server, Database, GitBranch] },
+  { main: Newspaper, sats: [BookOpen, Globe, Rocket] },
+  { main: Boxes, sats: [Terminal, Puzzle, Database] },
+  { main: Music, sats: [Wrench, Palette, Code2] },
+  { main: UtensilsCrossed, sats: [Coffee, Users, Star] },
+]
 
 type ExperienceItem = { role: string; company: string; period: string; bullets: string[] }
 
@@ -62,7 +75,7 @@ export function ExperiencesPage() {
           <section
             id={`experience-${index}`}
             key={`${item.company}-${item.period}`}
-            className={`box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)] ${
+            className={`exp-section exp-tone-${(index % 6) + 1} box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)] ${
               isEven ? 'bg-white' : 'bg-[#fdf4e8]'
             }`}
             data-slide
@@ -73,7 +86,21 @@ export function ExperiencesPage() {
                   isEvenSection ? 'lg:order-2' : 'lg:order-1'
                 }`}
               >
-                <Briefcase className="size-40 text-[#d66d28] sm:size-80 opacity-90" />
+                <div className={`showcase-theme-art showcase-theme-art-${(index % 6) + 1}`} aria-hidden="true">
+                  <span className="showcase-art-ring showcase-art-ring-1" />
+                  <span className="showcase-art-ring showcase-art-ring-2" />
+                  <span className="showcase-art-core">
+                    {(() => {
+                      const Main = artSets[index % artSets.length].main
+                      return <Main strokeWidth={1.6} />
+                    })()}
+                  </span>
+                  {artSets[index % artSets.length].sats.map((Sat, satIndex) => (
+                    <span className={`showcase-art-sat showcase-art-sat-${satIndex + 1}`} key={satIndex}>
+                      <Sat strokeWidth={1.8} />
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div
@@ -83,13 +110,13 @@ export function ExperiencesPage() {
                     : 'lg:order-2 lg:border-l lg:border-[#ebdcc9]'
                 }`}
               >
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d66d28]">{item.period}</p>
+                <p className="exp-period mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d66d28]">{item.period}</p>
                 <h2 className="mb-4 font-serif text-3xl font-bold text-[#1f2327] sm:text-4xl">{item.role}</h2>
                 <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">{item.company}</p>
                 <div className="flex flex-col gap-4">
                   {item.bullets.map((bullet) => (
                     <div key={bullet} className="flex gap-3 text-base leading-relaxed text-[#50575d] sm:text-lg">
-                      <span className="mt-2 size-2 shrink-0 rounded-full bg-[#d66d28]" />
+                      <span className="exp-bullet mt-2 size-2 shrink-0 rounded-full bg-[#d66d28]" />
                       <span>{renderBulletText(bullet)}</span>
                     </div>
                   ))}

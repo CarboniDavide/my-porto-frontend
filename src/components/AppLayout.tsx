@@ -30,7 +30,7 @@ export function LocalizedLayout() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="site-layout flex min-h-screen flex-col">
       <SyncLanguageFromUrl />
       <Header />
       <main id="content" className="flex-1">

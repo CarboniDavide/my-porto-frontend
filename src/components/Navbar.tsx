@@ -52,7 +52,7 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="w-full px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+    <nav className="relative w-full px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
       {/* Single row on desktop: logo left | links centered | lang right */}
       <div className="relative flex items-center justify-between py-3">
           {/* Logo — left */}
@@ -143,7 +143,7 @@ export function Navbar() {
 
         {/* Mobile menu — collapsible */}
         {menuOpen && (
-          <ul className="flex flex-col gap-1 pb-3 lg:hidden bg-[#fffaf4] border border-[#ebdcc9] rounded-xl mx-2 mt-2 shadow-lg px-4 py-3">
+          <ul className="absolute inset-x-0 top-full flex flex-col gap-1 pb-3 lg:hidden bg-[#fffaf4] border border-[#ebdcc9] rounded-xl mx-2 mt-2 shadow-lg px-4 py-3">
             {NAV_LINKS.map(({ to, label, active }) => (
               <li key={to}>
                 <Link
