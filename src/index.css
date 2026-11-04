@@ -439,12 +439,12 @@
 
 .chat-stage[data-open="true"] {
   max-width: 72rem;
-  padding: 0.5rem 0.5rem;
+  padding: calc(0.5rem + 50px) 0.5rem;
 }
 
 @media (min-width: 640px) {
   .chat-stage { padding-inline: 1.5rem; }
-  .chat-stage[data-open="true"] { padding: 1.5rem; }
+  .chat-stage[data-open="true"] { padding: calc(1.5rem + 50px) 1.5rem; }
 }
 
 .chat-collapse {
