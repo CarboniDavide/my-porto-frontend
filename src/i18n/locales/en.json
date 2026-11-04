@@ -306,6 +306,10 @@
     }
   },
   "seo": {
+    "legal": {
+      "title": "Legal information",
+      "description": "Terms of use, privacy policy and legal notice of carboni.ch."
+    },
     "keywords": "fullstack developer, AI integration, web development, react developer, freelance developer, API integration, portfolio",
     "chat": {
       "title": "AI Assistant for Your Digital Product",
@@ -332,7 +336,180 @@
       "description": "Get in touch with Davide Carboni to discuss fullstack web development, AI integration, and your next digital project."
     }
   },
+  "legal": {
+    "updated": "Last updated: November 4, 2026",
+    "contactLine": "For any question about this information, write to studio.ing.dci@gmail.com.",
+    "docs": {
+      "terms": {
+        "title": "Terms of use",
+        "sections": [
+          {
+            "title": "",
+            "body": [
+              "These terms govern access to and use of the carboni.ch website. By browsing the site, you accept these terms in their current version."
+            ]
+          },
+          {
+            "title": "Purpose of the site and services",
+            "body": [
+              "The site presents Davide Carboni's fullstack development, AI integration and project coordination activities. It is neither a contractual offer nor advice tailored to a particular situation. Any engagement is covered by a specific proposal, contract or conditions, which prevail over these terms of use."
+            ]
+          },
+          {
+            "title": "AI assistant",
+            "body": [
+              "The AI assistant provides automatically generated answers for information purposes. It may make mistakes and does not replace direct contact: no answer constitutes a commitment, an offer or an acceptance by Davide Carboni. The terms of any engagement are confirmed only in writing by Davide Carboni."
+            ]
+          },
+          {
+            "title": "Accuracy of information",
+            "body": [
+              "Davide Carboni takes care to publish accurate and up-to-date information, without being able to guarantee that it is complete or error-free at all times. Content may be changed or removed without notice."
+            ]
+          },
+          {
+            "title": "Intellectual property",
+            "body": [
+              "Unless stated otherwise, the texts, graphics, trademarks, logos and other content of the site belong to Davide Carboni or are used with permission. Reproducing, modifying or exploiting them beyond private use requires prior written permission."
+            ]
+          },
+          {
+            "title": "Liability",
+            "body": [
+              "To the extent permitted by applicable law, Davide Carboni disclaims all liability for damage resulting from access to the site, its unavailability, the use of its information or content offered by third-party sites. Mandatory provisions and commitments made in an engagement contract remain reserved."
+            ]
+          },
+          {
+            "title": "Applicable law",
+            "body": [
+              "These terms are governed by Swiss law. Subject to mandatory venues, the courts at Davide Carboni's place of business have exclusive jurisdiction."
+            ]
+          }
+        ]
+      },
+      "privacy": {
+        "title": "Privacy policy",
+        "sections": [
+          {
+            "title": "",
+            "body": [
+              "Davide Carboni processes personal data with care, in accordance with applicable Swiss data protection legislation and, where it applies, the European General Data Protection Regulation (GDPR)."
+            ]
+          },
+          {
+            "title": "Data controller",
+            "body": [
+              "Davide Carboni, Switzerland, is responsible for the processing described here. You can contact him at studio.ing.dci@gmail.com."
+            ]
+          },
+          {
+            "title": "Data processed",
+            "body": [
+              "Depending on how you use the site, Davide Carboni may process:",
+              "• the information you send through the contact form or by email, in particular your name, email address and message;",
+              "• the messages and files you send to the AI assistant, which may contain personal data;",
+              "• technical data needed for the security and operation of the site, such as the IP address, request date and browser, processed by the hosting provider and, only in memory and for a few moments, to limit repeated requests;",
+              "• for chat requests, only the date and time, path, outcome and duration, for statistical purposes. IP addresses, user agents and referrers are not stored;",
+              "• the language you chose, saved in your browser.",
+              "The site does not use audience measurement or advertising tools."
+            ]
+          },
+          {
+            "title": "Purposes and legal bases",
+            "body": [
+              "This data is used to answer requests, prepare or perform an engagement, operate and secure the site, prevent abuse and meet legal obligations. Processing relies, as the case may be, on pre-contractual steps, performance of a contract, a legal obligation, your consent (for example when you voluntarily write in the chat) or Davide Carboni's legitimate interests in communicating and providing a secure service."
+            ]
+          },
+          {
+            "title": "Providers and recipients",
+            "body": [
+              "Data is accessible only to Davide Carboni and the providers needed for the service: Infomaniak for hosting the site, Groq for generating the AI assistant's replies, and Google for reCAPTCHA verification and for delivering contact form messages through Gmail. No recipient receives this data for advertising purposes."
+            ]
+          },
+          {
+            "title": "Processing abroad",
+            "body": [
+              "Infomaniak hosts the site in Switzerland. Groq and Google may also process data outside Switzerland and the European Economic Area, in particular in the United States. In that case the transfer relies on an applicable adequacy decision, such as the Swiss-US Data Privacy Framework, or recognised contractual safeguards, such as standard contractual clauses."
+            ]
+          },
+          {
+            "title": "Retention",
+            "body": [
+              "A request with no contractual relationship is deleted no later than twelve months after the last exchange. Exchanges linked to an engagement are kept during the relationship and then according to the applicable legal periods. Conversations with the AI assistant are not retained by the site. Access statistics contain no personal data. Technical hosting logs are kept for at most the period set by Infomaniak."
+            ]
+          },
+          {
+            "title": "Your rights",
+            "body": [
+              "Within the limits of applicable law, you can request access to your data, its rectification, erasure, delivery or restriction of processing, and withdraw consent for the future. You can also contact the Federal Data Protection and Information Commissioner or the competent authority where you live."
+            ]
+          },
+          {
+            "title": "Cookies",
+            "body": [
+              "The site does not use tracking or advertising cookies. Only your language choice is saved in the browser, in local storage under the key portfolio-language. The site is protected by reCAPTCHA, which may use its own technical identifiers: the Google Privacy Policy and Terms of Service apply:"
+                          ],
+                          "recaptcha": true
+          },
+          {
+            "title": "Security",
+            "body": [
+              "Davide Carboni applies proportionate technical and organisational measures to protect data. As no system can offer absolute security, transmissions over the Internet remain subject to some risks."
+            ]
+          },
+          {
+            "title": "Changes",
+            "body": [
+              "This policy may change when services, providers or legal requirements change. The date at the top of the page indicates the latest version."
+            ]
+          }
+        ]
+      },
+      "notice": {
+        "title": "Legal notice",
+        "sections": [
+          {
+            "title": "Publisher and person responsible for the site",
+            "body": [
+              "Davide Carboni, Switzerland",
+              "studio.ing.dci@gmail.com"
+            ]
+          },
+          {
+            "title": "Hosting and operation",
+            "body": [
+              "The site is hosted by Infomaniak in Switzerland. The AI assistant's replies are generated by Groq. Anti-abuse verification is provided by Google reCAPTCHA and contact form messages are delivered through Gmail. The site does not use audience measurement tools."
+            ]
+          },
+          {
+            "title": "Editorial responsibility",
+            "body": [
+              "Davide Carboni prepares content with care but does not guarantee its permanent completeness. The general information published on this site does not replace a professional analysis that takes the reader's particular context into account."
+            ]
+          },
+          {
+            "title": "Copyright",
+            "body": [
+              "The content and design of the site are protected by copyright and other applicable intellectual property rights. Any use beyond normal browsing of the site requires Davide Carboni's prior consent."
+            ]
+          },
+          {
+            "title": "External links",
+            "body": [
+              "Links to third-party sites are provided for information only. Davide Carboni controls neither their content, their availability nor their privacy practices and accepts no responsibility for them."
+            ]
+          }
+        ]
+      }
+    }
+  },
   "footer": {
+    "terms": "Terms of use",
+    "privacy": "Privacy",
+    "legalNotice": "Legal notice",
+    "formNotice": "The details you send are used only to reply to you.",
+    "formNoticeLink": "Find out how they are handled",
+    "googleNotice": "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply:",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "copyright": "© {{year}} Davide Carboni"

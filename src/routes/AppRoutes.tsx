@@ -7,6 +7,7 @@ import { OverviewPage } from '../pages/OverviewPage'
 import { ExperiencesPage } from '../pages/ExperiencesPage'
 import { PortfolioPage } from '../pages/PortfolioPage'
 import { AiDemoPage } from '../pages/AiDemoPage'
+import { LegalPage } from '../pages/LegalPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
 function RedirectToCurrentLanguage() {
@@ -28,6 +29,7 @@ export function AppRoutes() {
         <Route path="experiences" element={<ExperiencesPage />} />
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="legal" element={<LegalPage />} />
         <Route path="recruit-me" element={<Navigate to=".." replace relative="path" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>

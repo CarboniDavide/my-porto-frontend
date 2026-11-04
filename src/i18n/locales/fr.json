@@ -306,6 +306,10 @@
     }
   },
   "seo": {
+    "legal": {
+      "title": "Informations légales",
+      "description": "Conditions d'utilisation, politique de confidentialité et mentions légales de carboni.ch."
+    },
     "keywords": "developpeur fullstack, integration IA, developpement web, developpeur react, freelance developer, integration API, portfolio",
     "chat": {
       "title": "Assistant IA pour votre produit digital",
@@ -332,7 +336,180 @@
       "description": "Contactez Davide Carboni pour parler de developpement web fullstack, d'integration IA et de votre prochain projet digital."
     }
   },
+  "legal": {
+    "updated": "Dernière mise à jour : 4 novembre 2026",
+    "contactLine": "Pour toute question concernant ces informations, écrivez à studio.ing.dci@gmail.com.",
+    "docs": {
+      "terms": {
+        "title": "Conditions d'utilisation",
+        "sections": [
+          {
+            "title": "",
+            "body": [
+              "Les présentes conditions régissent l'accès au site carboni.ch et son utilisation. En consultant ce site, vous acceptez ces conditions dans leur version en vigueur."
+            ]
+          },
+          {
+            "title": "Objet du site et des services",
+            "body": [
+              "Le site présente les activités de développement fullstack, d'intégration de l'IA et de coordination de projet de Davide Carboni. Il ne constitue ni une offre contractuelle ni un conseil adapté à une situation particulière. Tout mandat fait l'objet d'une proposition, d'un contrat ou de conditions spécifiques qui prévalent sur les présentes conditions d'utilisation."
+            ]
+          },
+          {
+            "title": "Assistant IA",
+            "body": [
+              "L'assistant IA fournit des réponses générées automatiquement à titre informatif. Il peut se tromper et ne remplace pas un contact direct : aucune réponse ne constitue un engagement, une offre ou une acceptation de la part de Davide Carboni. Les conditions d'un éventuel mandat ne sont confirmées que par écrit par Davide Carboni."
+            ]
+          },
+          {
+            "title": "Exactitude des informations",
+            "body": [
+              "Davide Carboni veille à publier des informations exactes et actuelles, sans pouvoir garantir qu'elles soient à tout moment complètes ou exemptes d'erreurs. Les contenus peuvent être modifiés ou retirés sans préavis."
+            ]
+          },
+          {
+            "title": "Propriété intellectuelle",
+            "body": [
+              "Sauf indication contraire, les textes, éléments graphiques, marques, logos et autres contenus du site appartiennent à Davide Carboni ou sont utilisés avec autorisation. Leur reproduction, modification ou exploitation au-delà de l'usage privé nécessite une autorisation écrite préalable."
+            ]
+          },
+          {
+            "title": "Responsabilité",
+            "body": [
+              "Dans les limites autorisées par le droit applicable, Davide Carboni décline toute responsabilité pour les dommages résultant de l'accès au site, de son indisponibilité, de l'utilisation de ses informations ou de contenus proposés par des sites tiers. Les dispositions impératives et les engagements pris dans un contrat de mandat demeurent réservés."
+            ]
+          },
+          {
+            "title": "Droit applicable",
+            "body": [
+              "Les présentes conditions sont régies par le droit suisse. Sous réserve des fors impératifs, les tribunaux compétents au siège de Davide Carboni sont seuls compétents."
+            ]
+          }
+        ]
+      },
+      "privacy": {
+        "title": "Politique de confidentialité",
+        "sections": [
+          {
+            "title": "",
+            "body": [
+              "Davide Carboni traite les données personnelles avec soin, conformément à la législation suisse applicable sur la protection des données et, lorsqu'il s'applique, au Règlement général européen sur la protection des données (RGPD)."
+            ]
+          },
+          {
+            "title": "Responsable du traitement",
+            "body": [
+              "Davide Carboni, Suisse, est responsable des traitements décrits ici. Vous pouvez le contacter à l'adresse studio.ing.dci@gmail.com."
+            ]
+          },
+          {
+            "title": "Données traitées",
+            "body": [
+              "Selon votre utilisation du site, Davide Carboni peut traiter :",
+              "• les informations que vous transmettez par le formulaire de contact ou par email, notamment votre nom, adresse email et message ;",
+              "• les messages et fichiers que vous envoyez à l'assistant IA, qui peuvent contenir des données personnelles ;",
+              "• des données techniques nécessaires à la sécurité et à l'exploitation du site, telles que l'adresse IP, la date de la requête et le navigateur, traitées par l'hébergeur et, uniquement en mémoire et quelques instants, pour limiter les requêtes répétées ;",
+              "• pour les requêtes au chat, uniquement la date et l'heure, le chemin, le résultat et la durée, à des fins statistiques. L'adresse IP, le user agent et le référent ne sont pas conservés ;",
+              "• la langue que vous avez choisie, enregistrée dans votre navigateur.",
+              "Le site n'utilise aucun outil de mesure d'audience ni de publicité."
+            ]
+          },
+          {
+            "title": "Finalités et fondements",
+            "body": [
+              "Ces données servent à répondre aux demandes, préparer ou exécuter un mandat, exploiter et sécuriser le site, prévenir les abus et respecter les obligations légales. Le traitement repose selon le cas sur les démarches précontractuelles, l'exécution d'un contrat, une obligation légale, votre consentement (par exemple lorsque vous écrivez volontairement dans le chat) ou les intérêts légitimes de Davide Carboni à communiquer et assurer un service sûr."
+            ]
+          },
+          {
+            "title": "Prestataires et destinataires",
+            "body": [
+              "Les données sont accessibles uniquement à Davide Carboni et aux prestataires nécessaires au service : Infomaniak pour l'hébergement du site, Groq pour générer les réponses de l'assistant IA, Google pour la vérification reCAPTCHA et pour l'acheminement des messages du formulaire de contact via Gmail. Aucun destinataire ne reçoit ces données à des fins publicitaires."
+            ]
+          },
+          {
+            "title": "Traitement à l'étranger",
+            "body": [
+              "Infomaniak héberge le site en Suisse. Groq et Google peuvent aussi traiter les données hors de Suisse et de l'Espace économique européen, notamment aux États-Unis. Dans ce cas, le transfert repose sur une décision d'adéquation applicable, comme le Swiss-US Data Privacy Framework, ou sur des garanties contractuelles reconnues, telles que les clauses contractuelles types."
+            ]
+          },
+          {
+            "title": "Durée de conservation",
+            "body": [
+              "Une demande sans relation contractuelle est supprimée au plus tard douze mois après le dernier échange. Les échanges liés à un mandat sont conservés pendant la relation puis selon les délais légaux applicables. Les conversations avec l'assistant IA ne sont pas conservées par le site. Les statistiques d'accès ne contiennent aucune donnée personnelle. Les journaux techniques de l'hébergeur sont conservés au maximum pendant la durée prévue par Infomaniak."
+            ]
+          },
+          {
+            "title": "Vos droits",
+            "body": [
+              "Dans les limites du droit applicable, vous pouvez demander l'accès à vos données, leur rectification, leur effacement, leur remise ou la limitation de leur traitement, et retirer un consentement pour l'avenir. Vous pouvez également vous adresser au Préposé fédéral à la protection des données et à la transparence ou à l'autorité compétente de votre lieu de résidence."
+            ]
+          },
+          {
+            "title": "Cookies",
+            "body": [
+              "Le site n'utilise ni cookies de suivi ni cookies publicitaires. Seul votre choix de langue est enregistré dans le navigateur, dans le stockage local sous la clé portfolio-language. Le site est protégé par reCAPTCHA, qui peut utiliser ses propres identifiants techniques : la Politique de confidentialité et les Conditions d'utilisation de Google s'appliquent :"
+                          ],
+                          "recaptcha": true
+          },
+          {
+            "title": "Sécurité",
+            "body": [
+              "Davide Carboni applique des mesures techniques et organisationnelles proportionnées pour protéger les données. Aucun système ne pouvant offrir une sécurité absolue, les transmissions sur Internet restent soumises à certains risques."
+            ]
+          },
+          {
+            "title": "Modifications",
+            "body": [
+              "Cette politique peut évoluer lorsque les services, prestataires ou exigences légales changent. La date figurant en tête de page indique la dernière version."
+            ]
+          }
+        ]
+      },
+      "notice": {
+        "title": "Mentions légales",
+        "sections": [
+          {
+            "title": "Éditeur et responsable du site",
+            "body": [
+              "Davide Carboni, Suisse",
+              "studio.ing.dci@gmail.com"
+            ]
+          },
+          {
+            "title": "Hébergement et exploitation",
+            "body": [
+              "Le site est hébergé par Infomaniak en Suisse. Les réponses de l'assistant IA sont générées par Groq. La vérification anti-abus est assurée par Google reCAPTCHA et l'acheminement des messages du formulaire de contact par Gmail. Le site n'utilise aucun outil de mesure d'audience."
+            ]
+          },
+          {
+            "title": "Responsabilité éditoriale",
+            "body": [
+              "Davide Carboni prépare les contenus avec soin, mais ne garantit pas leur exhaustivité permanente. Les informations générales publiées sur ce site ne remplacent pas une analyse professionnelle tenant compte du contexte particulier du lecteur."
+            ]
+          },
+          {
+            "title": "Droits d'auteur",
+            "body": [
+              "Le contenu et la conception du site sont protégés par le droit d'auteur et les autres droits de propriété intellectuelle applicables. Toute utilisation qui dépasse la consultation normale du site requiert l'accord préalable de Davide Carboni."
+            ]
+          },
+          {
+            "title": "Liens externes",
+            "body": [
+              "Les liens vers des sites tiers sont proposés à titre informatif. Davide Carboni ne contrôle ni leur contenu, ni leur disponibilité, ni leurs pratiques de confidentialité et n'en assume pas la responsabilité."
+            ]
+          }
+        ]
+      }
+    }
+  },
   "footer": {
+    "terms": "Conditions d'utilisation",
+    "privacy": "Confidentialité",
+    "legalNotice": "Mentions légales",
+    "formNotice": "Les données que vous envoyez ne servent qu'à vous répondre.",
+    "formNoticeLink": "Découvrir comment elles sont traitées",
+    "googleNotice": "Ce site est protégé par reCAPTCHA et la Politique de confidentialité et les Conditions d'utilisation de Google s'appliquent :",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "copyright": "© {{year}} Davide Carboni"

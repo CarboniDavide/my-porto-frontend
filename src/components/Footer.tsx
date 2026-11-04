@@ -25,32 +25,28 @@ export function Footer() {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 py-6 sm:px-6 sm:py-7 lg:flex-row lg:items-center lg:justify-between">
         <nav aria-label="Footer" className="flex flex-wrap items-center gap-2">
           <Link
-            to={`/${language}`}
+            to={`/${language}/legal?doc=terms`}
             className="rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#50575d] transition hover:border-[#d66d28] hover:text-[#1f2327]"
           >
-            {t('nav.aiAssistant')}
+            {t('footer.terms')}
           </Link>
           <Link
-            to={`/${language}/showcase`}
+            to={`/${language}/legal?doc=privacy`}
             className="rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#50575d] transition hover:border-[#d66d28] hover:text-[#1f2327]"
           >
-            {t('nav.showcase')}
+            {t('footer.privacy')}
           </Link>
           <Link
-            to={`/${language}/portfolio`}
+            to={`/${language}/legal?doc=legal_notice`}
             className="rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#50575d] transition hover:border-[#d66d28] hover:text-[#1f2327]"
           >
-            {t('nav.portfolio')}
-          </Link>
-          <Link
-            to={`/${language}/contact`}
-            className="rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#50575d] transition hover:border-[#d66d28] hover:text-[#1f2327]"
-          >
-            {t('nav.contact')}
+            {t('footer.legalNotice')}
           </Link>
         </nav>
 
-        <p className="text-sm text-[#7d7f80]">{t('footer.copyright', { year })}</p>
+        <div className="flex flex-col gap-2 text-sm text-[#7d7f80] sm:items-end">
+          <p>{t('footer.copyright', { year })}</p>
+        </div>
       </div>
     </footer>
   )
