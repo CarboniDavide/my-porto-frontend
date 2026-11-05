@@ -52,7 +52,7 @@ export function ExperiencesPage() {
         <div className="w-full max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d66d28]">{t('nav.experiences')}</p>
           <h1 className="mb-6 font-serif text-4xl font-bold text-[#1f2327] sm:text-6xl">{t('experiences.title')}</h1>
-          <p className="mb-8 max-w-3xl text-lg leading-relaxed text-[#50575d] sm:text-xl">{t('experiences.text')}</p>
+          <p className="mb-8 max-w-3xl text-justify text-lg leading-relaxed text-[#50575d] sm:text-xl">{t('experiences.text')}</p>
           <div className="flex flex-wrap gap-3">
             <a
               href="#experience-0"
@@ -115,7 +115,7 @@ export function ExperiencesPage() {
                 <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">{item.company}</p>
                 <div className="flex flex-col gap-4">
                   {item.bullets.map((bullet) => (
-                    <div key={bullet} className="flex gap-3 text-base leading-relaxed text-[#50575d] sm:text-lg">
+                    <div key={bullet} className="flex gap-3 text-justify text-base leading-relaxed text-[#50575d] sm:text-lg">
                       <span className="exp-bullet mt-2 size-2 shrink-0 rounded-full bg-[#d66d28]" />
                       <span>{renderBulletText(bullet)}</span>
                     </div>

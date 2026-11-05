@@ -99,7 +99,7 @@ export function PortfolioPage() {
                   <Icon className="size-6" />
                 </div>
                 <h2 className="mb-4 font-serif text-2xl font-bold">{pillar.title}</h2>
-                <p className="text-base leading-relaxed">{pillar.text}</p>
+                <p className="text-justify text-base leading-relaxed">{pillar.text}</p>
               </div>
             )
           })}
@@ -163,7 +163,7 @@ export function PortfolioPage() {
                   ))
                 ) : (
                   <>
-                    <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">
+                    <p className="mb-8 max-w-3xl text-justify text-base leading-relaxed text-[#50575d] sm:text-lg">
                       {category.text ?? getCategorySummary(category.items ?? [])}
                     </p>
                     <div className="flex flex-wrap gap-3">
