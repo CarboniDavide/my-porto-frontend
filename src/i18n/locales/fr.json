@@ -139,11 +139,7 @@
     "text": "Je gère des projets numériques **de la conception à la production**, en transformant un besoin métier en une application logicielle solide et facile à utiliser. Grâce à une méthodologie de travail agile, je développe le projet par cycles continus qui permettent de livrer des mises à jour régulières, en optimisant les délais et en garantissant des résultats en phase avec vos objectifs.\nJe tire parti de la puissance de l'**IA** à deux niveaux : comme alliée quotidienne pour accélérer le développement, mais surtout comme moteur intégré à vos applications pour automatiser les flux de travail, éliminer les erreurs et faire passer votre activité à la vitesse supérieure.",
     "approach": {
       "title": "Ma façon de travailler",
-      "text": "Je ne me cantonne jamais à une seule technologie. Je choisis la stack en fonction du problème : parfois un monolithe solide est la bonne option, d'autres fois une architecture serverless qui s'adapte automatiquement. Ce qui reste constant, c'est l'attention à la qualité du code, à la maintenabilité et à la clarté des API. Ces dernières années, j'ai intégré l'IA dans de vrais produits web — pas comme un mot à la mode, mais pour automatiser des processus, améliorer l'expérience utilisateur et réduire le travail répétitif."
-    },
-    "cloud": {
-      "title": "Cloud & Serverless",
-      "text": "Je travaille de plus en plus sur des architectures cloud-native : fonctions serverless pour une logique légère et évolutive, edge functions pour réduire la latence, et services managés pour ne pas réinventer l'infrastructure. J'ai de l'expérience avec AWS, Azure et des plateformes comme Vercel et Netlify qui simplifient le déploiement sans sacrifier le contrôle."
+      "text": "Je ne me limite jamais à une seule technologie : je choisis la stack en fonction du problème, qu'il s'agisse d'un monolithe solide ou d'une architecture serverless qui s'adapte seule. Ce qui ne change pas, c'est l'attention portée à la qualité du code, à la maintenabilité et à la propreté des API.\nCes dernières années, j'ai intégré l'IA dans de vrais produits web, non comme un *buzzword*, mais pour automatiser des processus, améliorer l'expérience utilisateur et réduire le travail répétitif.\nJ'aborde chaque projet avec une approche pragmatique et une vision de bout en bout : des principes du Clean Code et du DevOps jusqu'à la mise en production, en faisant le pont entre les besoins du métier et la réalité technique."
     },
     "team": {
       "title": "Gestion d'équipe et des priorités",
@@ -157,32 +153,24 @@
     },
     "categories": [
       {
-        "name": "Langages",
-        "items": ["PHP", "JavaScript / TypeScript", "Python", "Ruby", "C#", "Java", "HTML & CSS", "Bash"]
+        "name": "Architecture Backend & API",
+        "text": "Conception et développement de services robustes, performants et évolutifs, avec une gestion avancée des bases de données relationnelles et NoSQL.",
+        "items": ["Python / Django", "Node.js / Express / NestJS", "PHP / Laravel", "Go", "C#", "Ruby on Rails", "PostgreSQL", "MySQL", "MS SQL", "MongoDB", "SQLite"]
       },
       {
-        "name": "Frameworks & Bibliothèques",
-        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "n8n", "Bootstrap", "Tailwind CSS"]
+        "name": "Ingénierie Frontend & UX/UI",
+        "text": "Interfaces modernes, responsives et accessibles, avec une attention constante à la performance, à l'utilisabilité et à l'expérience utilisateur.",
+        "items": ["React / Next.js", "Vue.js / Nuxt.js", "Angular", "Ionic", "Tailwind CSS", "JS / jQuery"]
       },
       {
-        "name": "Node.js & Backend JS",
-        "items": ["Node.js", "Express", "Fastify", "REST API", "GraphQL", "WebSocket", "Middleware & Auth", "npm / pnpm"]
+        "name": "Qualité, DevOps & Méthodologies",
+        "text": "Rigueur d'ingénierie (OOP, design patterns, clean code, tests), déploiement cloud automatisé et maîtrise du contrôle de version.",
+        "items": ["OOP & Design Patterns", "Clean Code", "REST API", "Tests", "CI/CD", "Azure", "Caddy", "Ansible", "Docker", "Git / GitHub / GitLab", "Azure DevOps"]
       },
       {
-        "name": "Cloud & Serverless",
-        "items": ["Azure", "Infomaniak", "Heroku", "Netlify", "Azure Functions", "Azure Static Web Apps", "AWS Lambda", "AWS S3 / CloudFront", "Supabase", "Firebase"]
-      },
-      {
-        "name": "Bases de données",
-        "items": ["MySQL", "PostgreSQL", "MS SQL", "MongoDB", "Redis", "Modélisation ORM"]
-      },
-      {
-        "name": "DevOps & Outils",
-        "items": ["Docker", "Git", "Pipelines CI/CD", "Azure DevOps / GitHub / GitLab", "SSH · SSL · DNS", "VMware · VirtualBox"]
-      },
-      {
-        "name": "Architecture & Méthodes",
-        "items": ["Conception API & Intégration", "OOP & Design Patterns", "Clean Architecture", "Agile / SCRUM", "TDD & Qualité du Code", "Modélisation des Données"]
+        "name": "Gestion de Projet IT & Delivery",
+        "text": "Cadrage fonctionnel, définition de la roadmap, planification de sprints Agile/Scrum et pilotage opérationnel, avec gestion des priorités pour tenir les délais.",
+        "items": ["Cadrage fonctionnel", "Roadmap", "Agile / Scrum", "Planification de sprints", "Gestion des priorités", "Leadership opérationnel"]
       }
     ]
   },

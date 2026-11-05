@@ -139,11 +139,7 @@
     "text": "Gestisco progetti digitali **dalla concezione alla produzione**, traducendo un'esigenza aziendale in un'applicazione software solida e facile da usare. Grazie a una metodologia di lavoro agile, sviluppo il progetto attraverso cicli continui che permettono di rilasciare aggiornamenti costanti, ottimizzando i tempi e garantendo risultati in linea con i tuoi obiettivi.\nSfrutto il potere dell'**IA** a doppio livello: come alleata quotidiana per accelerare lo sviluppo, ma soprattutto come motore integrato nelle tue applicazioni per automatizzare i flussi di lavoro, azzerare gli errori e far fare un salto di qualità al tuo business.",
     "approach": {
       "title": "Come lavoro",
-      "text": "Non mi fermo mai a una sola tecnologia. Scelgo lo stack in base al problema: a volte serve un monolite solido, altre volte un'architettura serverless che scala da sola. Quello che rimane costante è l'attenzione alla qualità del codice, alla manutenibilità e alla chiarezza delle API. Negli ultimi anni ho integrato l'AI in prodotti web reali, non come buzzword, ma per automatizzare processi, migliorare l'esperienza utente e ridurre il lavoro ripetitivo."
-    },
-    "cloud": {
-      "title": "Cloud & Serverless",
-      "text": "Sempre di più lavoro su architetture cloud-native: funzioni serverless per logica leggera e scalabile, edge functions per ridurre la latenza, e servizi gestiti per non reinventare l'infrastruttura. Ho esperienza con ambienti AWS, Azure e piattaforme come Vercel e Netlify che semplificano il deploy senza sacrificare il controllo."
+      "text": "Non mi fermo mai a una sola tecnologia: scelgo lo stack in base al problema, che si tratti di un monolite solido o di un'architettura serverless che scala da sola. Quello che non cambia è l'attenzione alla qualità del codice, alla manutenibilità e alla pulizia delle API.\nNegli ultimi anni ho integrato l'IA in prodotti web reali, non come *buzzword*, ma per automatizzare processi, migliorare l'esperienza utente e ridurre il lavoro ripetitivo.\nAffronto ogni progetto con un approccio pragmatico e una visione end-to-end: dai principi di Clean Code e DevOps fino al rilascio in produzione, facendo da ponte tra le esigenze del business e la concretezza tecnica."
     },
     "team": {
       "title": "Gestione team e priorità",
@@ -157,32 +153,24 @@
     },
     "categories": [
       {
-        "name": "Linguaggi",
-        "items": ["PHP", "JavaScript / TypeScript", "Python", "Ruby", "C#", "Java", "HTML & CSS", "Bash"]
+        "name": "Architettura Backend & API",
+        "text": "Progettazione e sviluppo di servizi robusti, performanti e scalabili, con gestione avanzata di database relazionali e NoSQL.",
+        "items": ["Python / Django", "Node.js / Express / NestJS", "PHP / Laravel", "Go", "C#", "Ruby on Rails", "PostgreSQL", "MySQL", "MS SQL", "MongoDB", "SQLite"]
       },
       {
-        "name": "Framework & Librerie",
-        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "n8n", "Bootstrap", "Tailwind CSS"]
+        "name": "Frontend Engineering & UX/UI",
+        "text": "Interfacce moderne, responsive e accessibili, con attenzione continua a prestazioni, usabilità ed esperienza utente.",
+        "items": ["React / Next.js", "Vue.js / Nuxt.js", "Angular", "Ionic", "Tailwind CSS", "JS / jQuery"]
       },
       {
-        "name": "Node.js & Backend JS",
-        "items": ["Node.js", "Express", "Fastify", "REST API", "GraphQL", "WebSocket", "Middleware & Auth", "npm / pnpm"]
+        "name": "Qualità, DevOps & Metodologie",
+        "text": "Rigore ingegneristico (OOP, design pattern, clean code, test), deploy automatizzato su cloud e controllo di versione.",
+        "items": ["OOP & Design Pattern", "Clean Code", "REST API", "Testing", "CI/CD", "Azure", "Caddy", "Ansible", "Docker", "Git / GitHub / GitLab", "Azure DevOps"]
       },
       {
-        "name": "Cloud & Serverless",
-        "items": ["Azure", "Infomaniak", "Heroku", "Netlify", "Azure Functions", "Azure Static Web Apps", "AWS Lambda", "AWS S3 / CloudFront", "Supabase", "Firebase"]
-      },
-      {
-        "name": "Database",
-        "items": ["MySQL", "PostgreSQL", "MS SQL", "MongoDB", "Redis", "Modellazione ORM"]
-      },
-      {
-        "name": "DevOps & Strumenti",
-        "items": ["Docker", "Git", "Pipeline CI/CD", "Azure DevOps / GitHub / GitLab", "SSH · SSL · DNS", "VMware · VirtualBox"]
-      },
-      {
-        "name": "Architettura & Metodi",
-        "items": ["Design API & Integrazione", "OOP & Design Pattern", "Clean Architecture", "Agile / SCRUM", "TDD & Qualità del Codice", "Modellazione Dati"]
+        "name": "IT Project Management & Delivery",
+        "text": "Analisi funzionale, roadmap, sprint Agile/Scrum e guida operativa del progetto, con gestione delle priorità per rispettare le scadenze.",
+        "items": ["Analisi funzionale", "Roadmap", "Agile / Scrum", "Pianificazione sprint", "Gestione priorità", "Leadership operativa"]
       }
     ]
   },

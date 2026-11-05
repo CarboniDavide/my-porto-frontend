@@ -1,27 +1,36 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useLanguage } from '../contexts/LanguageContext'
 import { usePageSeo } from '../hooks/usePageSeo'
 import {
-  ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout,
-  Braces, Terminal, FileCode2, Boxes, Cpu, Zap, Globe, HardDrive, Table2, GitBranch, Workflow,
-  Settings2, Network, Compass, Puzzle, Blocks, Palette, MessageCircle, TrendingUp, ShieldCheck, type LucideIcon,
+  ChevronDown, Server, Database, Container, Layout, Terminal, GitBranch, Workflow, Code2, Layers, Sparkles, Compass,
+  Network, Palette, MonitorSmartphone, MousePointerClick, ClipboardList, CalendarCheck, Target, Users,
+  MessageCircle, TrendingUp, ShieldCheck, type LucideIcon,
 } from 'lucide-react'
 import { ObserverSlidePage } from '../components/ObserverSlidePage'
 
-type SkillCategory = { name: string; items: string[] }
+type SkillCategory = { name: string; text?: string; items: string[] }
+type PortfolioSection = { name: string; text?: string; paragraphs?: string[]; items?: string[]; art: { main: LucideIcon; sats: LucideIcon[] } }
 
+const APPROACH_ART = { main: Compass, sats: [Layers, Sparkles, Code2] }
+
+// Ordine allineato a skills.categories: backend, frontend, qualità/DevOps, project management
 const CATEGORY_ART: { main: LucideIcon; sats: LucideIcon[] }[] = [
-  { main: Code2, sats: [Braces, Terminal, FileCode2] },
-  { main: Layers, sats: [Boxes, Palette, Layout] },
-  { main: Server, sats: [Cpu, Zap, Terminal] },
-  { main: Cloud, sats: [Globe, Zap, HardDrive] },
-  { main: Database, sats: [Table2, HardDrive, Server] },
-  { main: Container, sats: [GitBranch, Settings2, Workflow] },
-  { main: Network, sats: [Compass, Puzzle, Blocks] },
+  { main: Server, sats: [Database, Network, Terminal] },
+  { main: Layout, sats: [Palette, MonitorSmartphone, MousePointerClick] },
+  { main: Container, sats: [GitBranch, Workflow, ShieldCheck] },
+  { main: ClipboardList, sats: [CalendarCheck, Target, Users] },
 ]
 
 const PILLAR_ICONS: LucideIcon[] = [MessageCircle, TrendingUp, ShieldCheck]
+
+function renderInline(text: string) {
+  return text.split(/(\*\*.+?\*\*|\*.+?\*)/g).map((part, index) => {
+    if (part.startsWith('**')) return <strong key={index} className="font-semibold text-[#1f2327]">{part.slice(2, -2)}</strong>
+    if (part.startsWith('*')) return <em key={index}>{part.slice(1, -1)}</em>
+    return <span key={index}>{part}</span>
+  })
+}
 
 function getCategorySummary(items: string[]): string {
   const preview = items.slice(0, 3).join(', ')
@@ -35,6 +44,10 @@ export function PortfolioPage() {
   const { language } = useLanguage()
   const skills = t('skills.categories', { returnObjects: true }) as SkillCategory[]
   const pillars = t('skills.pillars', { returnObjects: true }) as { title: string; text: string }[]
+  const sections: PortfolioSection[] = [
+    { name: t('skills.approach.title'), paragraphs: t('skills.approach.text').split('\n'), art: APPROACH_ART },
+    ...skills.map((category, index) => ({ ...category, art: CATEGORY_ART[index % CATEGORY_ART.length] })),
+  ]
 
   return (
     <ObserverSlidePage>
@@ -93,17 +106,20 @@ export function PortfolioPage() {
         </div>
       </section>
 
-      {/* One section per skill category */}
-      {skills.map((category, index) => {
-        const art = CATEGORY_ART[index % CATEGORY_ART.length]
+      {/* Approach + one section per skill category */}
+      {sections.map((category, index) => {
+        const art = category.art
         const Main = art.main
         const isEven = index % 2 === 0
         const isEvenSection = (index + 1) % 2 === 0
+        const heightClass = category.paragraphs
+          ? 'md:min-h-[calc(100svh-4rem)]'
+          : 'md:h-[calc(100svh-4rem)]'
 
         return (
           <section
             key={category.name}
-            className={`exp-section exp-tone-${(index % 6) + 1} box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] md:h-[calc(100svh-4rem)] ${
+            className={`exp-section exp-tone-${(index % 6) + 1} box-border flex items-center justify-center border-t border-[#ebdcc9] px-4 py-16 sm:px-6 sm:py-20 h-auto min-h-[60vh] ${heightClass} ${
               isEven ? 'bg-white' : 'bg-[#fdf4e8]'
             }`}
             data-slide
@@ -139,73 +155,35 @@ export function PortfolioPage() {
                 }`}
               >
                 <h2 className="mb-4 font-serif text-3xl font-bold text-[#1f2327] sm:text-4xl">{category.name}</h2>
-                <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">
-                  {getCategorySummary(category.items)}
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {category.items.map((item) => (
-                    <span
-                      key={item}
-                      className="exp-chip rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-sm font-bold uppercase tracking-tight text-[#d66d28] shadow-sm"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                {category.paragraphs ? (
+                  category.paragraphs.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="mb-4 text-justify text-base leading-relaxed text-[#50575d] last:mb-0 sm:text-lg">
+                      {renderInline(paragraph)}
+                    </p>
+                  ))
+                ) : (
+                  <>
+                    <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#50575d] sm:text-lg">
+                      {category.text ?? getCategorySummary(category.items ?? [])}
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {(category.items ?? []).map((item) => (
+                        <span
+                          key={item}
+                          className="exp-chip rounded-full border border-[#ebdcc9] bg-white px-4 py-2 text-sm font-bold uppercase tracking-tight text-[#d66d28] shadow-sm"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </section>
         )
       })}
 
-      {/* 4. Approach + Cloud */}
-      <section className="portfolio-closing box-border flex items-center justify-center border-t border-[#e6e8f1] px-4 py-20 min-h-[calc(100svh-4rem)]" data-slide>
-        <div className="w-full max-w-6xl">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-            
-            {/* Box Approccio */}
-            <div className="portfolio-card group relative overflow-hidden rounded-3xl p-8 sm:p-12 transition-all">
-              <div className="relative z-10">
-                <div className="portfolio-card-icon mb-6 inline-flex size-12 items-center justify-center rounded-xl">
-                  <Layers className="size-6" />
-                </div>
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d66d28]">
-                  {t('skills.approach.title')}
-                </p>
-                <h2 className="mb-5 font-serif text-3xl font-bold">
-                  {t('skills.approach.title')}
-                </h2>
-                <p className="text-base leading-relaxed">
-                  {t('skills.approach.text')}
-                </p>
-              </div>
-              {/* Decorazione di sfondo */}
-              <div className="absolute -right-8 -top-8 size-32 rounded-full bg-[#6558e8]/10 blur-3xl" />
-            </div>
-
-            {/* Box Cloud */}
-            <div className="portfolio-card group relative overflow-hidden rounded-3xl p-8 sm:p-12 transition-all">
-              <div className="relative z-10">
-                <div className="portfolio-card-icon mb-6 inline-flex size-12 items-center justify-center rounded-xl">
-                  <Cloud className="size-6" />
-                </div>
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d66d28]">
-                  {t('skills.cloud.title')}
-                </p>
-                <h2 className="mb-5 font-serif text-3xl font-bold">
-                  {t('skills.cloud.title')}
-                </h2>
-                <p className="text-base leading-relaxed">
-                  {t('skills.cloud.text')}
-                </p>
-              </div>
-              {/* Decorazione di sfondo */}
-              <div className="absolute -right-8 -top-8 size-32 rounded-full bg-[#22a37a]/10 blur-3xl" />
-            </div>
-
-          </div>
-        </div>
-      </section>
 
     </ObserverSlidePage>
   )

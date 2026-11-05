@@ -139,11 +139,7 @@
     "text": "I manage digital projects **from conception to production**, turning a business need into a solid, easy-to-use software application. Thanks to an agile way of working, I develop projects through continuous cycles that allow constant updates to be released, optimizing time and delivering results that match your goals.\nI harness the power of **AI** on two levels: as a daily ally to speed up development, but above all as an engine built into your applications to automate workflows, eliminate errors, and take your business to the next level.",
     "approach": {
       "title": "How I work",
-      "text": "I never stick to a single technology. I choose the stack based on the problem: sometimes a solid monolith is the right call, other times a serverless architecture that scales on its own. What stays constant is attention to code quality, maintainability, and clear APIs. In recent years I've integrated AI into real web products — not as a buzzword, but to automate processes, improve user experience, and reduce repetitive work."
-    },
-    "cloud": {
-      "title": "Cloud & Serverless",
-      "text": "I increasingly work on cloud-native architectures: serverless functions for lightweight and scalable logic, edge functions to reduce latency, and managed services to avoid reinventing infrastructure. I have experience with AWS, Azure environments, and platforms like Vercel and Netlify that simplify deployment without sacrificing control."
+      "text": "I never stick to a single technology: I choose the stack based on the problem, whether that means a solid monolith or a serverless architecture that scales on its own. What doesn't change is the focus on code quality, maintainability, and clean APIs.\nIn recent years I have integrated AI into real web products, not as a *buzzword*, but to automate processes, improve the user experience, and reduce repetitive work.\nI approach every project with a pragmatic, end-to-end mindset: from Clean Code and DevOps principles to production release, bridging business needs and technical reality."
     },
     "team": {
       "title": "Team leadership & prioritization",
@@ -157,32 +153,24 @@
     },
     "categories": [
       {
-        "name": "Languages",
-        "items": ["PHP", "JavaScript / TypeScript", "Python", "Ruby", "C#", "Java", "HTML & CSS", "Bash"]
+        "name": "Backend Architecture & APIs",
+        "text": "Design and development of robust, high-performance, scalable services, with advanced management of relational and NoSQL databases.",
+        "items": ["Python / Django", "Node.js / Express / NestJS", "PHP / Laravel", "Go", "C#", "Ruby on Rails", "PostgreSQL", "MySQL", "MS SQL", "MongoDB", "SQLite"]
       },
       {
-        "name": "Frameworks & Libraries",
-        "items": ["React", "Next.js", "Nuxt / Vue.js", "Django", "Laravel", "Angular", "Ionic", "ASP.NET", "Rails", "Odoo", "n8n", "Bootstrap", "Tailwind CSS"]
+        "name": "Frontend Engineering & UX/UI",
+        "text": "Modern, responsive, accessible interfaces, with continuous focus on performance, usability, and user experience.",
+        "items": ["React / Next.js", "Vue.js / Nuxt.js", "Angular", "Ionic", "Tailwind CSS", "JS / jQuery"]
       },
       {
-        "name": "Node.js & Backend JS",
-        "items": ["Node.js", "Express", "Fastify", "REST API", "GraphQL", "WebSocket", "Middleware & Auth", "npm / pnpm"]
+        "name": "Quality, DevOps & Methodologies",
+        "text": "Rigorous engineering (OOP, design patterns, clean code, testing), automated cloud deployment, and version-control expertise.",
+        "items": ["OOP & Design Patterns", "Clean Code", "REST API", "Testing", "CI/CD", "Azure", "Caddy", "Ansible", "Docker", "Git / GitHub / GitLab", "Azure DevOps"]
       },
       {
-        "name": "Cloud & Serverless",
-        "items": ["Azure", "Infomaniak", "Heroku", "Netlify", "Azure Functions", "Azure Static Web Apps", "AWS Lambda", "AWS S3 / CloudFront", "Supabase", "Firebase"]
-      },
-      {
-        "name": "Databases",
-        "items": ["MySQL", "PostgreSQL", "MS SQL", "MongoDB", "Redis", "ORM Modeling"]
-      },
-      {
-        "name": "DevOps & Tools",
-        "items": ["Docker", "Git", "CI/CD Pipelines", "Azure DevOps / GitHub / GitLab", "SSH · SSL · DNS", "VMware · VirtualBox"]
-      },
-      {
-        "name": "Architecture & Methods",
-        "items": ["API Design & Integration", "OOP & Design Patterns", "Clean Architecture", "Agile / SCRUM", "TDD & Code Quality", "Data Modeling"]
+        "name": "IT Project Management & Delivery",
+        "text": "Functional scoping, roadmap definition, Agile/Scrum sprint planning, and operational project leadership with priority management to meet deadlines.",
+        "items": ["Functional scoping", "Roadmap", "Agile / Scrum", "Sprint planning", "Priority management", "Operational leadership"]
       }
     ]
   },
