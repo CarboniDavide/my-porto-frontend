@@ -130,8 +130,13 @@
     ]
   },
   "skills": {
+    "pillars": [
+      { "title": "Écoute et Communication", "text": "Grâce à une solide expérience dans la gestion des relations, je parle votre langage, en transformant vos demandes en solutions concrètes sans barrières techniques." },
+      { "title": "Impact Business", "text": "Je crée une forte automatisation grâce à l'Intelligence Artificielle et à l'intégration native de services externes (API). Cela élimine le travail manuel et répétitif, réduit drastiquement les coûts d'exploitation et augmente l'efficacité de l'entreprise." },
+      { "title": "Infrastructure et Méthode Agile", "text": "Je configure l'environnement idéal pour garantir une application toujours en ligne, sécurisée et rapide, capable d'évoluer rapidement et sans interruption grâce à des livraisons continues." }
+    ],
     "title": "Compétences",
-    "text": "Mon expertise ne se limite pas à une technologie: elle repose sur ma capacité à relier frontend, backend, données et services externes au sein de solutions complètes. Avec une expérience en PHP, JavaScript, Python, React, Vue.js, Django, Laravel, Node.js et bases SQL et NoSQL, je choisis la stack selon le problème et construis des applications robustes, maintenables et prêtes à évoluer. L'IA fait désormais partie de mon quotidien: elle m'aide à accélérer la production, améliorer les services, réduire les erreurs et maintenir un haut niveau de qualité. J'y associe architecture logicielle, DevOps et automatisation pour transformer des besoins concrets en produits digitaux efficaces.",
+    "text": "Je gère des projets numériques **de la conception à la production**, en transformant un besoin métier en une application logicielle solide et facile à utiliser. Grâce à une méthodologie de travail agile, je développe le projet par cycles continus qui permettent de livrer des mises à jour régulières, en optimisant les délais et en garantissant des résultats en phase avec vos objectifs.\nJe tire parti de la puissance de l'**IA** à deux niveaux : comme alliée quotidienne pour accélérer le développement, mais surtout comme moteur intégré à vos applications pour automatiser les flux de travail, éliminer les erreurs et faire passer votre activité à la vitesse supérieure.",
     "approach": {
       "title": "Ma façon de travailler",
       "text": "Je ne me cantonne jamais à une seule technologie. Je choisis la stack en fonction du problème : parfois un monolithe solide est la bonne option, d'autres fois une architecture serverless qui s'adapte automatiquement. Ce qui reste constant, c'est l'attention à la qualité du code, à la maintenabilité et à la clarté des API. Ces dernières années, j'ai intégré l'IA dans de vrais produits web — pas comme un mot à la mode, mais pour automatiser des processus, améliorer l'expérience utilisateur et réduire le travail répétitif."

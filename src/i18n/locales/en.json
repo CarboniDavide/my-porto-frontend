@@ -130,8 +130,13 @@
     ]
   },
   "skills": {
+    "pillars": [
+      { "title": "Listening and Communication", "text": "Thanks to a solid background in relationship management, I speak your language, turning your requests into concrete solutions without technical barriers." },
+      { "title": "Business Impact", "text": "I build powerful automation through Artificial Intelligence and native integration with external services (APIs). This eliminates manual, repetitive work, drastically cutting operating costs and increasing business efficiency." },
+      { "title": "Infrastructure and Agile Method", "text": "I set up the ideal environment to keep your application always online, secure, and fast, able to evolve quickly and without downtime thanks to continuous releases." }
+    ],
     "title": "Skills",
-    "text": "My expertise is not tied to a single technology; it is the ability to connect frontend, backend, data, and external services into complete solutions. With experience in PHP, JavaScript, Python, React, Vue.js, Django, Laravel, Node.js, and SQL and NoSQL databases, I choose the stack according to the problem and build robust, maintainable applications that are ready to evolve. AI is now part of my daily work: it helps me accelerate delivery, improve services, reduce errors, and maintain a high standard of product quality. I combine this with software architecture, DevOps, and automation to turn concrete needs into effective digital products.",
+    "text": "I manage digital projects **from conception to production**, turning a business need into a solid, easy-to-use software application. Thanks to an agile way of working, I develop projects through continuous cycles that allow constant updates to be released, optimizing time and delivering results that match your goals.\nI harness the power of **AI** on two levels: as a daily ally to speed up development, but above all as an engine built into your applications to automate workflows, eliminate errors, and take your business to the next level.",
     "approach": {
       "title": "How I work",
       "text": "I never stick to a single technology. I choose the stack based on the problem: sometimes a solid monolith is the right call, other times a serverless architecture that scales on its own. What stays constant is attention to code quality, maintainability, and clear APIs. In recent years I've integrated AI into real web products — not as a buzzword, but to automate processes, improve user experience, and reduce repetitive work."

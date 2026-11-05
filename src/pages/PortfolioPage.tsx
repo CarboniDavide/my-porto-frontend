@@ -5,7 +5,7 @@ import { usePageSeo } from '../hooks/usePageSeo'
 import {
   ChevronDown, Code2, Layers, Server, Cloud, Database, Container, Layout,
   Braces, Terminal, FileCode2, Boxes, Cpu, Zap, Globe, HardDrive, Table2, GitBranch, Workflow,
-  Settings2, Network, Compass, Puzzle, Blocks, Palette, type LucideIcon,
+  Settings2, Network, Compass, Puzzle, Blocks, Palette, MessageCircle, TrendingUp, ShieldCheck, type LucideIcon,
 } from 'lucide-react'
 import { ObserverSlidePage } from '../components/ObserverSlidePage'
 
@@ -21,6 +21,8 @@ const CATEGORY_ART: { main: LucideIcon; sats: LucideIcon[] }[] = [
   { main: Network, sats: [Compass, Puzzle, Blocks] },
 ]
 
+const PILLAR_ICONS: LucideIcon[] = [MessageCircle, TrendingUp, ShieldCheck]
+
 function getCategorySummary(items: string[]): string {
   const preview = items.slice(0, 3).join(', ')
   const suffix = items.length > 3 ? ', ...' : ''
@@ -32,6 +34,7 @@ export function PortfolioPage() {
   const { t } = useTranslation('translation')
   const { language } = useLanguage()
   const skills = t('skills.categories', { returnObjects: true }) as SkillCategory[]
+  const pillars = t('skills.pillars', { returnObjects: true }) as { title: string; text: string }[]
 
   return (
     <ObserverSlidePage>
@@ -41,7 +44,17 @@ export function PortfolioPage() {
         <div className="w-full max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d66d28]">{t('nav.portfolio')}</p>
           <h1 className="mb-6 font-serif text-4xl font-bold text-[#1f2327] sm:text-6xl">{t('skills.title')}</h1>
-          <p className="mb-8 text-lg leading-relaxed text-[#50575d] sm:text-xl">{t('skills.text')}</p>
+          {t('skills.text').split('\n').map((paragraph, pIndex) => (
+            <p key={pIndex} className="mb-4 text-justify text-lg leading-relaxed text-[#50575d] last:mb-8 sm:text-xl">
+              {paragraph.split(/\*\*(.+?)\*\*/g).map((part, index) =>
+                index % 2 === 1 ? (
+                  <strong key={index} className="font-semibold text-[#1f2327]">{part}</strong>
+                ) : (
+                  <span key={index}>{part}</span>
+                ),
+              )}
+            </p>
+          ))}
           <div className="flex flex-wrap gap-3">
             <Link
               to={`/${language}/showcase`}
@@ -59,6 +72,24 @@ export function PortfolioPage() {
         </div>
         <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[#d66d28] hidden md:block" aria-hidden="true">
           <ChevronDown className="size-8" />
+        </div>
+      </section>
+
+      {/* Pillars */}
+      <section className="box-border flex items-center justify-center border-t border-[#ebdcc9] bg-[#fdf4e8] px-4 py-16 sm:px-6 sm:py-20 min-h-[60vh] md:h-[calc(100svh-4rem)]" data-slide>
+        <div className="grid w-full max-w-6xl gap-6 lg:grid-cols-3 lg:gap-8">
+          {pillars.map((pillar, index) => {
+            const Icon = PILLAR_ICONS[index % PILLAR_ICONS.length]
+            return (
+              <div key={pillar.title} className={`portfolio-card pillar-card-${(index % 3) + 1} relative overflow-hidden rounded-3xl p-8 sm:p-10`}>
+                <div className="portfolio-card-icon mb-6 inline-flex size-12 items-center justify-center rounded-xl">
+                  <Icon className="size-6" />
+                </div>
+                <h2 className="mb-4 font-serif text-2xl font-bold">{pillar.title}</h2>
+                <p className="text-base leading-relaxed">{pillar.text}</p>
+              </div>
+            )
+          })}
         </div>
       </section>
 

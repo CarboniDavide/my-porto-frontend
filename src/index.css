@@ -1216,6 +1216,32 @@
   box-shadow: 0 12px 24px rgb(101 88 232 / 25%);
 }
 
+.pillar-card-1,
+.pillar-card-1:hover {
+  background: #ffdcbc !important;
+  border: 2px solid #d66d28 !important;
+}
+.pillar-card-1 .portfolio-card-icon {
+  background: linear-gradient(145deg, #f09a5c, #d66d28) !important;
+  box-shadow: 0 12px 24px rgb(214 109 40 / 28%);
+}
+
+.pillar-card-2,
+.pillar-card-2:hover {
+  background: #bdeed9 !important;
+  border: 2px solid #22a37a !important;
+}
+.pillar-card-2 .portfolio-card-icon {
+  background: linear-gradient(145deg, #4fcaa0, #22a37a) !important;
+  box-shadow: 0 12px 24px rgb(34 163 122 / 28%);
+}
+
+.pillar-card-3,
+.pillar-card-3:hover {
+  background: #d9d3ff !important;
+  border: 2px solid #6558e8 !important;
+}
+
 .showcase-art-ring {
   position: absolute;
   border-radius: 50%;
