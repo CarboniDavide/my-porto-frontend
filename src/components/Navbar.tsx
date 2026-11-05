@@ -10,7 +10,6 @@ export function Navbar() {
   const navigate = useNavigate()
   const { lang: routeLanguage } = useParams()
   const [langOpen, setLangOpen] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -43,14 +42,6 @@ export function Navbar() {
     setLangOpen(false)
   }
 
-  const NAV_LINKS = [
-    { to: withLanguage('/'), label: t('nav.aiAssistant'), active: currentSection === '' },
-    { to: withLanguage('/showcase'), label: t('nav.showcase'), active: currentSection === 'showcase' },
-    { to: withLanguage('/experiences'), label: t('nav.experiences'), active: currentSection === 'experiences' },
-    { to: withLanguage('/portfolio'), label: t('nav.portfolio'), active: currentSection === 'portfolio' },
-    { to: withLanguage('/contact'), label: t('nav.contact'), active: currentSection === 'contact' },
-  ]
-
   return (
     <nav className="relative w-full px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
       {/* Single row on desktop: logo left | links centered | lang right */}
@@ -63,26 +54,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Nav links — center (hidden on mobile, shown inline on desktop) */}
-          <ul className="hidden lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:items-center lg:gap-1">
-            {NAV_LINKS.map(({ to, label, active }) => (
-              <li key={to}>
-                <Link
-                  to={to}
-                  className={[
-                    'block whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors',
-                    active
-                      ? 'bg-[#d66d28] text-white'
-                      : 'text-[#50575d] hover:bg-[#ebdcc9]',
-                  ].join(' ')}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Right side: lang + burger */}
+          {/* Right side: language switcher */}
           <div className="flex items-center justify-end gap-2 ml-auto">
             {/* Language switcher */}
             <div ref={langRef} className="relative">
@@ -119,49 +91,8 @@ export function Navbar() {
                 </div>
               )}
             </div>
-
-            {/* Burger button — mobile only */}
-            <button
-              type="button"
-              onClick={() => setMenuOpen((o) => !o)}
-              aria-expanded={menuOpen}
-              aria-label="Menu"
-              className="flex size-9 items-center justify-center rounded-full border border-[#ebdcc9] bg-[#f5ece0] text-[#50575d] transition hover:bg-[#ebdcc9] lg:hidden"
-            >
-              {menuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
-                  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
-                  <path fillRule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
-                </svg>
-              )}
-            </button>
           </div>
         </div>
-
-        {/* Mobile menu — collapsible */}
-        {menuOpen && (
-          <ul className="absolute inset-x-0 top-full flex flex-col gap-1 pb-3 lg:hidden bg-[#fffaf4] border border-[#ebdcc9] rounded-xl mx-2 mt-2 shadow-lg px-4 py-3">
-            {NAV_LINKS.map(({ to, label, active }) => (
-              <li key={to}>
-                <Link
-                  to={to}
-                  onClick={() => setMenuOpen(false)}
-                  className={[
-                    'block whitespace-nowrap rounded-full px-3 py-2 text-xs font-semibold transition-colors',
-                    active
-                      ? 'bg-[#d66d28] text-white'
-                      : 'text-[#50575d] hover:bg-[#ebdcc9]',
-                  ].join(' ')}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
     </nav>
   )
 }

@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { useRecaptcha } from '../contexts/RecaptchaContext'
+import { useLanguage } from '../contexts/LanguageContext'
 import { sendChat } from '../services/chatApi'
 import type { ChatMessage, Message } from '../types/chat'
 
 export function useChat(endpoint: string) {
   const { getRecaptchaToken } = useRecaptcha()
+  const { language } = useLanguage()
   const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  async function send(content: string) {
+  async function send(content: string, answerId?: string) {
     const trimmed = content.trim()
     if (!trimmed || isLoading) return
 
@@ -30,7 +32,13 @@ export function useChat(endpoint: string) {
 
     try {
       const recaptchaToken = await getRecaptchaToken('chat_message')
-      const response = await sendChat(endpoint, history, recaptchaToken)
+      const response = await sendChat(
+        endpoint,
+        history,
+        recaptchaToken,
+        undefined,
+        answerId ? { answerId, lang: language } : undefined,
+      )
 
       setMessages((prev) => [
         ...prev,
@@ -38,6 +46,8 @@ export function useChat(endpoint: string) {
           id: crypto.randomUUID(),
           role: 'assistant',
           content: response.reply || '...',
+          topic: response.topic,
+          title: response.title,
         },
       ])
     } catch {

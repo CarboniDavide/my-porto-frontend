@@ -2,11 +2,6 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { LocalizedLayout } from '../components/AppLayout'
 import { useLanguage } from '../contexts/LanguageContext'
 import { ChatPage } from '../pages/ChatPage'
-import { ContactPage } from '../pages/ContactPage'
-import { OverviewPage } from '../pages/OverviewPage'
-import { ExperiencesPage } from '../pages/ExperiencesPage'
-import { PortfolioPage } from '../pages/PortfolioPage'
-import { AiDemoPage } from '../pages/AiDemoPage'
 import { LegalPage } from '../pages/LegalPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
@@ -24,11 +19,6 @@ export function AppRoutes() {
       <Route path="/" element={<RedirectToCurrentLanguage />} />
       <Route path="/:lang" element={<LocalizedLayout />}>
         <Route index element={<ChatPage />} />
-        <Route path="showcase" element={<OverviewPage />} />
-        <Route path="ai-demo" element={<AiDemoPage />} />
-        <Route path="experiences" element={<ExperiencesPage />} />
-        <Route path="portfolio" element={<PortfolioPage />} />
-        <Route path="contact" element={<ContactPage />} />
         <Route path="legal" element={<LegalPage />} />
         <Route path="recruit-me" element={<Navigate to=".." replace relative="path" />} />
         <Route path="*" element={<NotFoundPage />} />

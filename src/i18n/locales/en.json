@@ -258,8 +258,8 @@
     "description": "The page you are looking for does not exist or has been moved."
   },
   "chat": {
-    "title": "Ask my AI assistant",
-    "subtitle": "Ask anything about my work and stack, or paste or upload a job offer to see if my profile fits.",
+    "title": "A new era for the web",
+    "subtitle": "Browse the site by writing what you want to know.",
     "upload": "Upload file",
     "themeSelected": "Scenario preselected. I have already started the discussion in context.",
     "placeholder": "Ask about my projects or availability, or paste a job offer...",
@@ -274,6 +274,14 @@
       "How do you integrate AI into a web product?",
       "What does your fullstack stack look like?",
       "Can you add AI features to an existing app?"
+    ],
+    "quickAnswers": [
+      { "id": "how-i-work", "label": "How I work" },
+      { "id": "skills", "label": "Skills" },
+      { "id": "experiences", "label": "Experiences" },
+      { "id": "showcase", "label": "Showcase" },
+      { "id": "links", "label": "Useful links" },
+      { "id": "contact", "label": "Contact me" }
     ],
     "themeStarters": {
       "ai-business-workflows": "Let's discuss the AI Integration for Business Workflows scenario. How would you identify the right processes, integrate AI into daily operations, and create measurable business value?",

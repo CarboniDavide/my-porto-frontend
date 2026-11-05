@@ -89,7 +89,7 @@ export function ChatWaveBackground() {
   }, [])
 
   return (
-    <div className="chat-background absolute inset-0 z-0" aria-hidden="true">
+    <div className="chat-background fixed inset-x-0 bottom-0 top-16 z-0" aria-hidden="true">
       <span className="chat-background-orb chat-background-orb-one" />
       <span className="chat-background-orb chat-background-orb-two" />
       <canvas ref={neuralCanvasRef} className="chat-neural-canvas" aria-hidden="true" />

@@ -258,8 +258,8 @@
     "description": "La pagina che cerchi non esiste o è stata spostata."
   },
   "chat": {
-    "title": "Chiedi al mio assistente AI",
-    "subtitle": "Chiedimi del mio lavoro e dello stack, oppure incolla o carica un'offerta di lavoro per vedere se il mio profilo è adatto.",
+    "title": "Una nuova era per il web",
+    "subtitle": "Naviga nel sito scrivendo quello che vuoi sapere.",
     "upload": "Carica file",
     "themeSelected": "Scenario preselezionato. Ho gia avviato la conversazione nel contesto giusto.",
     "placeholder": "Chiedi dei miei progetti o della disponibilità, oppure incolla un'offerta di lavoro...",
@@ -274,6 +274,14 @@
       "Come integri l'AI in un prodotto web?",
       "Com'è il tuo stack fullstack?",
       "Puoi aggiungere funzionalità AI a un'app esistente?"
+    ],
+    "quickAnswers": [
+      { "id": "how-i-work", "label": "Come lavoro" },
+      { "id": "skills", "label": "Competenze" },
+      { "id": "experiences", "label": "Esperienze" },
+      { "id": "showcase", "label": "Showcase" },
+      { "id": "links", "label": "Link utili" },
+      { "id": "contact", "label": "Contattami" }
     ],
     "themeStarters": {
       "ai-business-workflows": "Parliamo dello scenario Integrazione AI per Flussi Business. Come individueresti i processi giusti, integreresti l'AI nelle operazioni quotidiane e creeresti valore misurabile per il business?",

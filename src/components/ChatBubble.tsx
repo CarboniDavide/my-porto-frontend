@@ -1,7 +1,14 @@
 import type { Message } from '../types/chat'
+import { TopicCard } from '../chat/TopicCard'
+import { useTopics } from '../chat/useTopics'
 
 export function ChatBubble({ message }: { message: Message }) {
   const isUser = message.role === 'user'
+  const topics = useTopics(isUser ? undefined : message.topic)
+  const topic = !isUser ? topics.find((item) => item.id === message.topic) : undefined
+
+  if (topic) return <TopicCard message={message} topic={topic} />
+
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
       {!isUser && (

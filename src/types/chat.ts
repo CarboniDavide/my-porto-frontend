@@ -9,10 +9,14 @@ export type Message = {
   id: string
   role: ChatMessage['role']
   content: string
+  topic?: string
+  title?: string
 }
 
 export type ChatResponse = {
   reply: string
+  topic?: string
+  title?: string
   usage?: {
     prompt_tokens?: number
     completion_tokens?: number

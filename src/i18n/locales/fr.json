@@ -258,8 +258,8 @@
     "description": "La page que vous cherchez n'existe pas ou a été déplacée."
   },
   "chat": {
-    "title": "Parlez avec mon assistant IA",
-    "subtitle": "Posez vos questions sur mon travail et ma stack, ou collez ou téléchargez une offre d'emploi pour voir si mon profil convient.",
+    "title": "Une nouvelle ère pour le web",
+    "subtitle": "Naviguez sur le site en écrivant ce que vous voulez savoir.",
     "upload": "Télécharger un fichier",
     "themeSelected": "Scenario preselectionne. J'ai deja lance la discussion dans le bon contexte.",
     "placeholder": "Posez une question sur mes projets ou ma disponibilité, ou collez une offre d'emploi...",
@@ -274,6 +274,14 @@
       "Comment intègres-tu l'IA dans un produit web ?",
       "Comment se présente ta stack fullstack ?",
       "Peux-tu ajouter des fonctionnalités IA à une app existante ?"
+    ],
+    "quickAnswers": [
+      { "id": "how-i-work", "label": "Ma façon de travailler" },
+      { "id": "skills", "label": "Compétences" },
+      { "id": "experiences", "label": "Expériences" },
+      { "id": "showcase", "label": "Showcase" },
+      { "id": "links", "label": "Liens utiles" },
+      { "id": "contact", "label": "Me contacter" }
     ],
     "themeStarters": {
       "ai-business-workflows": "Parlons du scénario Intégration IA pour Workflows Métier. Comment identifierais-tu les bons processus, intégrerais-tu l'IA dans les opérations quotidiennes et créerais-tu une valeur mesurable pour le business ?",

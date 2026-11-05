@@ -41,11 +41,12 @@ export async function sendChat(
   messages: ChatMessage[],
   recaptchaToken: string,
   signal?: AbortSignal,
+  predefined?: { answerId: string; lang: string },
 ): Promise<ChatResponse> {
   const response = await fetch(`${baseUrl}${endpoint}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messages, recaptchaToken }),
+    body: JSON.stringify({ messages, recaptchaToken, ...predefined }),
     signal,
   })
 
